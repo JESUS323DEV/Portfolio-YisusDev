@@ -10,51 +10,23 @@ import ScrollSections from "../../componentes/ScrollSections"
 //CSS
 import '../../styles/Hero.css'
 
-const TEXTO_INICIAL = "Webs para estar en internet."
-const BORRAR_HASTA  = "Webs para "           // lo que queda tras borrar
-const TEXTO_FINAL   = "vender."
-
-// fases: 'escribiendo1' | 'pausa' | 'borrando' | 'escribiendo2' | 'fin'
+const TEXTO = "Tu web como herramienta de trabajo."
 
 export default function Hero() {
 
-    const [fase, setFase]   = useState('escribiendo1')
     const [texto, setTexto] = useState("")
+    const [fin, setFin] = useState(false)
 
     useEffect(() => {
-        let timer
-
-        if (fase === 'escribiendo1') {
-            if (texto.length < TEXTO_INICIAL.length) {
-                timer = setTimeout(() => setTexto(TEXTO_INICIAL.slice(0, texto.length + 1)), 75)
-            } else {
-                timer = setTimeout(() => setFase('pausa'), 1200)
-            }
+        if (fin) return
+        if (texto.length < TEXTO.length) {
+            const timer = setTimeout(() => setTexto(TEXTO.slice(0, texto.length + 1)), 75)
+            return () => clearTimeout(timer)
+        } else {
+            const timer = setTimeout(() => setFin(true), 0)
+            return () => clearTimeout(timer)
         }
-
-        if (fase === 'pausa') {
-            timer = setTimeout(() => setFase('borrando'), 500)
-        }
-
-        if (fase === 'borrando') {
-            if (texto.length > BORRAR_HASTA.length) {
-                timer = setTimeout(() => setTexto(texto.slice(0, -1)), 45)
-            } else {
-                timer = setTimeout(() => setFase('escribiendo2'), 200)
-            }
-        }
-
-        if (fase === 'escribiendo2') {
-            const objetivo = BORRAR_HASTA + TEXTO_FINAL
-            if (texto.length < objetivo.length) {
-                timer = setTimeout(() => setTexto(objetivo.slice(0, texto.length + 1)), 75)
-            } else {
-                timer = setTimeout(() => setFase('fin'), 0)
-            }
-        }
-
-        return () => clearTimeout(timer)
-    }, [fase, texto])
+    }, [texto, fin])
 
     return (
         <>
