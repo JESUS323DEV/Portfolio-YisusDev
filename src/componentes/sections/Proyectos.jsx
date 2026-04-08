@@ -83,7 +83,7 @@ export default function Proyectos() {
                                     </div>
                                     <h3 className='title-card1'>Vanessa</h3>
                                     <div className='body-project'>
-                                        <p>Web profesional de psicopedagogía con servicios claros y contacto directo por WhatsApp.</p>
+                                        <p>Web clara y estructurada para explicar servicios y facilitar el contacto directo por WhatsApp.</p>
                                     </div>
                                     <div className='cont-foot-card'>
                                         <button className='btn-leer-mas' onClick={() => toggleFlip(0)}>Leer más</button>
@@ -133,7 +133,7 @@ export default function Proyectos() {
                                     </div>
                                     <h3 className='title-card2'>Estrella sin filtro</h3>
                                     <div className='body-project'>
-                                        <p>Web profesional para Social Media Manager orientada a captar clientes y mostrar sus servicios.</p>
+                                        <p>Web pensada para mostrar su marca personal y convertir visitas en oportunidades de trabajo.</p>
                                     </div>
                                     <div className='cont-foot-card'>
                                         <button className='btn-leer-mas' onClick={() => toggleFlip(1)}>Leer más</button>
