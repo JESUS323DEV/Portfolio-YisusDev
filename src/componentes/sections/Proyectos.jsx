@@ -46,6 +46,14 @@ import estrellaMobile2 from "../../assets/galeria-projects/estrella/mobile/estre
 import estrellaMobile3 from "../../assets/galeria-projects/estrella/mobile/estrella-section3-mobile.png"
 import estrellaMobile4 from "../../assets/galeria-projects/estrella/mobile/estrella-section4-mobile.png"
 
+// GALERIA IDLE MINER
+import idleCaptura1 from "../../assets/galeria-projects/idleMiner/captura-1.png"
+import idleCaptura2 from "../../assets/galeria-projects/idleMiner/captura-2.png"
+import idleCaptura3 from "../../assets/galeria-projects/idleMiner/captura-3.png"
+import idleCaptura4 from "../../assets/galeria-projects/idleMiner/captura-4.png"
+import idleCaptura5 from "../../assets/galeria-projects/idleMiner/captura-5.png"
+import idleCaptura6 from "../../assets/galeria-projects/idleMiner/captura-6.png"
+
 //CSS
 import '../../styles/Proyectos.css'
 
@@ -58,7 +66,7 @@ export default function Proyectos() {
     const detailsRefs = useRef([]);
     ScrollDetails(detailsRefs)
 
-    const [flipped, setFlipped] = useState([false, false, false])
+    const [flipped, setFlipped] = useState([false, false, false, false])
     const toggleFlip = (i) => setFlipped(prev => prev.map((v, idx) => idx === i ? !v : v))
 
     return (
@@ -151,8 +159,8 @@ export default function Proyectos() {
                                     <ul className='back-features'>
                                         <li>Presentación de servicios de redes sociales</li>
                                         <li>Portfolio con trabajos realizados</li>
-                                        <li>Formulario de captación de clientes</li>
-                                        <li>Diseño moderno con identidad visual propia</li>
+                                        <li>Diseño minimalista y profesional</li>
+                                        <li>Identidad visual propia y coherente</li>
                                     </ul>
                                     <div className='skills-cont back-skills'>
                                         <span className='skills'>Html</span>
@@ -213,6 +221,56 @@ export default function Proyectos() {
                                         <button className='btn-volver' onClick={() => toggleFlip(2)}>← Volver</button>
                                         <div className='ver-online'>
                                             <a target='_blank' href="https://www.atenciahomes.es/">Ver online</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        {/* ===== CARD 4: IDLE MINER ===== */}
+                        <div className='cont-card'>
+                            <div className={`card-project ${flipped[3] ? 'card-flipped' : ''}`}>
+
+                                <div className='card-front'>
+                                    <div className='galeria-projects'>
+                                        <GaleriaDemo
+                                            imagenesDesktop={[idleCaptura1, idleCaptura2, idleCaptura3]}
+                                            imagenesMobile={[idleCaptura1, idleCaptura2, idleCaptura3, idleCaptura4, idleCaptura5, idleCaptura6]}
+                                        />
+                                    </div>
+                                    <h3 className='title-card4'>Lady Hungry</h3>
+                                    <span className='badge-proyecto-propio'>Proyecto personal</span>
+                                    <div className='body-project'>
+                                        <p>Juego idle con perros mineros. Mina oro, gestiona recursos y desbloquea sistemas progresivamente.</p>
+                                    </div>
+                                    <div className='cont-foot-card'>
+                                        <button className='btn-leer-mas' onClick={() => toggleFlip(3)}>Leer más</button>
+                                        <div className='ver-online'>
+                                            <a target='_blank' href="https://idleminero.netlify.app/">Ver online</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className='card-back'>
+                                    <h3>Lady Hungry</h3>
+                                    <p>Idle clicker con temática de perros mineros. Desarrollado en React con arquitectura modular por sistemas.</p>
+                                    <ul className='back-features'>
+                                        <li>Sistema de minas, forja y taberna</li>
+                                        <li>Perros ayudantes con rareza y estrellas</li>
+                                        <li>Raids pasivas con loot escalable</li>
+                                        <li>14 temas visuales + tema personalizado</li>
+                                    </ul>
+                                    <div className='skills-cont back-skills'>
+                                        <span className='skills'>React</span>
+                                        <span className='skills'>Vite</span>
+                                        <span className='skills'>Context API</span>
+                                        <span className='skills'>CSS</span>
+                                    </div>
+                                    <div className='cont-foot-card'>
+                                        <button className='btn-volver' onClick={() => toggleFlip(3)}>← Volver</button>
+                                        <div className='ver-online'>
+                                            <a target='_blank' href="https://idleminero.netlify.app/">Ver online</a>
                                         </div>
                                     </div>
                                 </div>

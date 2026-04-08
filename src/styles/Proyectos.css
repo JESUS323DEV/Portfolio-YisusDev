@@ -75,6 +75,23 @@
     margin: auto;
 }
 
+.title-card4 {
+    width: 12rem;
+    margin: auto;
+}
+
+.badge-proyecto-propio {
+    display: block;
+    margin: -0.5rem auto 0;
+    width: fit-content;
+    background: rgba(0, 255, 238, 0.08);
+    border: 1px solid var(--color-span);
+    border-radius: 2rem;
+    color: var(--color-span);
+    font-size: 0.65rem;
+    padding: 0.2rem 0.8rem;
+}
+
 
 
 .cont-card {
