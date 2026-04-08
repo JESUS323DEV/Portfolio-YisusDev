@@ -67,6 +67,7 @@ export default function Proyectos() {
             <section id='proyectos'>
                 <div className='cont-proyectos'>
                     <h2>Proyectos</h2>
+                    <p className='subtitulo-proyectos'>Proyectos reales, resultados reales.</p>
 
                     <div className='contenido-proyectos'>
 

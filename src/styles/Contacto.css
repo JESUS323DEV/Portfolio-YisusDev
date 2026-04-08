@@ -39,3 +39,14 @@
     color: white;
     font-size: 1.4rem;
 }
+
+.iconos-contacto {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.cta-instagram img {
+    width: 55px;
+}
