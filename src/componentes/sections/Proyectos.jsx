@@ -228,6 +228,14 @@ export default function Proyectos() {
                             </div>
                         </div>
 
+                    </div>
+
+                    {/* ===== PROYECTOS PERSONALES ===== */}
+                    <h2 className='h2-personales'>Proyectos personales</h2>
+                    <p className='subtitulo-proyectos'>Lo que construyo cuando nadie me lo pide.</p>
+
+                    <div className='contenido-proyectos'>
+
                         {/* ===== CARD 4: IDLE MINER ===== */}
                         <div className='cont-card'>
                             <div className={`card-project ${flipped[3] ? 'card-flipped' : ''}`}>

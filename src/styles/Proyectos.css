@@ -15,6 +15,16 @@
 
 }
 
+.h2-personales {
+    color: white;
+    font-size: var(--h2-fontXs);
+    border-bottom: 1px solid var(--color-span);
+    width: 70%;
+    margin: 3rem auto 0;
+    text-align: center;
+    padding-top: 3rem;
+}
+
 .subtitulo-proyectos {
     text-align: center;
     color: rgb(163, 163, 163);
