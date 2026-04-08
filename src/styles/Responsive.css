@@ -3,8 +3,7 @@
    ===================== */
 
 /* Móviles XS (≤575px) */
-@media (max-width: 575px) {
-}
+@media (max-width: 575px) {}
 
 /*SM: Móviles pequeños verticales y móviles estándar(576px – 767px) */
 @media (min-width: 576px) and (max-width: 767px) {
@@ -878,7 +877,7 @@
         width: 80%;
     }
 
-      /*GALERIA PROYECTOS*/
+    /*GALERIA PROYECTOS*/
     .galeria-projects .galeria-container {
         height: 220px;
     }
@@ -904,7 +903,7 @@
 
 
     }
-    
+
     /*GALERIA PROYECTOS*/
     .galeria-container {
 
@@ -970,12 +969,28 @@
 /*XXL: Pantallas grandes ≥1400px */
 @media (min-width: 1400px) {
 
-    #servicios {
+    #hero {
 
-        scroll-margin-top: 1rem;
+        scroll-margin-top: 5.8rem;
     }
 
     #aboutMe {
+        scroll-margin-top: 1rem;
+    }
+
+    #servicios {
+        scroll-margin-top: 0;
+    }
+
+    #proyectos {
+        scroll-margin-top: 4rem;
+    }
+
+    #contacto {
+        scroll-margin-top: 5.8rem;
+    }
+
+    #demos {
 
         scroll-margin-top: 0;
 
@@ -1210,7 +1225,7 @@
         font-size: 4rem;
     }
 
-     .cont-card {
+    .cont-card {
         width: 90%;
     }
 
@@ -1230,7 +1245,7 @@
         width: 80%;
     }
 
-      /*GALERIA PROYECTOS*/
+    /*GALERIA PROYECTOS*/
     .galeria-projects .galeria-container {
         height: 220px;
     }
