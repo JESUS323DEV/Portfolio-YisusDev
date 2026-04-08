@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 
-import "../../styles/demos.css"
+import "../../styles/Demos.css"
 import cap1Desktop from "../../assets/ollaPeru-demo/img-desktop/hero-desktop.png"
 import cap2Desktop from "../../assets/ollaPeru-demo/img-desktop/sugerencias-desktop.png"
 import cap3Desktop from "../../assets/ollaPeru-demo/img-desktop/carta-desktop.png"
