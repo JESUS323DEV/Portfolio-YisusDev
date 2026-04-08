@@ -1,0 +1,107 @@
+/* ===== BEFORE AFTER SLIDER ===== */
+
+.baf-container {
+    position: relative;
+    width: 90%;
+    margin: auto;
+    height: 300px;
+    overflow: hidden;
+    cursor: col-resize;
+    user-select: none;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+
+
+.baf-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    pointer-events: none;
+}
+
+/* LÍNEA + BOTÓN */
+.baf-handle {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.baf-line {
+    width: 2px;
+    height: 100%;
+    background: #00bcd4;
+}
+
+.baf-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #00bcd4;
+    color: #0a0a0a;
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 6px 8px;
+    border-radius: 50px;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+/* ETIQUETAS */
+.baf-label {
+    position: absolute;
+    bottom: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 0.75rem;
+    padding: 3px 10px;
+    border-radius: 4px;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.baf-label-before {
+    left: 10px;
+    color: #aaa;
+}
+
+.baf-label-after {
+    right: 10px;
+    color: #00bcd4;
+}
+
+/* BOTONES */
+.baf-btns {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.baf-btn {
+    background: transparent;
+    border: 1px solid #00bcd4;
+    color: #00bcd4;
+    padding: 6px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.baf-btn-active {
+    background: #00bcd4;
+    color: #0a0a0a;
+    font-weight: bold;
+}

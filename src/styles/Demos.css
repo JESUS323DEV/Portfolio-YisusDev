@@ -1,0 +1,131 @@
+
+
+.cont-demos {
+
+    background: var(--bg-normal3);
+
+    padding: 2rem 0;
+
+}
+
+.cont-demos h2 {
+
+    color: white;
+    font-size: var(--h2-fontXs);
+    border-bottom: 1px solid var(--color-span);
+    width: 95%;
+    margin: auto;
+    margin-bottom: 1rem;
+    text-align: center;
+
+}
+
+.cont-demos h3 {
+
+    text-align: center;
+    color: white;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 2rem;
+    font-size: 0.8rem;
+}
+
+.content-ollaPeru p {
+    line-height: 1.5;
+    width: 90%;
+    margin: auto;
+
+}
+
+.container-demos {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+
+}
+
+
+
+.title-demos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.title-demos h5 {
+
+    font-size: 1rem;
+    line-height: 1.5;
+
+}
+
+.cont-olla {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.galeria-demos {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.link-demo {
+
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.link-demo a {
+
+    background: transparent;
+    color: #00bcd4;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+/*======================BTN LEER MÁS==================*/
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease;
+}
+
+.accordion-content.open {
+    max-height: 500px;
+    /* grande, que sobre */
+}
+
+.cont-leer {
+
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.leer-mas-menos {
+
+    border: 1px solid rgb(89, 89, 89);
+    background-color: var(--color-border-card);
+    padding: 0.2rem 2rem;
+    border-radius: 0.3rem;
+    color: white;
+}
+
+
+.text-accordion {
+
+    margin-top: 1rem;
+}
+
+/*=======================================================*/

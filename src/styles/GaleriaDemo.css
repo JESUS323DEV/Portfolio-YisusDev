@@ -1,0 +1,149 @@
+/* ===== GALERIA DEMO ===== */
+
+.galeria-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+
+/* BOTONES VISTA */
+.galeria-btns-vista {
+    position: absolute;
+    bottom: 0.2rem;
+    left: 0.5rem;
+    display: flex;
+    gap: 0.3rem;
+    z-index: 2;
+}
+
+
+
+
+
+
+
+.galeria-btn-vista svg {
+
+    width: 20px;
+    height: 20px;
+    padding: 0.2rem;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+    background: transparent;
+    color: rgb(255, 255, 255);
+    background-color: #121212;
+
+
+
+}
+
+
+.galeria-btn-vista-active svg {
+    color: #000000;
+    background-color: #5fefff;
+    border: 1px solid rgb(0, 108, 147);
+    font-weight: normal;
+    border-radius: 4px;
+
+}
+
+/* FILA con botones a los lados */
+.galeria-fila {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+
+}
+
+/* CONTENEDOR IMAGEN */
+.galeria-container {
+    flex: 1;
+    height: 220px;
+    overflow: hidden;
+    border-radius: 8px 8px 0px 0px;
+    position: relative;
+}
+
+.galeria-container-mobile {
+    height: 220px;
+}
+
+.galeria-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+
+}
+
+/* FLECHAS */
+.galeria-nav {
+
+    background: #00bbd4b5;
+    color: #0c0c0c;
+    border: 1px solid #00bbd42b;
+    font-size: 1.8rem;
+    padding: 0 0.3rem;
+    cursor: pointer;
+    border-radius: 4px;
+    flex-shrink: 0;
+    z-index: 3;
+
+}
+
+.galeria-prev {
+    position: absolute;
+    left: 0.1rem;
+
+}
+
+.galeria-next {
+
+    position: absolute;
+    right: 0.1rem;
+}
+
+
+/* FOOTER: puntos + contador */
+.galeria-footer {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+}
+
+.galeria-puntos {
+
+    display: flex;
+    gap: 3px;
+    margin-top: 10px;
+}
+
+.galeria-punto {
+
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #005b6f;
+    cursor: pointer;
+}
+
+.galeria-punto-active {
+    background: #00bcd4;
+}
+
+.galeria-contador {
+    position: absolute;
+    right: 0;
+    color: #aaa;
+    font-size: 0.75rem;
+}

@@ -1,0 +1,1465 @@
+/* =====================
+   MEDIA QUERIES RESPONSIVE
+   ===================== */
+
+/* Móviles XS (≤575px) */
+@media (max-width: 575px) {
+    body::before {
+        content: "XS";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        background: rgb(185, 6, 6);
+        color: rgb(0, 0, 0);
+        padding: 5px;
+        z-index: 9999;
+
+    }
+
+
+}
+
+/*SM: Móviles pequeños verticales y móviles estándar(576px – 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+    body::before {
+        content: "SM";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        background: rgb(0, 255, 30);
+        color: rgb(0, 0, 0);
+        padding: 5px;
+        z-index: 9999;
+    }
+
+    /*====================HERO=======================*/
+
+    .contenido-hero {
+
+        min-height: 70vh;
+    }
+
+    .text-hero {
+
+        margin-top: 2rem;
+        gap: 3rem;
+    }
+
+    .text-hero h1 {
+
+        font-size: 3rem;
+    }
+
+    /*====================CÓMO TRABAJO=======================*/
+
+    .cont-aboutMe h2 {
+        width: 55%;
+    }
+
+
+    /*====================SERVICIOS=======================*/
+
+    .cont-servicios h2 {
+
+        width: 55%;
+    }
+
+    /*====================PROYECTOS=======================*/
+
+
+
+    .cont-proyectos h2 {
+        width: 15rem;
+    }
+
+
+
+
+    .cont-card {
+
+        width: 80%;
+    }
+
+
+
+
+    /*====================demos=======================*/
+
+    .cont-demos h2 {
+
+        border-bottom: 1px solid var(--color-span);
+        width: 37rem;
+    }
+
+    .content-ollaPeru p {
+
+        width: 70%;
+        margin: auto;
+
+    }
+
+    .galeria-demos .galeria-wrapper {
+        width: 85%;
+
+
+    }
+
+    .galeria-container {
+
+        height: 300px;
+
+    }
+
+    /*====================CONTACTO=======================*/
+
+    .cont-contacto h2 {
+        width: 45%;
+    }
+
+}
+
+/*MD: Tablets verticales (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    body::before {
+        content: "MD";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        background: rgb(1, 22, 255);
+        color: rgb(0, 0, 0);
+        padding: 5px;
+        z-index: 9999;
+    }
+
+    /*====================HERO=======================*/
+    .contenido-hero {
+        min-height: 80vh;
+        gap: 9rem;
+    }
+
+    .text-hero {
+        margin-top: 3rem;
+        gap: 3rem;
+    }
+
+    .text-hero img {
+        width: 140px;
+    }
+
+    .text-hero h1 {
+        font-size: 3.3rem;
+    }
+
+    .text-hero p {
+        font-size: 1.5rem;
+    }
+
+    /*====================COMO TRABAJO=======================*/
+    .cont-aboutMe h2 {
+        width: 25rem;
+        font-size: 3.5rem;
+    }
+
+    .contenido-aboutMe {
+        display: flex;
+        flex-direction: row;
+        margin-top: 4rem;
+        gap: 4rem;
+        padding: 0;
+    }
+
+    .card-content {
+        gap: 5rem;
+        width: 45%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .card-aboutMe {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+    }
+
+    .card-aboutMe h4 {
+        padding: 1rem 0;
+        width: 90%;
+    }
+
+    .wf-container {
+        width: 17rem;
+        height: 380px;
+        border-radius: 0.5rem;
+        box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.399);
+    }
+
+    /*====================SERVICIOS=======================*/
+    .cont-servicios h2 {
+        width: 40%;
+    }
+
+    .cont-servicios {
+        padding-top: 2rem;
+    }
+
+    .contenido-servicios {
+        gap: 5rem;
+    }
+
+    .card-servicios {
+        width: 450px;
+    }
+
+    /*====================PROYECTOS=======================*/
+    .cont-proyectos h2 {
+        width: 35%;
+    }
+
+    .card-project h3 {
+
+        margin-top: 0.5rem;
+    }
+
+    .cont-card {
+        width: 100%;
+    }
+
+
+    .contenido-proyectos {
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 95%;
+        margin: auto;
+    }
+
+    .body-project p {
+
+        width: 80%;
+    }
+
+    .galeria-projects .galeria-container {
+        height: 220px;
+    }
+
+
+    /*====================DEMOS=======================*/
+    .cont-demos h2 {
+        border-bottom: 1px solid var(--color-span);
+        width: 37rem;
+    }
+
+    .content-ollaPeru p {
+        width: 70%;
+        margin: auto;
+    }
+
+    .galeria-demos .galeria-wrapper {
+        width: 80%;
+    }
+
+    .galeria-container {
+        height: 420px;
+    }
+
+    /*====================CONTACTO=======================*/
+    .cont-contacto h2 {
+        width: 30%;
+    }
+
+    .contenido-contacto p {
+        width: 70%;
+    }
+
+    /*====================PRESUPUESTO=======================*/
+    .card-presupuesto {
+        width: 70%;
+        margin: auto;
+    }
+
+    .header-presupuesto {
+        margin-top: 2.5rem;
+    }
+}
+
+/*LG: Tablets horizontales / laptops (992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    body::before {
+        content: "LG";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        background: rgb(196, 1, 255);
+        color: rgb(0, 0, 0);
+        padding: 5px;
+        z-index: 9999;
+    }
+
+    /*====================HEADER=======================*/
+    .menu.closed,
+    .menu.open {
+        display: flex !important;
+    }
+
+    .contenido-header button {
+        display: none;
+    }
+
+    .menu {
+        position: static;
+        height: auto;
+        width: auto;
+        padding-top: 0;
+        background: none;
+    }
+
+    .menu ul {
+        display: flex !important;
+        flex-direction: row !important;
+        margin: 0;
+        width: 100%;
+        gap: 2rem;
+    }
+
+    .menu li {
+        border: none;
+        padding: 0;
+        font-size: 1.1rem;
+        color: white;
+        width: auto;
+    }
+
+    /*====================HERO=======================*/
+    .contenido-hero {
+        min-height: 60vh;
+        gap: 7rem;
+    }
+
+    .text-hero {
+        margin-top: 3rem;
+        gap: 3rem;
+    }
+
+    .text-hero img {
+        width: 140px;
+    }
+
+    .text-hero h1 {
+        font-size: 4rem;
+    }
+
+    .text-hero p {
+        font-size: 1.8rem;
+    }
+
+    /*====================COMO TRABAJO=======================*/
+    .cont-aboutMe h2 {
+        width: 40%;
+        font-size: 3.5rem;
+    }
+
+    .contenido-aboutMe {
+        display: flex;
+        flex-direction: row;
+        margin-top: 4rem;
+        gap: 8rem;
+        padding: 0;
+    }
+
+    .card-content {
+        gap: 5rem;
+        width: 45%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .card-aboutMe {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+    }
+
+    .card-aboutMe h4 {
+        font-size: 1.8rem;
+        width: 90%;
+        padding: 1rem 0;
+    }
+
+    .wf-container {
+        width: 17rem;
+        height: 380px;
+        border-radius: 0.5rem;
+        box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.399);
+    }
+
+    /*====================SERVICIOS=======================*/
+    .cont-servicios h2 {
+        width: 40%;
+        font-size: 3.5rem;
+    }
+
+    .cont-servicios {
+        padding-top: 8rem;
+    }
+
+    .contenido-servicios {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 90%;
+        margin: auto;
+    }
+
+    .card-servicios {
+        width: 300px;
+        margin: auto;
+    }
+
+    /*====================PROYECTOS=======================*/
+    .cont-proyectos h2 {
+        width: 35%;
+        font-size: 3.5rem;
+    }
+
+    .cont-card {
+        width: 100%;
+    }
+
+    .contenido-proyectos {
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.8rem;
+        width: 95%;
+        margin: auto;
+    }
+
+
+
+    .body-project p {
+
+        width: 80%;
+    }
+
+    /*GALERIA PROYECTOS*/
+    .galeria-projects .galeria-container {
+        height: 220px;
+    }
+
+
+    /*====================DEMOS=======================*/
+    .cont-demos h2 {
+        border-bottom: 1px solid var(--color-span);
+        width: 37rem;
+    }
+
+    .content-ollaPeru p {
+        width: 70%;
+        margin: auto;
+    }
+
+    /*GALERIA DEMO*/
+    .galeria-demos .galeria-wrapper {
+        width: 85%;
+    }
+
+    .galeria-container {
+        height: 520px;
+    }
+
+    /*====================CONTACTO=======================*/
+    .cont-contacto h2 {
+        width: 30%;
+    }
+
+    .contenido-contacto p {
+        width: 70%;
+    }
+
+    /*====================PRESUPUESTO=======================*/
+    .soluciones {
+        min-height: 850px;
+        width: 100%;
+    }
+
+    .contenido-presupuesto {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .header-presupuesto {
+        grid-column: 1 / -1;
+        margin-bottom: 2rem;
+    }
+
+    .header-presupuesto h2 {
+        font-size: 4rem;
+    }
+
+    .cont-presupuesto {
+        padding: 5rem 0;
+    }
+}
+
+/*SXL: laptos pequeñas(1200px – 1279px) */
+@media (min-width: 1200px) and (max-width: 1279px) {
+    body::before {
+        content: "1200px-1279px";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 50px;
+        height: 20px;
+        background: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
+        padding: 5px;
+        z-index: 9999;
+    }
+
+    /*====================HEADER=======================*/
+    /* anulamos el estado móvil */
+    .menu.closed,
+    .menu.open {
+        display: flex !important;
+    }
+
+    .contenido-header button {
+        display: none;
+    }
+
+    .menu {
+        position: static;
+        height: auto;
+        width: auto;
+        padding-top: 0;
+        background: none;
+    }
+
+    .menu ul {
+
+        display: flex !important;
+        flex-direction: row !important;
+        margin: 0;
+        width: 100%;
+        gap: 2rem;
+    }
+
+    /* estilos de los links en desktop */
+    .menu li {
+        border: none;
+        padding: 0;
+        font-size: 1.1rem;
+        color: white;
+        width: auto;
+    }
+
+    .menu a {
+
+        display: inline-block;
+        border: 1px solid transparent;
+        padding-bottom: 0.2rem;
+    }
+
+    .menu a:hover {
+
+
+        border-bottom: 1px solid var(--color-span);
+        transform: scale(1.2);
+        padding-bottom: 0.2rem;
+    }
+
+    .contenido-header img {
+        transition: transform 0.2s ease;
+    }
+
+    .contenido-header img:hover {
+        transform: scale(1.1);
+
+
+
+    }
+
+    /*====================HERO=======================*/
+
+    .contenido-hero {
+
+        min-height: 80vh;
+        gap: 7rem;
+    }
+
+    .text-hero {
+
+        margin-top: 3rem;
+        gap: 3rem;
+    }
+
+    .text-hero img {
+
+        width: 180px;
+    }
+
+    .text-hero h1 {
+
+        font-size: 4.5rem;
+    }
+
+    .text-hero p {
+
+        font-size: 1.8rem;
+    }
+
+    /*====================CÓMO TRABAJO=======================*/
+
+    .cont-aboutMe h2 {
+
+        width: 30%;
+        font-size: 3.5rem;
+    }
+
+    .contenido-aboutMe {
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 0;
+        width: 80%;
+        gap: 0;
+    }
+
+    .card-aboutMe {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 350px;
+        box-shadow: 1px 1px 10px rgba(0, 255, 255, 0.125);
+        width: 80%;
+        border: 1px solid var(--color-border);
+        border-radius: 0.3rem;
+        padding: 3rem 0;
+
+        margin: 5rem auto;
+
+    }
+
+    /*====================SERVICIOS=======================*/
+
+    .cont-servicios h2 {
+
+        width: 30%;
+        font-size: 3.5rem;
+
+    }
+
+    .cont-servicios {
+
+        padding-top: 8rem;
+    }
+
+    .contenido-servicios {
+
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 90%;
+        margin: auto;
+
+    }
+
+    .card-servicios {
+
+        width: 300px;
+        margin: auto;
+    }
+
+    /*====================PROYECTOS=======================*/
+
+    .cont-proyectos h2 {
+        width: 25%;
+        font-size: 3.5rem;
+
+    }
+
+    .contenido-proyectos summary {
+
+
+        width: 70%;
+    }
+
+    .contenido-proyectos p {
+        width: 70%;
+
+    }
+
+    /*====================CONTACTO=======================*/
+
+    .cont-contacto h2 {
+        width: 20%;
+    }
+
+    .contenido-contacto p {
+        width: 70%;
+
+    }
+
+    /*====================FOOTER=======================*/
+
+    .links-footer a {
+
+        width: 80%;
+        gap: 0;
+        margin: auto;
+
+
+    }
+
+}
+
+/*XL laptos grandes (1280px – 1399px) */
+@media (min-width: 1280px) and (max-width: 1399px) {
+
+    body::before {
+        content: "XL";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 50px;
+        height: 20px;
+        background: rgb(255, 102, 0);
+        color: rgb(255, 255, 255);
+        padding: 5px;
+        z-index: 9999;
+    }
+
+    /*====================HEADER=======================*/
+    /* anulamos el estado móvil */
+    .menu.closed,
+    .menu.open {
+        display: flex !important;
+    }
+
+    .contenido-header button {
+        display: none;
+    }
+
+    .menu {
+        position: static;
+        height: auto;
+        width: auto;
+        padding-top: 0;
+        background: none;
+    }
+
+    .menu ul {
+
+        display: flex !important;
+        flex-direction: row !important;
+        margin: 0;
+        width: 100%;
+        gap: 2rem;
+    }
+
+    /* estilos de los links en desktop */
+    .menu li {
+        border: none;
+        padding: 0;
+        font-size: 1.1rem;
+        color: white;
+        width: auto;
+    }
+
+    .menu a {
+
+        display: inline-block;
+        border: 1px solid transparent;
+        padding-bottom: 0.2rem;
+    }
+
+    .menu a:hover {
+
+
+        border-bottom: 1px solid var(--color-span);
+        transform: scale(1.2);
+        padding-bottom: 0.2rem;
+    }
+
+    .contenido-header img {
+        transition: transform 0.2s ease;
+    }
+
+    .contenido-header img:hover {
+        transform: scale(1.1);
+
+
+
+    }
+
+    /*====================HERO=======================*/
+
+    .contenido-hero {
+
+        min-height: 80vh;
+        gap: 7rem;
+    }
+
+    .text-hero {
+
+        margin-top: 3rem;
+        gap: 3rem;
+    }
+
+    .text-hero img {
+
+        width: 180px;
+    }
+
+    .text-hero h1 {
+
+        font-size: 4.5rem;
+    }
+
+    .text-hero p {
+
+        font-size: 1.8rem;
+    }
+
+    /*====================CÓMO TRABAJO=======================*/
+
+    .cont-aboutMe h2 {
+
+        width: 28rem;
+        font-size: 4rem;
+    }
+
+    .contenido-aboutMe {
+
+        display: flex;
+        flex-direction: row;
+        margin-top: 6rem;
+        gap: 8rem;
+        padding: 0;
+
+
+
+    }
+
+    .card-content {
+
+        gap: 5rem;
+        width: 45%;
+        padding: 0;
+        margin: 0;
+    }
+
+
+
+    .card-aboutMe {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+
+    }
+
+    .card-aboutMe h4 {
+        font-size: 2rem;
+        width: 90%;
+        padding: 1rem 0;
+    }
+
+
+    .wf-container {
+
+        width: 17rem;
+        height: 380px;
+        border-radius: 0.5rem;
+
+        box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.399);
+
+    }
+
+    .wf-container:hover {
+        box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.679);
+
+    }
+
+    /*====================SERVICIOS=======================*/
+
+    .cont-servicios h2 {
+
+        width: 27rem;
+        font-size: 4rem;
+
+    }
+
+    .cont-servicios {
+
+        padding-top: 8rem;
+    }
+
+    .contenido-servicios {
+
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 90%;
+        margin: auto;
+
+    }
+
+    .card-servicios {
+
+        width: 300px;
+        margin: auto;
+    }
+
+    /*====================PROYECTOS=======================*/
+
+    .cont-proyectos h2 {
+        width: 21rem;
+        font-size: 4rem;
+
+    }
+
+    .cont-card {
+        width: 100%;
+    }
+
+    .contenido-proyectos {
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.8rem;
+        width: 90%;
+        margin: auto;
+    }
+
+
+
+    .body-project p {
+
+        width: 80%;
+    }
+
+      /*GALERIA PROYECTOS*/
+    .galeria-projects .galeria-container {
+        height: 220px;
+    }
+
+
+    /*====================demos=======================*/
+
+    .cont-demos h2 {
+
+        border-bottom: 1px solid var(--color-span);
+        width: 37rem;
+    }
+
+    .content-ollaPeru p {
+
+        width: 50%;
+        margin: auto;
+
+    }
+
+    .galeria-demos .galeria-wrapper {
+        width: 65%;
+
+
+    }
+    
+    /*GALERIA PROYECTOS*/
+    .galeria-container {
+
+        height: 420px;
+
+
+    }
+
+    /*====================CONTACTO=======================*/
+
+    .cont-contacto h2 {
+        width: 20%;
+    }
+
+    .contenido-contacto p {
+        width: 70%;
+
+    }
+
+    /*====================FOOTER=======================*/
+
+    .links-footer a {
+
+        width: 80%;
+        gap: 0;
+        margin: auto;
+
+
+    }
+
+
+    /*====================PRESUPUESTO======================*/
+    .header-presupuesto h2 {
+        font-size: 5rem;
+    }
+
+    .header-presupuesto p {
+        font-size: 1.5rem;
+    }
+
+
+    .soluciones {
+
+        min-height: 750px;
+    }
+
+    .contenido-presupuesto {
+
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .header-presupuesto {
+
+        grid-column: 1 / -1;
+        padding: 3rem 0;
+
+    }
+
+}
+
+/*XXL: Pantallas grandes ≥1400px */
+@media (min-width: 1400px) {
+    body::before {
+        content: "XXL";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 50px;
+        height: 20px;
+        background: rgb(135, 181, 255);
+        color: rgb(255, 255, 255);
+        padding: 5px;
+        z-index: 9999;
+    }
+
+    #servicios {
+
+        scroll-margin-top: 1rem;
+    }
+
+    #aboutMe {
+
+        scroll-margin-top: 0;
+
+    }
+
+    /*====================HEADER=======================*/
+    /* anulamos el estado móvil */
+    .menu.closed,
+    .menu.open {
+        display: flex !important;
+    }
+
+    .contenido-header button {
+        display: none;
+    }
+
+    .contenido-header img {
+        transition: transform 0.2s ease;
+    }
+
+    .contenido-header img:hover {
+        transform: scale(1.1);
+
+
+
+    }
+
+    .menu {
+        position: static;
+        height: auto;
+        width: auto;
+        padding-top: 0;
+        background: none;
+    }
+
+    .menu ul {
+
+        display: flex !important;
+        flex-direction: row !important;
+        margin: 0;
+        width: 100%;
+        gap: 2rem;
+    }
+
+    /* estilos de los links en desktop */
+    .menu li {
+        border: none;
+        padding: 0;
+        font-size: 1.1rem;
+        color: white;
+        width: auto;
+    }
+
+    .menu a {
+
+        display: inline-block;
+        border: 1px solid transparent;
+        padding-bottom: 0.2rem;
+        transition: transform 0.2s ease, border-color 0.2s ease;
+
+    }
+
+    .menu a:hover {
+
+
+        border-bottom: 1px solid var(--color-span);
+        transform: scale(1.2);
+        padding-bottom: 0.2rem;
+    }
+
+
+
+    /*====================HERO=======================*/
+
+    .contenido-hero {
+
+        min-height: 100vh;
+        background-position: bottom;
+        gap: 7rem;
+    }
+
+    .text-hero {
+
+        margin-top: 3rem;
+        gap: 3rem;
+    }
+
+    .text-hero img {
+
+        width: 180px;
+    }
+
+    .text-hero h1 {
+
+        font-size: 5rem;
+    }
+
+    .text-hero p {
+
+        font-size: 2rem;
+    }
+
+    .cta-heroLink {
+
+        display: inline-block;
+        transition: transform 0.2s ease, border-color 0.2s ease;
+
+    }
+
+    .cta-heroLink:hover {
+
+        background-color: rgba(0, 255, 255, 0.118);
+        transform: scale(1.1);
+    }
+
+    /*====================CÓMO TRABAJO=======================*/
+
+    .cont-aboutMe h2 {
+
+        width: 28rem;
+        font-size: 4rem;
+    }
+
+    .contenido-aboutMe {
+
+        display: flex;
+        flex-direction: row;
+        margin-top: 6rem;
+        gap: 8rem;
+        padding: 0;
+
+
+
+    }
+
+    .card-content {
+
+        gap: 5rem;
+        width: 30%;
+        padding: 0;
+    }
+
+
+
+    .card-aboutMe {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+
+    }
+
+    .card-aboutMe h4 {
+        font-size: 2rem;
+        width: 90%;
+        padding: 1rem 0;
+    }
+
+
+
+    .wf-container {
+
+        width: 17rem;
+        height: 380px;
+        border-radius: 0.5rem;
+
+        box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.399);
+
+    }
+
+    .wf-container:hover {
+        box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.679);
+
+    }
+
+    /*====================SERVICIOS=======================*/
+
+    .cont-servicios h2 {
+
+        width: 28rem;
+        font-size: 4rem;
+        margin-bottom: 7rem;
+
+    }
+
+    .cont-servicios {
+
+        padding-top: 10rem;
+        padding-bottom: 5rem;
+    }
+
+    .contenido-servicios {
+
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 90%;
+        margin: auto;
+
+
+    }
+
+    .card-servicios {
+
+        width: 500px;
+        margin: auto;
+    }
+
+    .card-servicios:hover {
+
+        box-shadow: 1px 1px 10px var(--color-border);
+        background-color: rgba(115, 115, 115, 0.101);
+
+
+    }
+
+    .card-servicios h4 {
+        padding: 1rem 0;
+    }
+
+    .card-servicios p {
+        padding-bottom: 3rem;
+    }
+
+
+    /*====================PROYECTOS=======================*/
+
+    .cont-proyectos h2 {
+        width: 21rem;
+        font-size: 4rem;
+    }
+
+     .cont-card {
+        width: 90%;
+    }
+
+    .contenido-proyectos {
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0 !important;
+        width: 75%;
+        margin: auto;
+    }
+
+
+
+    .body-project p {
+
+        width: 80%;
+    }
+
+      /*GALERIA PROYECTOS*/
+    .galeria-projects .galeria-container {
+        height: 220px;
+    }
+
+
+    /*====================DEMOS=======================*/
+    .cont-demos {
+        padding: 8rem 0;
+    }
+
+    /*====================demos=======================*/
+
+    .cont-demos h2 {
+
+        border-bottom: 1px solid var(--color-span);
+        width: 55rem;
+        font-size: 4rem;
+
+    }
+
+    .content-ollaPeru p {
+
+        width: 40%;
+        margin: auto;
+        font-size: 1.4rem;
+
+    }
+
+    .content-ollaPeru a {
+
+        font-size: 1.1rem;
+    }
+
+
+
+    .galeria-demos .galeria-wrapper {
+        width: 50%;
+
+
+
+    }
+
+    .galeria-container {
+
+        height: 500px;
+
+
+    }
+
+
+
+
+    /*====================CONTACTO=======================*/
+
+    .cont-contacto h2 {
+        width: 20%;
+        font-size: 4rem;
+
+    }
+
+    .cont-contacto h4 {
+        font-size: 2rem;
+
+    }
+
+    .cont-contacto img {
+        width: 70px;
+    }
+
+    .contenido-contacto p {
+        width: 70%;
+        font-size: 1.4rem;
+        width: 30%;
+    }
+
+    /*====================FOOTER=======================*/
+
+    .links-footer a {
+
+        width: 80%;
+        gap: 0;
+        margin: auto;
+    }
+
+    .contenido-footer {
+
+
+        width: 50%;
+        margin: auto;
+        padding: 2rem 0;
+    }
+
+    .foot img {
+
+        width: 100px;
+    }
+
+    .foot small {
+
+        font-size: 1.2rem;
+    }
+
+    .cont-small {
+
+        font-size: 1.1rem;
+    }
+
+
+    /*====================PRESUPUESTO======================*/
+
+    .title-presupuesto h5 {
+
+        width: 50%;
+    }
+
+    .soluciones {
+
+        min-height: 650px;
+    }
+
+    .contenido-presupuesto {
+
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+
+        width: 80%;
+        margin: auto;
+    }
+
+    .header-presupuesto {
+
+        grid-column: 1 / -1;
+        margin: 4rem 0;
+
+    }
+
+    .header-presupuesto h2 {
+
+        font-size: 5rem;
+    }
+
+
+}
