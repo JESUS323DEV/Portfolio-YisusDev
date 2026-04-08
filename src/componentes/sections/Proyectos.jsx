@@ -50,7 +50,7 @@ import estrellaMobile4 from "../../assets/galeria-projects/estrella/mobile/estre
 import '../../styles/Proyectos.css'
 
 //IMPORT COMPONENTES
-import ScrollDetails from "../../componentes/scrollDetails";
+import ScrollDetails from "../../componentes/ScrollDetails";
 import GaleriaDemo from "../../componentes/GaleriaDemo";
 
 export default function Proyectos() {
