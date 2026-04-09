@@ -251,7 +251,7 @@ export default function Proyectos() {
                                 <div className='card-front'>
                                     <div className='galeria-projects'>
                                         <GaleriaDemo
-                                            imagenesDesktop={[idleCaptura1, idleCaptura2, idleCaptura3]}
+                                            imagenesDesktop={[idleCaptura1, idleCaptura2, idleCaptura3, idleCaptura4, idleCaptura5, idleCaptura6]}
                                             imagenesMobile={[idleCaptura1, idleCaptura2, idleCaptura3, idleCaptura4, idleCaptura5, idleCaptura6]}
                                         />
                                     </div>
