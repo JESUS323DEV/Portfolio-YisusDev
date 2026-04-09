@@ -46,6 +46,14 @@ import estrellaMobile2 from "../../assets/galeria-projects/estrella/mobile/estre
 import estrellaMobile3 from "../../assets/galeria-projects/estrella/mobile/estrella-section3-mobile.png"
 import estrellaMobile4 from "../../assets/galeria-projects/estrella/mobile/estrella-section4-mobile.png"
 
+// GALERIA APP RESERVAS
+import reservaDesktop1 from "../../assets/galeria-projects/appReservas/desktop/app-reserva-desktop1.png"
+import reservaDesktop2 from "../../assets/galeria-projects/appReservas/desktop/app-reserva-desktop2.png"
+import reservaDesktop3 from "../../assets/galeria-projects/appReservas/desktop/app-reserva-desktop3.png"
+import reservaDesktop4 from "../../assets/galeria-projects/appReservas/desktop/app-reserva-desktop4.png"
+import reservaDesktop5 from "../../assets/galeria-projects/appReservas/desktop/app-reserva-desktop5.png"
+import reservaDesktop6 from "../../assets/galeria-projects/appReservas/desktop/app-reserva-desktop6.png"
+
 // GALERIA IDLE MINER
 import idleCaptura1 from "../../assets/galeria-projects/idleMiner/captura-1.png"
 import idleCaptura2 from "../../assets/galeria-projects/idleMiner/captura-2.png"
@@ -66,7 +74,7 @@ export default function Proyectos() {
     const detailsRefs = useRef([]);
     ScrollDetails(detailsRefs)
 
-    const [flipped, setFlipped] = useState([false, false, false, false])
+    const [flipped, setFlipped] = useState([false, false, false, false, false])
     const toggleFlip = (i) => setFlipped(prev => prev.map((v, idx) => idx === i ? !v : v))
 
     return (
@@ -280,6 +288,52 @@ export default function Proyectos() {
                                         <div className='ver-online'>
                                             <a target='_blank' href="https://idleminero.netlify.app/">Ver online</a>
                                         </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        {/* ===== CARD 5: APP RESERVAS ===== */}
+                        <div className='cont-card'>
+                            <div className={`card-project ${flipped[4] ? 'card-flipped' : ''}`}>
+
+                                <div className='card-front'>
+                                    <div className='galeria-projects'>
+                                        <GaleriaDemo
+                                            imagenesDesktop={[reservaDesktop1, reservaDesktop2, reservaDesktop3, reservaDesktop4, reservaDesktop5, reservaDesktop6]}
+                                            imagenesMobile={[reservaDesktop1, reservaDesktop2, reservaDesktop3]}
+                                        />
+                                    </div>
+                                    <h3 className='title-card5'>App Reservas</h3>
+                                    <span className='badge-proyecto-propio'>Proyecto propio</span>
+                                    <div className='body-project'>
+                                        <p>Sistema de reservas vía WhatsApp para pequeños negocios. Panel admin personalizable sin backend.</p>
+                                    </div>
+                                    <div className='cont-foot-card'>
+                                        <button className='btn-leer-mas' onClick={() => toggleFlip(4)}>Leer más</button>
+                                        <span className='badge-proximamente'>Próximamente</span>
+                                    </div>
+                                </div>
+
+                                <div className='card-back'>
+                                    <h3>App Reservas</h3>
+                                    <p>Sistema de reservas vía WhatsApp para negocios locales. El cliente rellena el formulario y se genera un mensaje formateado automáticamente.</p>
+                                    <ul className='back-features'>
+                                        <li>Panel admin con 6 secciones configurables</li>
+                                        <li>14 temas visuales + tema personalizado</li>
+                                        <li>Slots, horarios y servicios dinámicos</li>
+                                        <li>QR descargable y exportación a calendario</li>
+                                    </ul>
+                                    <div className='skills-cont back-skills'>
+                                        <span className='skills'>React</span>
+                                        <span className='skills'>Vite</span>
+                                        <span className='skills'>localStorage</span>
+                                        <span className='skills'>CSS</span>
+                                    </div>
+                                    <div className='cont-foot-card'>
+                                        <button className='btn-volver' onClick={() => toggleFlip(4)}>← Volver</button>
+                                        <span className='badge-proximamente'>Próximamente</span>
                                     </div>
                                 </div>
 
