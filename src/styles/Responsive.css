@@ -515,18 +515,12 @@
     }
 
     .menu a {
-
         display: inline-block;
-        border: 1px solid transparent;
-        padding-bottom: 0.2rem;
+        position: relative;
     }
 
     .menu a:hover {
-
-
-        border-bottom: 1px solid var(--color-span);
-        transform: scale(1.2);
-        padding-bottom: 0.2rem;
+        color: var(--color-span);
     }
 
     .contenido-header img {
@@ -717,18 +711,12 @@
     }
 
     .menu a {
-
         display: inline-block;
-        border: 1px solid transparent;
-        padding-bottom: 0.2rem;
+        position: relative;
     }
 
     .menu a:hover {
-
-
-        border-bottom: 1px solid var(--color-span);
-        transform: scale(1.2);
-        padding-bottom: 0.2rem;
+        color: var(--color-span);
     }
 
     .contenido-header img {
@@ -1075,11 +1063,7 @@
     }
 
     .menu a:hover {
-
-
-        border-bottom: 1px solid var(--color-span);
-        transform: scale(1.2);
-        padding-bottom: 0.2rem;
+        color: var(--color-span);
     }
 
 
@@ -1270,7 +1254,10 @@
     .galeria-projects .galeria-container {
         height: 220px;
     }
+ .h2-personales {
 
+        width: 47rem !important;
+    }
 
 
     /*====================DEMOS=======================*/

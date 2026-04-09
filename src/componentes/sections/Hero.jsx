@@ -2,7 +2,6 @@
 import bgHero from "../../assets/backgrounds/fondo5.png"
 import pixel1 from "../../assets/foto-pixel1.png"
 
-import { useState, useEffect } from "react"
 import { Link } from "react-router-dom";
 
 import ScrollSections from "../../componentes/ScrollSections"
@@ -10,23 +9,7 @@ import ScrollSections from "../../componentes/ScrollSections"
 //CSS
 import '../../styles/Hero.css'
 
-const TEXTO = "Tu web como herramienta de trabajo."
-
 export default function Hero() {
-
-    const [texto, setTexto] = useState("")
-    const [fin, setFin] = useState(false)
-
-    useEffect(() => {
-        if (fin) return
-        if (texto.length < TEXTO.length) {
-            const timer = setTimeout(() => setTexto(TEXTO.slice(0, texto.length + 1)), 75)
-            return () => clearTimeout(timer)
-        } else {
-            const timer = setTimeout(() => setFin(true), 0)
-            return () => clearTimeout(timer)
-        }
-    }, [texto, fin])
 
     return (
         <>
@@ -37,11 +20,8 @@ export default function Hero() {
 
                         <div className='text-hero'>
                             <img src={pixel1} alt="Yisus" />
-                            <h1>Programación y Diseño Web</h1>
-                            <p>
-                                <span className='typewriter-text'>{texto}</span>
-                                <span className='cursor'>|</span>
-                            </p>
+                            <h1>Diseño webs para negocios locales</h1>
+                            <p>Tu web como herramienta de trabajo. No solo para "estar en internet".</p>
                         </div>
 
                         <div className='cta-hero-cont'>
