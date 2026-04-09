@@ -3,13 +3,12 @@
 
 }
 
-.cont-proyectos h2 {
+.h2-proyectos {
     color: white;
     font-size: var(--h2-fontXs);
     border-bottom: 1px solid var(--color-span);
     width: 70%;
     margin: auto;
-    margin-bottom: 2.5rem;
     text-align: center;
     padding-top: 5rem;
 
@@ -19,18 +18,22 @@
     color: white;
     font-size: var(--h2-fontXs);
     border-bottom: 1px solid var(--color-span);
-    width: 70%;
-    margin: 3rem auto 0;
+    width: 90% !important;
+
+    margin: auto;
     text-align: center;
     padding-top: 3rem;
+
 }
+
 
 .subtitulo-proyectos {
     text-align: center;
     color: rgb(163, 163, 163);
     font-size: 0.85rem;
-    margin-top: -1.5rem;
-    margin-bottom: 2rem;
+    margin: 0.5rem 0 2rem 0;
+
+
 }
 
 .contenido-proyectos {
@@ -91,7 +94,7 @@
 }
 
 .title-card5 {
-    width: 11rem;
+    width: 14rem;
     margin: auto;
 }
 
@@ -319,4 +322,34 @@
     padding: 0.3rem 0.7rem;
 
 
+}
+
+/* ===== TOGGLE VISTA GLOBAL ===== */
+.toggle-vista-global {
+    display: none;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .toggle-vista-global {
+        display: flex;
+    }
+}
+
+.btn-vista-global {
+    background: transparent;
+    color: rgb(163, 163, 163);
+    border: 1px solid rgba(163, 163, 163, 0.3);
+    border-radius: 0.3rem;
+    padding: 0.4rem 1rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.btn-vista-active {
+    color: var(--color-span);
+    border-color: var(--color-span);
+    background: rgba(0, 255, 238, 0.08);
 }

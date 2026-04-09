@@ -77,13 +77,27 @@ export default function Proyectos() {
     const [flipped, setFlipped] = useState([false, false, false, false, false])
     const toggleFlip = (i) => setFlipped(prev => prev.map((v, idx) => idx === i ? !v : v))
 
+    const [vistaGlobal, setVistaGlobal] = useState('desktop')
+
     return (
         <>
             {/*==================== MIS PROYECTOS======================== */}
             <section id='proyectos'>
                 <div className='cont-proyectos'>
-                    <h2>Proyectos</h2>
-                    <p className='subtitulo-proyectos'>Proyectos reales, resultados reales.</p>
+                    <div>
+                        <h2 className='h2-proyectos'>Proyectos</h2>
+                        <p className='subtitulo-proyectos'>Proyectos reales, resultados reales.</p>
+                    </div>
+                    <div className='toggle-vista-global'>
+                        <button
+                            className={`btn-vista-global ${vistaGlobal === 'desktop' ? 'btn-vista-active' : ''}`}
+                            onClick={() => setVistaGlobal('desktop')}
+                        >🖥 Desktop</button>
+                        <button
+                            className={`btn-vista-global ${vistaGlobal === 'mobile' ? 'btn-vista-active' : ''}`}
+                            onClick={() => setVistaGlobal('mobile')}
+                        >📱 Mobile</button>
+                    </div>
 
                     <div className='contenido-proyectos'>
 
@@ -96,6 +110,7 @@ export default function Proyectos() {
                                         <GaleriaDemo
                                             imagenesDesktop={[vanessaHeroDesktop, vanessaDesktop1, vanessaDesktop2, vanessaDesktop3]}
                                             imagenesMobile={[vanessaHeroMobile, vanessaMobile1, vanessaMobile2, vanessaMobile3, vanessaMobile4, vanessaMobile5]}
+                                            vistaGlobal={vistaGlobal}
                                         />
                                     </div>
                                     <h3 className='title-card1'>Vanessa</h3>
@@ -146,6 +161,7 @@ export default function Proyectos() {
                                         <GaleriaDemo
                                             imagenesDesktop={[estrellaHeroDesktop, estrellaDesktop1, estrellaDesktop2, estrellaDesktop3, estrellaDesktop4]}
                                             imagenesMobile={[estrellaHeroMobile, estrellaMobile1, estrellaMobile2, estrellaMobile3, estrellaMobile4]}
+                                            vistaGlobal={vistaGlobal}
                                         />
                                     </div>
                                     <h3 className='title-card2'>Estrella sin filtro</h3>
@@ -196,6 +212,7 @@ export default function Proyectos() {
                                         <GaleriaDemo
                                             imagenesDesktop={[atenciaHeroDesktop, atenciaDesktop1, atenciaDesktop2, atenciaDesktop3, atenciaDesktop4, atenciaDesktop5]}
                                             imagenesMobile={[atenciaHeroMobile, atenciaMobile2, atenciaMobile3]}
+                                            vistaGlobal={vistaGlobal}
                                         />
                                     </div>
                                     <h3 className='title-card3'>Atencia homes</h3>
@@ -239,9 +256,20 @@ export default function Proyectos() {
                     </div>
 
                     {/* ===== PROYECTOS PERSONALES ===== */}
-                    <h2 className='h2-personales'>Proyectos personales</h2>
-                    <p className='subtitulo-proyectos'>Lo que construyo cuando nadie me lo pide.</p>
-
+                    <div className='title-personales'>
+                        <h2 className='h2-personales'>Proyectos personales</h2>
+                        <p className='subtitulo-proyectos'>Lo que construyo cuando nadie me lo pide.</p>
+                    </div>
+                    <div className='toggle-vista-global'>
+                        <button
+                            className={`btn-vista-global ${vistaGlobal === 'desktop' ? 'btn-vista-active' : ''}`}
+                            onClick={() => setVistaGlobal('desktop')}
+                        >🖥 Desktop</button>
+                        <button
+                            className={`btn-vista-global ${vistaGlobal === 'mobile' ? 'btn-vista-active' : ''}`}
+                            onClick={() => setVistaGlobal('mobile')}
+                        >📱 Mobile</button>
+                    </div>
                     <div className='contenido-proyectos'>
 
                         {/* ===== CARD 4: IDLE MINER ===== */}
@@ -253,6 +281,7 @@ export default function Proyectos() {
                                         <GaleriaDemo
                                             imagenesDesktop={[idleCaptura1, idleCaptura2, idleCaptura3, idleCaptura4, idleCaptura5, idleCaptura6]}
                                             imagenesMobile={[idleCaptura1, idleCaptura2, idleCaptura3, idleCaptura4, idleCaptura5, idleCaptura6]}
+                                            vistaGlobal={vistaGlobal}
                                         />
                                     </div>
                                     <h3 className='title-card4'>Lady Hungry</h3>
@@ -303,6 +332,7 @@ export default function Proyectos() {
                                         <GaleriaDemo
                                             imagenesDesktop={[reservaDesktop1, reservaDesktop2, reservaDesktop3, reservaDesktop4, reservaDesktop5, reservaDesktop6]}
                                             imagenesMobile={[reservaDesktop1, reservaDesktop2, reservaDesktop3]}
+                                            vistaGlobal={vistaGlobal}
                                         />
                                     </div>
                                     <h3 className='title-card5'>App Reservas</h3>

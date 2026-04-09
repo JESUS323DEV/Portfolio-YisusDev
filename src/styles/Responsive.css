@@ -65,6 +65,7 @@
 
         border-bottom: 1px solid var(--color-span);
         width: 37rem;
+        padding-top: 3rem;
     }
 
     .content-ollaPeru p {
@@ -210,11 +211,17 @@
         height: 220px;
     }
 
+    .h2-personales {
+
+        width: 33rem !important;
+    }
 
     /*====================DEMOS=======================*/
     .cont-demos h2 {
         border-bottom: 1px solid var(--color-span);
         width: 37rem;
+        padding-top: 3rem;
+
     }
 
     .content-ollaPeru p {
@@ -405,11 +412,18 @@
         height: 220px;
     }
 
+    .h2-personales {
+
+        width: 40rem !important;
+    }
+
 
     /*====================DEMOS=======================*/
     .cont-demos h2 {
         border-bottom: 1px solid var(--color-span);
         width: 37rem;
+        padding-top: 4rem;
+
     }
 
     .content-ollaPeru p {
@@ -855,6 +869,7 @@
         width: 21rem;
         font-size: 4rem;
 
+
     }
 
     .cont-card {
@@ -882,6 +897,10 @@
         height: 220px;
     }
 
+    .h2-personales {
+
+        width: 45rem !important;
+    }
 
     /*====================demos=======================*/
 
@@ -889,6 +908,8 @@
 
         border-bottom: 1px solid var(--color-span);
         width: 37rem;
+        padding-top: 5rem;
+
     }
 
     .content-ollaPeru p {
@@ -1251,6 +1272,7 @@
     }
 
 
+
     /*====================DEMOS=======================*/
     .cont-demos {
         padding: 8rem 0;
@@ -1263,6 +1285,8 @@
         border-bottom: 1px solid var(--color-span);
         width: 55rem;
         font-size: 4rem;
+        padding-top: 2rem;
+
 
     }
 

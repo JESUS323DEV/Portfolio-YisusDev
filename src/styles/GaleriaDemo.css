@@ -71,8 +71,9 @@
     position: relative;
 }
 
-.galeria-container-mobile {
-    height: 220px;
+.galeria-container-mobile,
+.galeria-projects .galeria-container-mobile {
+    height: 320px !important;
 }
 
 .galeria-img {
@@ -146,4 +147,11 @@
     right: 0;
     color: #aaa;
     font-size: 0.75rem;
+}
+
+/* En MD+ los botones locales de cada galería se ocultan */
+@media (min-width: 768px) {
+    .galeria-btns-vista-local {
+        display: none;
+    }
 }

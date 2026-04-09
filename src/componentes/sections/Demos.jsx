@@ -21,6 +21,7 @@ import GaleriaDemo from "../../componentes/GaleriaDemo"
 export default function Demos() {
 
     const [openReadMore, setOpenReadMore] = useState(false);
+    const [vistaGlobal, setVistaGlobal] = useState('desktop');
 
     return (
         <>
@@ -29,16 +30,28 @@ export default function Demos() {
                 <div className="cont-demos">
                     <h2>Webs listas para tu negocio</h2>
                     <h3>Diseños terminados que adapto a tu marca. Solo queda poner tu nombre.</h3>
+
+                    <div className='toggle-vista-global'>
+                        <button
+                            className={`btn-vista-global ${vistaGlobal === 'desktop' ? 'btn-vista-active' : ''}`}
+                            onClick={() => setVistaGlobal('desktop')}
+                        >🖥 Desktop</button>
+                        <button
+                            className={`btn-vista-global ${vistaGlobal === 'mobile' ? 'btn-vista-active' : ''}`}
+                            onClick={() => setVistaGlobal('mobile')}
+                        >📱 Mobile</button>
+                    </div>
+
                     <div className="container-demos">
 
                         <div className="cont-olla">
                             {/*DEMO OLLA PERÚ*/}
-                           
 
                             <div className="galeria-demos">
                                 <GaleriaDemo
                                     imagenesDesktop={[cap1Desktop, cap2Desktop, cap3Desktop, cap4Desktop, cap5Desktop]}
                                     imagenesMobile={[cap1Mobile, cap2Mobile, cap3Mobile, cap4Mobile, cap5Mobile, cap6Mobile]}
+                                    vistaGlobal={vistaGlobal}
                                 />
                             </div>
 

@@ -1,14 +1,34 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 
 import { TabletSmartphone, LaptopMinimal } from "lucide-react"
 import '../styles/GaleriaDemo.css'
 
-export default function GaleriaDemo({ imagenesDesktop, imagenesMobile }) {
+export default function GaleriaDemo({ imagenesDesktop, imagenesMobile, vistaGlobal }) {
 
-    const [activeView, setActiveView] = useState('desktop')
+    const [localView, setLocalView] = useState('desktop')
+    const [isMd, setIsMd] = useState(() => window.matchMedia('(min-width: 768px)').matches)
     const [indice, setIndice] = useState(0)
 
     const touchStartX = useRef(null)
+
+    useEffect(() => {
+        const mq = window.matchMedia('(min-width: 768px)')
+        const handler = (e) => setIsMd(e.matches)
+        mq.addEventListener('change', handler)
+        return () => mq.removeEventListener('change', handler)
+    }, [])
+
+    // MD+: usa vistaGlobal si está disponible; mobile: usa estado local
+    const activeView = (isMd && vistaGlobal) ? vistaGlobal : localView
+
+    // Resetear índice cuando cambia la vista activa
+    const prevActiveView = useRef(activeView)
+    useEffect(() => {
+        if (prevActiveView.current !== activeView) {
+            setIndice(0)
+            prevActiveView.current = activeView
+        }
+    }, [activeView])
 
     const imagenes = activeView === 'mobile' ? imagenesMobile : imagenesDesktop
 
@@ -43,17 +63,17 @@ export default function GaleriaDemo({ imagenesDesktop, imagenesMobile }) {
                         loading='lazy'
                         className='galeria-img'
                     />
-                    {/* BOTONES VISTA */}
-                    <div className='galeria-btns-vista'>
+                    {/* BOTONES VISTA (solo visibles en mobile) */}
+                    <div className='galeria-btns-vista galeria-btns-vista-local'>
                         <button
-                            className={`galeria-btn-vista ${activeView === 'desktop' ? 'galeria-btn-vista-active' : ''}`}
-                            onClick={() => { setActiveView('desktop'); setIndice(0) }}
+                            className={`galeria-btn-vista ${localView === 'desktop' ? 'galeria-btn-vista-active' : ''}`}
+                            onClick={() => { setLocalView('desktop'); setIndice(0) }}
                         >
                             <LaptopMinimal />
                         </button>
                         <button
-                            className={`galeria-btn-vista ${activeView === 'mobile' ? 'galeria-btn-vista-active' : ''}`}
-                            onClick={() => { setActiveView('mobile'); setIndice(0) }}
+                            className={`galeria-btn-vista ${localView === 'mobile' ? 'galeria-btn-vista-active' : ''}`}
+                            onClick={() => { setLocalView('mobile'); setIndice(0) }}
                         >
                             <TabletSmartphone />
                         </button>
@@ -74,9 +94,6 @@ export default function GaleriaDemo({ imagenesDesktop, imagenesMobile }) {
                     ))}
                 </div>
             </div>
-
-
-
 
         </div>
     )
