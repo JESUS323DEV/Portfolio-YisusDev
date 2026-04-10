@@ -30,12 +30,14 @@ Sitio web de presentación y venta de servicios de desarrollo web freelance, ori
 ## Proyectos incluidos
 
 **Clientes:**
-- Vanessa Deco
+- Vanessa (psicopedagoga)
 - Estrella
 - Clínica Atencia
 
 **Personales / Demos:**
 - Webs listas (en expansión)
+- Juego
+- Utrno
 
 ## Breakpoints
 
