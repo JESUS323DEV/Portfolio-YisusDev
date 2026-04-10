@@ -1,16 +1,67 @@
-# React + Vite
+# YisusDev — Sitio web de servicios freelance
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> 🚧 **En construcción** — Se irán añadiendo más proyectos a la sección Webs Listas próximamente.
 
-Currently, two official plugins are available:
+Sitio web de presentación y venta de servicios de desarrollo web freelance, orientado a negocios locales. Diseño oscuro, moderno y responsive.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Live:** [webyisusdev.netlify.app](https://webyisusdev.netlify.app)
 
-## React Compiler
+---
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+## Stack
 
-## Expanding the ESLint configuration
+- **React 18** + **Vite**
+- **React Router v6** — navegación SPA con scroll a sección
+- **CSS puro** — sin librerías de estilos, responsive manual con breakpoints propios
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Estructura de secciones
+
+| Ruta | Sección |
+|---|---|
+| `/` | Hero |
+| `/como-trabajo` | Cómo trabajo |
+| `/servicios` | Mis servicios |
+| `/proyectos` | Proyectos (clientes + personales) |
+| `/webs-listas` | Demos / Webs listas |
+| `/contacto` | Contacto |
+| `/aviso-legal` | Aviso legal |
+| `/privacidad` | Política de privacidad |
+
+## Proyectos incluidos
+
+**Clientes:**
+- Vanessa Deco
+- Estrella
+- Clínica Atencia
+
+**Personales / Demos:**
+- Webs listas (en expansión)
+
+## Breakpoints
+
+```
+XS   ≤ 575px
+SM   576px – 767px
+MD   768px – 991px
+LG   992px – 1199px
+SXL  1200px – 1279px
+XL   1280px – 1399px
+XXL  ≥ 1400px
+```
+
+## Arrancar en local
+
+```bash
+npm install
+npm run dev
+```
+
+## Build
+
+```bash
+npm run build
+```
+
+---
+
+*Desarrollado por [YisusDev](https://webyisusdev.netlify.app)*
