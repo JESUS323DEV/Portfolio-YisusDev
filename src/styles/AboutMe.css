@@ -1,25 +1,8 @@
 .cont-aboutMe {
-    
-    background-position: bottom;
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
-    z-index: 1;
 
+    background: var(--bg-normal2);
     padding: 8rem 0;
 
-}
-
-.cont-aboutMe::before {
-
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--bg-transparente2);
-    z-index: -1;
 }
 
 .cont-aboutMe h2 {

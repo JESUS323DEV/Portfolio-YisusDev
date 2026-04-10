@@ -13,6 +13,8 @@ import Proyectos from "./componentes/sections/Proyectos";
 import Demos from "./componentes/sections/Demos";
 import Contacto from "./componentes/sections/Contacto";
 import Presupuesto from "./componentes/sections/Presupuesto";
+import AvisoLegal from "./componentes/sections/AvisoLegal";
+import Privacidad from "./componentes/sections/Privacidad";
 
 // CSS
 import "./styles/Responsive.css";
@@ -39,6 +41,10 @@ const ScrollHandler = () => {
   const hasScrolled = useRef(false);
 
   useEffect(() => {
+    if (pathname === "/aviso-legal" || pathname === "/privacidad") {
+      window.scrollTo(0, 0);
+      return;
+    }
     if (pathname === "/proyectos" && !hasScrolled.current) {
       setTimeout(() => {
         document.getElementById("proyectos")?.scrollIntoView({
@@ -70,6 +76,10 @@ function App() {
 
         {/* PRESUPUESTO (OCULTO) */}
         <Route path="/presupuesto" element={<Presupuesto />} />
+
+        {/* LEGAL */}
+        <Route path="/aviso-legal" element={<AvisoLegal />} />
+        <Route path="/privacidad" element={<Privacidad />} />
       </Routes>
 
     </BrowserRouter>

@@ -1,0 +1,48 @@
+.cont-legal-page {
+    background: var(--bg-normal);
+    min-height: 100vh;
+}
+
+.cont-legal {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 6rem;
+    color: rgb(200, 200, 200);
+}
+
+.cont-legal h1 {
+    color: white;
+    font-size: 2.2rem;
+    border-bottom: 1px solid var(--color-span);
+    padding-bottom: 0.8rem;
+    margin-bottom: 2.5rem;
+}
+
+.cont-legal section {
+    margin-bottom: 2rem;
+}
+
+.cont-legal h2 {
+    color: var(--color-span);
+    font-size: 1rem;
+    margin-bottom: 0.6rem;
+}
+
+.cont-legal p,
+.cont-legal li {
+    font-size: 0.88rem;
+    line-height: 1.7;
+    color: rgb(163, 163, 163);
+}
+
+.cont-legal ul {
+    padding-left: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.cont-legal a {
+    color: var(--color-span);
+    text-decoration: underline;
+}

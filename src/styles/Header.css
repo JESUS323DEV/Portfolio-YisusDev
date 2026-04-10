@@ -4,17 +4,16 @@
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 10;
+    z-index: 100;
 }
 
 .contenido-header {
     position: relative;
-    background: var(--bg-normal);
+    background: var(--bg-normal2);
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 1.5rem 0;
-
     border-bottom: 1px solid rgba(0, 0, 0, 0.199);
 
 }

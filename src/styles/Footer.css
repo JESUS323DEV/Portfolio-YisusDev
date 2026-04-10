@@ -52,6 +52,26 @@
     background: var(--bg-transparente);
 }
 
+.foot-legal {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.foot-legal a {
+    color: rgb(120, 120, 120);
+    font-size: 0.7rem;
+}
+
+.foot-legal a:hover {
+    color: var(--color-span);
+}
+
+.foot-legal span {
+    color: rgb(80, 80, 80);
+    font-size: 0.7rem;
+}
+
 .cont-small {
 
     text-align: center;

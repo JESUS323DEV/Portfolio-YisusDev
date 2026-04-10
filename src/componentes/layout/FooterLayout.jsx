@@ -23,7 +23,12 @@ export default function FooterLayout() {
 
                         <div className='foot'>
                             <img src={logo} alt="Logo Footer" />
-                            <small>Webs pensadas para negocios reales. </small>
+                            <small>Páginas web claras, rápidas y adaptadas a tu negocio</small>
+                            <div className='foot-legal'>
+                                <Link to="/aviso-legal">Aviso legal</Link>
+                                <span>·</span>
+                                <Link to="/privacidad">Privacidad</Link>
+                            </div>
                         </div>
 
                         <div className='links-footer'>

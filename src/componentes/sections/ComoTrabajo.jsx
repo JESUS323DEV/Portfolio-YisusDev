@@ -1,5 +1,3 @@
-import bgAbout from "../../assets/backgrounds/bgAbout-me.png"
-
 import '../../styles/AboutMe.css'
 import WireframeSlider from '../../componentes/WireframeSlider'
 
@@ -10,7 +8,7 @@ export default function ComoTrabajo() {
             {/*==================== ABOUT ME======================== */}
 
             <section id='aboutMe'>
-                <div className='cont-aboutMe' style={{ backgroundImage: `url(${bgAbout})` }}>
+                <div className='cont-aboutMe'>
                     <h2>Cómo trabajo</h2>
 
                     <div className='contenido-aboutMe'>
