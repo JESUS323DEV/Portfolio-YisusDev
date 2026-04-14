@@ -128,7 +128,7 @@ export default function Proyectos() {
                                 {/* ===== CARD 1: VANESSA - BACK ===== */}
                                 <div className='card-back'>
                                     <h3>Vanessa</h3>
-                                    <p>Web profesional para psicopedagoga autónoma. El objetivo era mostrar sus servicios de forma clara y facilitar el contacto de nuevos clientes.</p>
+                                    <p>Web profesional para psicopedagoga autónoma. El objetivo es mostrar sus servicios de forma clara y facilitar el contacto de nuevos clientes.</p>
                                     <ul className='back-features'>
                                         <li>Secciones de servicios con diseño limpio</li>
                                         <li>Contacto directo por WhatsApp integrado</li>
@@ -233,7 +233,7 @@ export default function Proyectos() {
                                     <p>Web inmobiliaria para agencia local. El objetivo era mostrar propiedades disponibles y generar contactos de forma rápida y directa.</p>
                                     <ul className='back-features'>
                                         <li>Catálogo de propiedades con galería</li>
-                                        <li>Formulario de contacto directo</li>
+                                        <li>Contacto directo</li>
                                         <li>Diseño adaptado al sector inmobiliario</li>
                                         <li>Optimizada para SEO local</li>
                                     </ul>

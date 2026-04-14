@@ -22,15 +22,10 @@
     }
 
     .text-hero h1 {
-
         font-size: 4rem;
     }
 
-    .span-hero {
 
-        font-size: 4.5rem;
-    }
-   
 
     /*====================CÓMO TRABAJO=======================*/
 
@@ -110,39 +105,32 @@
 
     }
 
-    .hero-inner {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-        padding-top: 3rem;
-        gap: 4rem;
-    }
+
 
     .text-hero {
         align-items: flex-start;
         text-align: left;
-        gap: 2.5rem;
     }
 
     .hero-gallery-wrap,
     .hero-gallery {
-        max-width: 100%;
+        max-width: 90%;
+        margin: auto;
     }
 
     .text-hero h1 {
-        font-size: 3.2rem;
-        width: 100%;
-        margin: 0;
+        font-size: 4rem;
+
     }
 
-    .span-hero {
-
-        font-size: 3.7rem;
-    }
 
     .text-hero p {
-        width: 100%;
-        margin: 0;
+        width: 90%;
+        margin: auto;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
     }
 
     .cta-hero-cont {
@@ -156,18 +144,25 @@
         order: unset;
     }
 
+    .hero-badges-marquee {
+
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
     /*====================COMO TRABAJO=======================*/
     .cont-aboutMe h2 {
-        width: 25rem;
+        width: 28rem;
         font-size: 3.5rem;
     }
 
     .contenido-aboutMe {
-        display: flex;
-        flex-direction: row;
-        margin-top: 4rem;
-        gap: 4rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.2rem;
+        margin-top: 0;
         padding: 0;
     }
 
@@ -181,14 +176,31 @@
     .card-aboutMe {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        justify-content: flex-start;
+        align-items: flex-start;
         text-align: left;
     }
 
-    .card-aboutMe h4 {
-        padding: 1rem 0;
-        width: 90%;
+    .card-aboutMe-header h4 {
+        font-size: 1.8rem;
+    }
+
+    .card-aboutMe-sub {
+        font-size: 1rem;
+    }
+
+    .card-aboutMe>p {
+        font-size: 0.88rem;
+        min-height: 4rem;
+    }
+
+    .card-aboutMe-lista-titulo {
+        font-size: 0.7rem;
+    }
+
+    .card-aboutMe-lista ul li,
+    .card-aboutMe-entregable p {
+        font-size: 0.85rem;
     }
 
     .wf-container {
@@ -274,12 +286,21 @@
     }
 
     /*====================CONTACTO=======================*/
-    .cont-contacto h2 {
-        width: 30%;
+    .contenido-contacto {
+        display: grid;
+        grid-template-columns: 1fr 1.4fr;
+        gap: 4rem;
+        align-items: start;
     }
 
-    .contenido-contacto p {
-        width: 70%;
+    .contacto-form {
+        order: 2;
+    }
+
+    .contacto-directo {
+        order: 1;
+        border-top: none;
+        padding-top: 0;
     }
 
     /*====================PRESUPUESTO=======================*/
@@ -356,15 +377,13 @@
         margin: 0;
     }
 
-    .span-hero {
-        font-size: 5rem;
-    }
+
 
     .hero-gallery-wrap,
     .hero-gallery {
         max-width: 100%;
 
-        margin-top: 2.5rem;
+        margin-top: 1rem;
     }
 
     .hero-gallery-wrap {
@@ -388,21 +407,29 @@
         width: 100%;
     }
 
+    .hero-subtitle {
+        font-size: 1.05rem;
+    }
 
 
 
+    .hero-badges-marquee {
+
+        width: 100%;
+
+    }
 
     /*====================COMO TRABAJO=======================*/
     .cont-aboutMe h2 {
-        width: 40%;
+        width: 28rem;
         font-size: 3.5rem;
     }
 
     .contenido-aboutMe {
-        display: flex;
-        flex-direction: row;
-        margin-top: 4rem;
-        gap: 8rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-top: 0;
         padding: 0;
     }
 
@@ -411,20 +438,38 @@
         width: 45%;
         padding: 0;
         margin: 0;
+
+
     }
 
     .card-aboutMe {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        justify-content: flex-start;
+        align-items: flex-start;
         text-align: left;
     }
 
-    .card-aboutMe h4 {
-        font-size: 1.8rem;
-        width: 90%;
-        padding: 1rem 0;
+    .card-aboutMe-header h4 {
+        font-size: 1.6rem;
+    }
+
+    .card-aboutMe-sub {
+        font-size: 1rem;
+    }
+
+    .card-aboutMe>p {
+        font-size: 0.9rem;
+        min-height: 5.5rem;
+    }
+
+    .card-aboutMe-lista-titulo {
+        font-size: 0.7rem;
+    }
+
+    .card-aboutMe-lista ul li,
+    .card-aboutMe-entregable p {
+        font-size: 0.88rem;
     }
 
     .wf-container {
@@ -432,6 +477,8 @@
         height: 380px;
         border-radius: 0.5rem;
         box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.399);
+
+
     }
 
     /*====================SERVICIOS=======================*/
@@ -516,12 +563,21 @@
     }
 
     /*====================CONTACTO=======================*/
-    .cont-contacto h2 {
-        width: 30%;
+    .contenido-contacto {
+        display: grid;
+        grid-template-columns: 1fr 1.4fr;
+        gap: 4rem;
+        align-items: start;
     }
 
-    .contenido-contacto p {
-        width: 70%;
+    .contacto-form {
+        order: 2;
+    }
+
+    .contacto-directo {
+        order: 1;
+        border-top: none;
+        padding-top: 0;
     }
 
     /*====================PRESUPUESTO=======================*/
@@ -666,29 +722,17 @@
     }
 
     .contenido-aboutMe {
-
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.2rem;
         padding: 0;
-        width: 80%;
-        gap: 0;
     }
 
     .card-aboutMe {
-
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        min-height: 350px;
-        box-shadow: 1px 1px 10px rgba(0, 255, 255, 0.125);
-        width: 80%;
-        border: 1px solid var(--color-border);
-        border-radius: 0.3rem;
-        padding: 3rem 0;
-
-        margin: 5rem auto;
-
+        justify-content: flex-start;
+        align-items: flex-start;
     }
 
     /*====================SERVICIOS=======================*/
@@ -834,7 +878,7 @@
 
     .hero-inner {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1.1fr 1fr;
         align-items: center;
         padding: 5rem 0;
         column-gap: 1rem;
@@ -860,9 +904,13 @@
         width: 100%;
     }
 
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
     .span-hero {
 
-        font-size: 6.5rem;
+        font-size: 6rem;
     }
 
     .hero-gallery-wrap,
@@ -888,6 +936,7 @@
         justify-content: center;
     }
 
+
     /*====================CÓMO TRABAJO=======================*/
     .cont-aboutMe {
 
@@ -896,16 +945,14 @@
 
     .cont-aboutMe h2 {
 
-        width: 28rem;
+        width: 32rem;
         font-size: 4rem;
     }
 
     .contenido-aboutMe {
-
-        display: flex;
-        flex-direction: row;
-        margin-top: 6rem;
-        gap: 8rem;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.2rem;
         padding: 0;
 
 
@@ -923,21 +970,34 @@
 
 
     .card-aboutMe {
-
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        justify-content: flex-start;
+        align-items: flex-start;
         text-align: left;
-
     }
 
-    .card-aboutMe h4 {
-        font-size: 2rem;
-        width: 90%;
-        padding: 1rem 0;
+    .card-aboutMe-header h4 {
+        font-size: 1.35rem;
     }
 
+    .card-aboutMe-sub {
+        font-size: 0.95rem;
+    }
+
+    .card-aboutMe>p {
+        font-size: 0.88rem;
+        min-height: 5rem;
+    }
+
+    .card-aboutMe-lista-titulo {
+        font-size: 0.7rem;
+    }
+
+    .card-aboutMe-lista ul li,
+    .card-aboutMe-entregable p {
+        font-size: 0.85rem;
+    }
 
     .wf-container {
 
@@ -1055,14 +1115,25 @@
     }
 
     /*====================CONTACTO=======================*/
-
-    .cont-contacto h2 {
-        width: 20%;
+    .contenido-contacto {
+        display: grid;
+        grid-template-columns: 1fr 1.4fr;
+        gap: 5rem;
+        align-items: start;
     }
 
-    .contenido-contacto p {
-        width: 70%;
+    .cont-contacto h2 {
+        width: 20rem;
+    }
 
+    .contacto-form {
+        order: 2;
+    }
+
+    .contacto-directo {
+        order: 1;
+        border-top: none;
+        padding-top: 0;
     }
 
     /*====================FOOTER=======================*/
@@ -1117,7 +1188,7 @@
     }
 
     #aboutMe {
-        scroll-margin-top: 1rem;
+        scroll-margin-top: 8rem;
     }
 
     #servicios {
@@ -1125,7 +1196,7 @@
     }
 
     #proyectos {
-        scroll-margin-top: 4rem;
+        scroll-margin-top: 2rem;
     }
 
     #contacto {
@@ -1231,6 +1302,10 @@
         margin: auto;
     }
 
+    .hero-subtitle {
+        font-size: 1.3rem;
+    }
+
     .text-hero p {
 
         width: 100%;
@@ -1276,50 +1351,61 @@
         transform: scale(1.1);
     }
 
+    .hero-badges-marquee {
+
+        width: 100%;
+        display: flex;
+        align-items: start;
+
+    }
+
     /*====================CÓMO TRABAJO=======================*/
 
-    .cont-aboutMe h2 {
+    .cont-aboutMe {
+        padding: 1rem 0;
+    }
 
-        width: 28rem;
+    .cont-aboutMe h2 {
+        width: 32rem;
         font-size: 4rem;
     }
 
     .contenido-aboutMe {
-
-        display: flex;
-        flex-direction: row;
-        margin-top: 6rem;
-        gap: 8rem;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
         padding: 0;
-
-
-
+        max-width: 1600px;
+        margin: auto;
+        width: 90%;
     }
-
-    .card-content {
-
-        gap: 5rem;
-        width: 30%;
-        padding: 0;
-    }
-
-
 
     .card-aboutMe {
-
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        justify-content: flex-start;
+        align-items: flex-start;
         text-align: left;
-
+        padding: 2.5rem;
     }
 
-    .card-aboutMe h4 {
-        font-size: 2rem;
-        width: 90%;
-        padding: 1rem 0;
+    .card-aboutMe-header h4 {
+        font-size: 1.5rem;
     }
+
+    .card-aboutMe-sub {
+        font-size: 1rem;
+    }
+
+    .card-aboutMe>p {
+        font-size: 0.95rem;
+        min-height: 5rem;
+    }
+
+    .card-aboutMe-lista-titulo {
+        font-size: 0.72rem;
+    }
+
 
 
 
@@ -1338,57 +1424,15 @@
 
     }
 
-    /*====================SERVICIOS=======================*/
 
-    .cont-servicios h2 {
-
-        width: 28rem;
-        font-size: 4rem;
-        margin-bottom: 7rem;
-
-    }
-
-    .cont-servicios {
-
-        padding-top: 10rem;
-        padding-bottom: 5rem;
-    }
-
-    .contenido-servicios {
-
-
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        width: 90%;
-        margin: auto;
-
-
-    }
-
-    .card-servicios {
-
-        width: 500px;
-        margin: auto;
-    }
-
-    .card-servicios:hover {
-
-        box-shadow: 1px 1px 10px var(--color-border);
-        background-color: rgba(115, 115, 115, 0.101);
-
-
-    }
-
-    .card-servicios h4 {
-        padding: 1rem 0;
-    }
-
-    .card-servicios p {
-        padding-bottom: 3rem;
-    }
 
 
     /*====================PROYECTOS=======================*/
+
+    .cont-proyectos {
+        padding-top: 5rem;
+    }
+
 
     .cont-proyectos h2 {
         width: 21rem;
@@ -1476,26 +1520,29 @@
 
 
     /*====================CONTACTO=======================*/
+    .contenido-contacto {
+        display: grid;
+        grid-template-columns: 1fr 1.4fr;
+        gap: 6rem;
+        align-items: start;
+        width: 50%;
+        margin: auto;
+    }
 
     .cont-contacto h2 {
-        width: 20%;
         font-size: 4rem;
-
+        width: 20rem;
+        margin-bottom: 5rem;
     }
 
-    .cont-contacto h4 {
-        font-size: 2rem;
-
+    .contacto-form {
+        order: 2;
     }
 
-    .cont-contacto img {
-        width: 70px;
-    }
-
-    .contenido-contacto p {
-        width: 70%;
-        font-size: 1.4rem;
-        width: 30%;
+    .contacto-directo {
+        order: 1;
+        border-top: none;
+        padding-top: 0;
     }
 
     /*====================FOOTER=======================*/

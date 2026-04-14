@@ -62,16 +62,6 @@ export default function Header() {
 
                                     <li>
                                         <Link
-                                            to="/servicios"
-                                            className={activeSection === 'servicios' ? 'active' : ''}
-                                            onClick={() => { setOpen(false); ScrollSections("servicios"); }}
-                                        >
-                                            Mis servicios
-                                        </Link>
-                                    </li>
-
-                                    <li>
-                                        <Link
                                             to="/proyectos"
                                             className={activeSection === 'proyectos' ? 'active' : ''}
                                             onClick={() => { setOpen(false); ScrollSections("proyectos"); }}

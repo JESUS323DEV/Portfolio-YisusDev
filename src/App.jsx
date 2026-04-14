@@ -8,7 +8,6 @@ import FooterLayout from "./componentes/layout/FooterLayout";
 // IMPORT SECTIONS
 import Hero from "./componentes/sections/Hero";
 import ComoTrabajo from "./componentes/sections/ComoTrabajo";
-import Servicios from "./componentes/sections/Servicios";
 import Proyectos from "./componentes/sections/Proyectos";
 import Demos from "./componentes/sections/Demos";
 import Contacto from "./componentes/sections/Contacto";
@@ -26,7 +25,6 @@ const HomeLayout = () => (
     <main>
       <Hero />
       <ComoTrabajo />
-      <Servicios />
       <Proyectos />
       <Demos />
       <Contacto />
@@ -68,7 +66,6 @@ function App() {
       <Routes>
         {/* HOME + SECCIONES */}
         <Route path="/" element={<HomeLayout />} />
-        <Route path="/servicios" element={<HomeLayout />} />
         <Route path="/proyectos" element={<HomeLayout />} />
         <Route path="/como-trabajo" element={<HomeLayout />} />
         <Route path="/webs-listas" element={<HomeLayout />} />

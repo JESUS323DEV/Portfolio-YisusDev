@@ -36,17 +36,13 @@ export default function Hero() {
 
                             {/* TEXTO */}
                             <div className='text-hero'>
-                                <span className="title-hero">
-                                    <h1>Tu web como <span className="span-hero">herramienta</span> de trabajo.</h1>
-                                </span>
-                                <span className="body-hero">
-                                    <p>Páginas web a medida para negocios locales. Diseño claro, funcional y sin complicaciones.</p>
-                                </span>
+                                <h1>Tu web como <span className="span-hero">herramienta</span> de trabajo.</h1>
+                                <p className='hero-subtitle'>Páginas web a medida para negocios locales, portfolios y marcas personales.</p>
                                 <div className='hero-badges-marquee'>
                                     <div className='hero-badges-track'>
                                         <span className='hero-badge'>✓ Diseño moderno</span>
                                         <span className='hero-badge'>✓ SEO básico</span>
-                                        <span className='hero-badge'>✓ Adaptación móvil </span>
+                                        <span className='hero-badge'>✓ Adaptación móvil</span>
                                         <span className='hero-badge'>✓ Sin complicaciones</span>
                                     </div>
                                 </div>
