@@ -42,19 +42,24 @@
     }
 
     /*====================PROYECTOS=======================*/
+    .back-features-cliente {
+        margin-top: 1rem;
+    }
 
-
+    .card-back {
+        gap: 0.4;
+    }
 
     .cont-proyectos h2 {
         width: 15rem;
     }
 
-
-
-
     .cont-card {
-
         width: 80%;
+    }
+
+    .cont-card-personal {
+        height: auto;
     }
 
 
@@ -156,12 +161,14 @@
     .cont-aboutMe h2 {
         width: 28rem;
         font-size: 3.5rem;
+        border: 1px solid red !important;
+
     }
 
     .contenido-aboutMe {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 1.2rem;
+        gap: 1rem;
         margin-top: 0;
         padding: 0;
     }
@@ -171,6 +178,7 @@
         width: 45%;
         padding: 0;
         margin: 0;
+
     }
 
     .card-aboutMe {
@@ -179,10 +187,12 @@
         justify-content: flex-start;
         align-items: flex-start;
         text-align: left;
+        gap: 0;
     }
 
     .card-aboutMe-header h4 {
         font-size: 1.8rem;
+
     }
 
     .card-aboutMe-sub {
@@ -210,6 +220,7 @@
         box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.399);
     }
 
+  
     /*====================SERVICIOS=======================*/
     .cont-servicios h2 {
         width: 40%;
@@ -227,6 +238,7 @@
         width: 450px;
     }
 
+ 
     /*====================PROYECTOS=======================*/
     .cont-proyectos h2 {
         width: 35%;
@@ -241,19 +253,28 @@
         width: 100%;
     }
 
-
     .contenido-proyectos {
-
         display: grid;
         grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
         width: 95%;
         margin: auto;
     }
 
     .body-project p {
-
         width: 80%;
     }
+
+    .card-front,
+    .card-back {
+        width: 100%;
+        align-items: stretch;
+    }
+
+    .card-front {
+        align-items: stretch;
+    }
+
 
     .galeria-projects .galeria-container {
         height: 220px;
@@ -435,6 +456,7 @@
         gap: 2rem;
         margin-top: 0;
         padding: 0;
+
     }
 
     .card-content {
@@ -460,11 +482,12 @@
 
     .card-aboutMe-sub {
         font-size: 1rem;
+
     }
 
     .card-aboutMe>p {
         font-size: 0.9rem;
-        min-height: 5.5rem;
+
     }
 
     .card-aboutMe-lista-titulo {
@@ -546,6 +569,12 @@
 
         width: 40rem !important;
     }
+
+
+
+
+
+
 
 
     /*====================DEMOS=======================*/
@@ -674,6 +703,8 @@
     }
 
     /*====================HERO=======================*/
+
+
     .contenido-hero {
         min-height: unset;
         padding: 3rem 0;
@@ -681,10 +712,14 @@
 
     .hero-inner {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1.1fr 1fr;
         align-items: center;
-        padding: 0;
-        column-gap: 4rem;
+        padding: 5rem 0;
+        column-gap: 1rem;
+        width: 75rem;
+        margin: auto;
+
+
     }
 
     .text-hero {
@@ -693,14 +728,29 @@
     }
 
     .text-hero h1 {
-        font-size: 3.2rem;
+        font-size: 5.5rem;
         width: 100%;
-        margin: 0;
+        margin: auto;
+    }
+
+    .text-hero p {
+
+        width: 100%;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .span-hero {
+
+        font-size: 6rem;
     }
 
     .hero-gallery-wrap,
     .hero-gallery {
-        max-width: 100%;
+        max-width: 90%;
+        margin: auto;
     }
 
     .hero-gallery-wrap {
@@ -718,15 +768,19 @@
         grid-column: 2;
         grid-row: 2;
         justify-content: center;
-        padding-top: 1rem;
     }
 
+
     /*====================CÓMO TRABAJO=======================*/
+    .cont-aboutMe {
+
+        padding: 5rem 0;
+    }
 
     .cont-aboutMe h2 {
 
-        width: 30%;
-        font-size: 3.5rem;
+        width: 32rem;
+        font-size: 4rem;
     }
 
     .contenido-aboutMe {
@@ -734,21 +788,72 @@
         grid-template-columns: repeat(4, 1fr);
         gap: 1.2rem;
         padding: 0;
+
+
+
     }
+
+    .card-content {
+
+        gap: 5rem;
+        width: 45%;
+        padding: 0;
+        margin: 0;
+    }
+
+
 
     .card-aboutMe {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
+        text-align: left;
+    }
+
+    .card-aboutMe-header h4 {
+        font-size: 1.35rem;
+    }
+
+    .card-aboutMe-sub {
+        font-size: 0.95rem;
+    }
+
+    .card-aboutMe>p {
+        font-size: 0.88rem;
+        min-height: 5rem;
+    }
+
+    .card-aboutMe-lista-titulo {
+        font-size: 0.7rem;
+    }
+
+    .card-aboutMe-lista ul li,
+    .card-aboutMe-entregable p {
+        font-size: 0.85rem;
+    }
+
+    .wf-container {
+
+        width: 17rem;
+        height: 380px;
+        border-radius: 0.5rem;
+
+        box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.399);
+
+    }
+
+    .wf-container:hover {
+        box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.679);
+
     }
 
     /*====================SERVICIOS=======================*/
 
     .cont-servicios h2 {
 
-        width: 30%;
-        font-size: 3.5rem;
+        width: 27rem;
+        font-size: 4rem;
 
     }
 
@@ -776,31 +881,97 @@
     /*====================PROYECTOS=======================*/
 
     .cont-proyectos h2 {
-        width: 25%;
-        font-size: 3.5rem;
+        width: 21rem;
+        font-size: 4rem;
+
 
     }
 
-    .contenido-proyectos summary {
-
-
-        width: 70%;
+    .cont-card {
+        width: 100%;
     }
 
-    .contenido-proyectos p {
-        width: 70%;
+    .contenido-proyectos {
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.8rem;
+        width: 90%;
+        margin: auto;
+    }
+
+
+
+    .body-project p {
+
+        width: 80%;
+    }
+
+    /*GALERIA PROYECTOS*/
+    .galeria-projects .galeria-container {
+        height: 220px;
+    }
+
+    .galeria-container-completa {
+        height: 300px !important;
+    }
+
+    .h2-personales {
+
+        width: 45rem !important;
+    }
+
+    /*====================demos=======================*/
+
+    .cont-demos h2 {
+
+        border-bottom: 1px solid var(--color-span);
+        width: 37rem;
+        padding-top: 5rem;
+
+    }
+
+    .content-ollaPeru p {
+
+        width: 50%;
+        margin: auto;
+
+    }
+
+    .galeria-demos .galeria-wrapper {
+        width: 65%;
+
+
+    }
+
+    /*GALERIA PROYECTOS*/
+    .galeria-container {
+
+        height: 420px;
+
 
     }
 
     /*====================CONTACTO=======================*/
-
-    .cont-contacto h2 {
-        width: 20%;
+    .contenido-contacto {
+        display: grid;
+        grid-template-columns: 1fr 1.4fr;
+        gap: 5rem;
+        align-items: start;
     }
 
-    .contenido-contacto p {
-        width: 70%;
+    .cont-contacto h2 {
+        width: 20rem;
+    }
 
+    .contacto-form {
+        order: 2;
+    }
+
+    .contacto-directo {
+        order: 1;
+        border-top: none;
+        padding-top: 0;
     }
 
     /*====================FOOTER=======================*/
@@ -814,7 +985,39 @@
 
     }
 
+
+    /*====================PRESUPUESTO======================*/
+    .header-presupuesto h2 {
+        font-size: 5rem;
+    }
+
+    .header-presupuesto p {
+        font-size: 1.5rem;
+    }
+
+
+    .soluciones {
+
+        min-height: 750px;
+    }
+
+    .contenido-presupuesto {
+
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .header-presupuesto {
+
+        grid-column: 1 / -1;
+        padding: 3rem 0;
+
+    }
+
 }
+
+
 
 /*XL laptos grandes (1280px – 1399px) */
 @media (min-width: 1280px) and (max-width: 1399px) {
@@ -1289,7 +1492,7 @@
         min-height: 100vh;
         padding: 0;
         justify-content: start;
-        padding-top: 9rem;
+        padding-top: 5rem;
 
     }
 
@@ -1327,7 +1530,7 @@
 
     .span-hero {
 
-        font-size: 6.5rem;
+        font-size: 5.5rem;
     }
 
     .hero-gallery-wrap,
@@ -1337,7 +1540,7 @@
 
     .hero-gallery-wrap {
         order: unset;
-        margin-top: 3rem;
+        margin-top: 5rem;
     }
 
 
@@ -1351,6 +1554,10 @@
         grid-column: 2;
         grid-row: 2;
         justify-content: center;
+        display: flex;
+        gap: 3rem;
+
+
     }
 
     .cta-heroLink {
@@ -1368,6 +1575,12 @@
         width: 100%;
         display: flex;
         align-items: start;
+
+    }
+
+    .cta-heroLink {
+        padding: 1.2rem 3rem;
+        font-size: 1.2rem;
 
     }
 
@@ -1411,7 +1624,7 @@
 
     .card-aboutMe>p {
         font-size: 0.95rem;
-        min-height: 5rem;
+        min-height: 4rem;
     }
 
     .card-aboutMe-lista-titulo {
@@ -1469,6 +1682,7 @@
     .body-project p {
 
         width: 80%;
+        font-size: 1rem;
     }
 
     /*GALERIA PROYECTOS*/
@@ -1483,6 +1697,13 @@
     .h2-personales {
 
         width: 47rem !important;
+    }
+
+    .cont-card-body {
+
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
     }
 
 
@@ -1630,6 +1851,7 @@
 
 
 }
+
 /* Deshabilitar Ver online en Lady Hungry para MD+ */
 @media (min-width: 768px) {
     .ver-online-solo-movil {

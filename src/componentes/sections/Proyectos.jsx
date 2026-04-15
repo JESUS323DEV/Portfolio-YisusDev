@@ -127,17 +127,20 @@ export default function Proyectos() {
 
                                 {/* ===== CARD 1: VANESSA - BACK ===== */}
                                 <div className='card-back'>
-                                    <h3>Vanessa</h3>
-                                    <p>Web profesional para psicopedagoga autónoma. El objetivo es mostrar sus servicios de forma clara y facilitar el contacto de nuevos clientes.</p>
-                                    <ul className='back-features'>
+                                    <div className='title-back'>
+                                        <h3 className='h3-vanessa'>Vanessa</h3>
+                                        <p>Web profesional para psicopedagoga autónoma. El objetivo es mostrar sus servicios de forma clara y facilitar el contacto de nuevos clientes.</p>
+                                    </div>
+
+                                    <ul className='back-features back-features-cliente'>
                                         <li>Secciones de servicios con diseño limpio</li>
                                         <li>Contacto directo por WhatsApp integrado</li>
                                         <li>Diseño responsive mobile-first</li>
                                         <li>Diseño minimalista y profesional</li>
                                         <li>Optimizada para SEO local</li>
-
-
                                     </ul>
+
+
                                     <div className='skills-cont back-skills'>
                                         <span className='skills'>Html</span>
                                         <span className='skills'>CSS</span>
@@ -181,9 +184,12 @@ export default function Proyectos() {
 
                                 {/* ===== CARD 2: ESTRELLA-BACK ===== */}
                                 <div className='card-back'>
-                                    <h3>Estrella sin filtro</h3>
-                                    <p>Web profesional para Social Media Manager. Diseñada para captar clientes mostrando sus servicios y portfolio de forma atractiva.</p>
-                                    <ul className='back-features'>
+                                    <div className='title-back'>
+                                        <h3 className='h3-estrella'>Estrella sin filtro</h3>
+                                        <p>Web profesional para Social Media Manager. Diseñada para captar clientes mostrando sus servicios y portfolio de forma atractiva.</p>
+
+                                    </div>
+                                    <ul className='back-features back-features-cliente'>
                                         <li>Presentación de servicios de redes sociales</li>
                                         <li>Portfolio con trabajos realizados</li>
                                         <li>Animaciones de entrada.</li>
@@ -234,18 +240,25 @@ export default function Proyectos() {
 
                                 {/* ===== CARD 3: ATENCIA - BACK===== */}
                                 <div className='card-back'>
-                                    <h3>Atencia homes</h3>
-                                    <p>Web inmobiliaria para agencia local. El objetivo era mostrar propiedades disponibles y generar contactos de forma rápida y directa.</p>
-                                    <ul className='back-features'>
+
+                                    <div className='title-back'>
+                                        <h3 className='h3-atencia'>Atencia homes</h3>
+                                        <p>Web inmobiliaria para agencia local. El objetivo era mostrar propiedades disponibles y generar contactos de forma rápida y directa.</p>
+
+                                    </div>
+
+                                    <ul className='back-features back-features-cliente'>
                                         <li>Catálogo de propiedades con galería</li>
                                         <li>Contacto directo</li>
                                         <li>Diseño adaptado al sector inmobiliario</li>
                                     </ul>
+
                                     <div className='skills-cont back-skills'>
                                         <span className='skills'>Html</span>
                                         <span className='skills'>CSS</span>
                                         <span className='skills'>JS</span>
                                     </div>
+
                                     <div className='cont-foot-card'>
                                         <button className='btn-volver' onClick={() => toggleFlip(2)}>← Volver</button>
                                         <div className='ver-online'>
@@ -267,7 +280,7 @@ export default function Proyectos() {
                     <div className='contenido-proyectos'>
 
                         {/* ===== CARD 4: IDLE MINER ===== */}
-                        <div className='cont-card'>
+                        <div className='cont-card cont-card-personal'>
                             <div className={`card-project ${flipped[3] ? 'card-flipped' : ''}`}>
 
                                 <div className='card-front'>
@@ -280,27 +293,36 @@ export default function Proyectos() {
                                             imagenCompleta={true}
                                         />
                                     </div>
-                                    <h3 className='title-card4'>Lady Hungry</h3>
-                                    <div className='badge-row'>
-                                        <span className='badge-proyecto-propio'>Proyecto personal</span>
-                                        <span className='badge-solo-movil'>📱 Solo para móvil</span>
-                                    </div>
-                                    <div className='body-project'>
-                                        <p>Idle clicker con perros mineros. Mina oro, gestiona recursos, forja lingotes y envía expediciones. </p>
-                                    </div>
-                                    <div className='cont-foot-card'>
-                                        <button className='btn-leer-mas' onClick={() => toggleFlip(3)}>Leer más</button>
-                                        <div className='ver-online ver-online-solo-movil'>
-                                            <a target='_blank' href="https://idleminero.netlify.app/" >Ver online</a>
+
+                                    <div className='cont-card-body'>
+                                        <div className='title-row'>
+                                            <h3 className='title-card4'>Lady Hungry</h3>
+                                            <div className='badge-row'>
+                                                <span className='badge-proyecto-propio'>Proyecto personal</span>
+                                                <span className='badge-solo-movil'>📱 Solo para móvil</span>
+                                            </div>
+                                        </div>
+                                        <div className='body-project'>
+                                            <p>Idle clicker con perros mineros. Mina oro, gestiona recursos, forja lingotes, envía expediciones, mejoras de pico y stamina. </p>
+                                        </div>
+
+                                        <div className='cont-foot-card'>
+                                            <button className='btn-leer-mas' onClick={() => toggleFlip(3)}>Leer más</button>
+                                            <div className='ver-online ver-online-solo-movil'>
+                                                <a target='_blank' href="https://idleminero.netlify.app/" >Ver online</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div className='card-back'>
-                                    <h3>Lady Hungry</h3>
-                                    <p>Lady Hungry nació como proyecto de aprendizaje de React y creció hasta convertirse en un juego idle completo y jugable.
-                                        Lo que puedes hacer:
-                                    </p>
+                                {/* ===== CARD 4: IDLE MINER - BACK ===== */}
+                                <div className='card-back card-back-personal'>
+                                    <div className='title-back'>
+                                        <h3 className='title-card4'>Lady Hungry</h3>
+                                        <p>Lady Hungry nació como proyecto de aprendizaje de React y creció hasta convertirse en un juego idle completo y jugable.
+                                            Lo que puedes hacer:
+                                        </p>
+                                    </div>
                                     <ul className='back-features'>
                                         <li>Minar oro, gestionar tres minas y forjar lingotes</li>
                                         <li>Desbloquear perros con rareza rara, épica y legendaria.</li>
@@ -328,7 +350,7 @@ export default function Proyectos() {
                         </div>
 
                         {/* ===== CARD 5: APP RESERVAS ===== */}
-                        <div className='cont-card'>
+                        <div className='cont-card cont-card-personal'>
                             <div className={`card-project ${flipped[4] ? 'card-flipped' : ''}`}>
 
                                 <div className='card-front'>
@@ -341,20 +363,31 @@ export default function Proyectos() {
                                             imagenCompleta={true}
                                         />
                                     </div>
-                                    <h3 className='title-card5'>App Reservas</h3>
-                                    <span className='badge-proyecto-propio'>Proyecto personal</span>
-                                    <div className='body-project'>
-                                        <p>Sistema de reservas vía WhatsApp para pequeños negocios. Panel admin personalizable sin backend.</p>
-                                    </div>
-                                    <div className='cont-foot-card'>
-                                        <button className='btn-leer-mas' onClick={() => toggleFlip(4)}>Leer más</button>
-                                        <span className='badge-proximamente'>Próximamente</span>
+
+                                    <div className='cont-card-body'>
+                                        <div className='title-row'>
+                                            <h3 className='title-card5'>App Reservas</h3>
+                                            <span className='badge-proyecto-propio'>Proyecto personal</span>
+
+                                        </div>
+                                        <div className='body-project'>
+                                            <p>Sistema de reservas vía WhatsApp para pequeños negocios. El usuario configura horarios, servicios y diseño desde su panel.
+                                            </p>
+
+                                        </div>
+                                        <div className='cont-foot-card'>
+                                            <button className='btn-leer-mas' onClick={() => toggleFlip(4)}>Leer más</button>
+                                            <span className='badge-proximamente'>Próximamente</span>
+                                        </div>
                                     </div>
                                 </div>
 
-                                <div className='card-back'>
-                                    <h3>App Reservas</h3>
-                                    <p>Aplicación web que permite a negocios locales gestionar reservas sin llamadas. El cliente rellena un formulario y el negocio recibe un mensaje formateado en WhatsApp</p>
+                                {/* ===== CARD 5: APP RESERVAS BACK===== */}
+                                <div className='card-back card-back-personal'>
+                                    <div className='title-back'>
+                                        <h3 className='title-card5'>App Reservas</h3>
+                                        <p>Aplicación web que permite a negocios locales gestionar reservas sin llamadas. El cliente rellena un formulario y el negocio recibe un mensaje formateado en WhatsApp</p>
+                                    </div>
                                     <ul className='back-features'>
                                         <li>Panel admin con 6 secciones configurables.</li>
                                         <li>14 temas visuales + personalización completa de colores.</li>
@@ -364,12 +397,14 @@ export default function Proyectos() {
                                         <li>Preguntas personalizadas en el formulario (texto libre u opciones)</li>
                                         <li>QR descargable y exportación a calendario.</li>
                                     </ul>
+
                                     <div className='skills-cont back-skills'>
                                         <span className='skills'>React</span>
                                         <span className='skills'>Vite</span>
                                         <span className='skills'>localStorage</span>
                                         <span className='skills'>CSS</span>
                                     </div>
+
                                     <div className='cont-foot-card'>
                                         <button className='btn-volver' onClick={() => toggleFlip(4)}>← Volver</button>
                                         <span className='badge-proximamente'>Próximamente</span>

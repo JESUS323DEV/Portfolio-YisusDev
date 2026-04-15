@@ -249,6 +249,7 @@
 
 .cta-heroLink:hover {
     background: rgb(0, 180, 204);
+    color: white;
     box-shadow: 0 0 28px rgba(4, 157, 178, 0.6);
 }
 
