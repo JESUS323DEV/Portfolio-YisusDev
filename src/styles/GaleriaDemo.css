@@ -81,7 +81,16 @@
     height: 100%;
     object-fit: cover;
     object-position: top;
+}
 
+.galeria-container-completa {
+    height: auto !important;
+    background: #0d0d0d;
+}
+
+.galeria-container-completa .galeria-img {
+    height: auto;
+    object-fit: contain;
 }
 
 /* FLECHAS */

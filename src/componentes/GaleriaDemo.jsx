@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from 'react'
 import { TabletSmartphone, LaptopMinimal } from "lucide-react"
 import '../styles/GaleriaDemo.css'
 
-export default function GaleriaDemo({ imagenesDesktop, imagenesMobile, vistaGlobal }) {
+export default function GaleriaDemo({ imagenesDesktop, imagenesMobile, vistaGlobal, ocultarVista = false, imagenCompleta = false }) {
 
     const [localView, setLocalView] = useState('desktop')
     const [isMd, setIsMd] = useState(() => window.matchMedia('(min-width: 768px)').matches)
@@ -53,7 +53,7 @@ export default function GaleriaDemo({ imagenesDesktop, imagenesMobile, vistaGlob
                 <button className='galeria-nav galeria-prev' onClick={anterior}>‹</button>
 
                 <div
-                    className={`galeria-container ${activeView === 'mobile' ? 'galeria-container-mobile' : ''}`}
+                    className={`galeria-container ${activeView === 'mobile' ? 'galeria-container-mobile' : ''} ${imagenCompleta ? 'galeria-container-completa' : ''}`}
                     onTouchStart={onTouchStart}
                     onTouchEnd={onTouchEnd}
                 >
@@ -64,7 +64,7 @@ export default function GaleriaDemo({ imagenesDesktop, imagenesMobile, vistaGlob
                         className='galeria-img'
                     />
                     {/* BOTONES VISTA (solo visibles en mobile) */}
-                    <div className='galeria-btns-vista galeria-btns-vista-local'>
+                    {!ocultarVista && <div className='galeria-btns-vista galeria-btns-vista-local'>
                         <button
                             className={`galeria-btn-vista ${localView === 'desktop' ? 'galeria-btn-vista-active' : ''}`}
                             onClick={() => { setLocalView('desktop'); setIndice(0) }}
@@ -77,7 +77,7 @@ export default function GaleriaDemo({ imagenesDesktop, imagenesMobile, vistaGlob
                         >
                             <TabletSmartphone />
                         </button>
-                    </div>
+                    </div>}
                 </div>
 
                 <button className='galeria-nav galeria-next' onClick={siguiente}>›</button>

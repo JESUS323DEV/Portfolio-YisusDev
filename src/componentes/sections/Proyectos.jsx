@@ -47,12 +47,12 @@ import estrellaMobile3 from "../../assets/galeria-projects/estrella/mobile/estre
 import estrellaMobile4 from "../../assets/galeria-projects/estrella/mobile/estrella-section4-mobile.png"
 
 // GALERIA APP RESERVAS
-import reservaDesktop1 from "../../assets/galeria-projects/appReservas/desktop/app-reserva-desktop1.png"
-import reservaDesktop2 from "../../assets/galeria-projects/appReservas/desktop/app-reserva-desktop2.png"
-import reservaDesktop3 from "../../assets/galeria-projects/appReservas/desktop/app-reserva-desktop3.png"
-import reservaDesktop4 from "../../assets/galeria-projects/appReservas/desktop/app-reserva-desktop4.png"
-import reservaDesktop5 from "../../assets/galeria-projects/appReservas/desktop/app-reserva-desktop5.png"
-import reservaDesktop6 from "../../assets/galeria-projects/appReservas/desktop/app-reserva-desktop6.png"
+import reservaMobile1 from "../../assets/galeria-projects/appReservas/mobile/app-reservas-mobile1.png"
+import reservaMobile2 from "../../assets/galeria-projects/appReservas/mobile/app-reservas-mobile2.png"
+import reservaMobile3 from "../../assets/galeria-projects/appReservas/mobile/app-reservas-mobile3.png"
+import reservaMobile4 from "../../assets/galeria-projects/appReservas/mobile/app-reservas-mobile4.png"
+import reservaMobile5 from "../../assets/galeria-projects/appReservas/mobile/app-reservas-mobile5.png"
+import reservaMobile6 from "../../assets/galeria-projects/appReservas/mobile/app-reservas-mobile6.png"
 
 // GALERIA IDLE MINER
 import idleCaptura1 from "../../assets/galeria-projects/idleMiner/captura-1.png"
@@ -133,7 +133,10 @@ export default function Proyectos() {
                                         <li>Secciones de servicios con diseño limpio</li>
                                         <li>Contacto directo por WhatsApp integrado</li>
                                         <li>Diseño responsive mobile-first</li>
-                                        <li>Animaciones de entrada al hacer scroll</li>
+                                        <li>Diseño minimalista y profesional</li>
+                                        <li>Optimizada para SEO local</li>
+
+
                                     </ul>
                                     <div className='skills-cont back-skills'>
                                         <span className='skills'>Html</span>
@@ -183,8 +186,10 @@ export default function Proyectos() {
                                     <ul className='back-features'>
                                         <li>Presentación de servicios de redes sociales</li>
                                         <li>Portfolio con trabajos realizados</li>
-                                        <li>Diseño minimalista y profesional</li>
+                                        <li>Animaciones de entrada.</li>
                                         <li>Identidad visual propia y coherente</li>
+                                        <li>Optimizada para SEO local</li>
+
                                     </ul>
                                     <div className='skills-cont back-skills'>
                                         <span className='skills'>Html</span>
@@ -235,7 +240,6 @@ export default function Proyectos() {
                                         <li>Catálogo de propiedades con galería</li>
                                         <li>Contacto directo</li>
                                         <li>Diseño adaptado al sector inmobiliario</li>
-                                        <li>Optimizada para SEO local</li>
                                     </ul>
                                     <div className='skills-cont back-skills'>
                                         <span className='skills'>Html</span>
@@ -260,16 +264,6 @@ export default function Proyectos() {
                         <h2 className='h2-personales'>Proyectos personales</h2>
                         <p className='subtitulo-proyectos'>Lo que construyo cuando nadie me lo pide.</p>
                     </div>
-                    <div className='toggle-vista-global'>
-                        <button
-                            className={`btn-vista-global ${vistaGlobal === 'desktop' ? 'btn-vista-active' : ''}`}
-                            onClick={() => setVistaGlobal('desktop')}
-                        >🖥 Desktop</button>
-                        <button
-                            className={`btn-vista-global ${vistaGlobal === 'mobile' ? 'btn-vista-active' : ''}`}
-                            onClick={() => setVistaGlobal('mobile')}
-                        >📱 Mobile</button>
-                    </div>
                     <div className='contenido-proyectos'>
 
                         {/* ===== CARD 4: IDLE MINER ===== */}
@@ -282,30 +276,40 @@ export default function Proyectos() {
                                             imagenesDesktop={[idleCaptura1, idleCaptura2, idleCaptura3, idleCaptura4, idleCaptura5, idleCaptura6]}
                                             imagenesMobile={[idleCaptura1, idleCaptura2, idleCaptura3, idleCaptura4, idleCaptura5, idleCaptura6]}
                                             vistaGlobal={vistaGlobal}
+                                            ocultarVista={true}
+                                            imagenCompleta={true}
                                         />
                                     </div>
                                     <h3 className='title-card4'>Lady Hungry</h3>
-                                    <span className='badge-proyecto-propio'>Proyecto personal</span>
+                                    <div className='badge-row'>
+                                        <span className='badge-proyecto-propio'>Proyecto personal</span>
+                                        <span className='badge-solo-movil'>📱 Solo para móvil</span>
+                                    </div>
                                     <div className='body-project'>
-                                        <p>Juego idle con perros mineros. Mina oro, gestiona recursos y desbloquea sistemas progresivamente.</p>
+                                        <p>Idle clicker con perros mineros. Mina oro, gestiona recursos, forja lingotes y envía expediciones. </p>
                                     </div>
                                     <div className='cont-foot-card'>
                                         <button className='btn-leer-mas' onClick={() => toggleFlip(3)}>Leer más</button>
-                                        <div className='ver-online'>
-                                            <a target='_blank' href="https://idleminero.netlify.app/">Ver online</a>
+                                        <div className='ver-online ver-online-solo-movil'>
+                                            <a target='_blank' href="https://idleminero.netlify.app/" >Ver online</a>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div className='card-back'>
                                     <h3>Lady Hungry</h3>
-                                    <p>Idle clicker con temática de perros mineros. Desarrollado en React con arquitectura modular por sistemas.</p>
+                                    <p>Lady Hungry nació como proyecto de aprendizaje de React y creció hasta convertirse en un juego idle completo y jugable.
+                                        Lo que puedes hacer:
+                                    </p>
                                     <ul className='back-features'>
-                                        <li>Sistema de minas, forja y taberna</li>
-                                        <li>Perros ayudantes con rareza y estrellas</li>
-                                        <li>Raids pasivas con loot escalable</li>
-                                        <li>14 temas visuales + tema personalizado</li>
+                                        <li>Minar oro, gestionar tres minas y forjar lingotes</li>
+                                        <li>Desbloquear perros con rareza rara, épica y legendaria.</li>
+                                        <li>Forjar lingotes en tres hornos con perros asignados.</li>
+                                        <li>Mejorar picos, gestionar stamina y administrar yacimientos pasivos.</li>
+                                        <li>Enviar raids activas y pasivas.</li>
                                     </ul>
+
+                                    <p>⚠️ Demo en constante desarrollo. El arte es provisional y pueden aparecer errores. </p>
                                     <div className='skills-cont back-skills'>
                                         <span className='skills'>React</span>
                                         <span className='skills'>Vite</span>
@@ -314,8 +318,8 @@ export default function Proyectos() {
                                     </div>
                                     <div className='cont-foot-card'>
                                         <button className='btn-volver' onClick={() => toggleFlip(3)}>← Volver</button>
-                                        <div className='ver-online'>
-                                            <a target='_blank' href="https://idleminero.netlify.app/">Ver online</a>
+                                        <div className='ver-online ver-online-solo-movil'>
+                                            <a target='_blank' href="https://idleminero.netlify.app/" >Ver online</a>
                                         </div>
                                     </div>
                                 </div>
@@ -330,13 +334,15 @@ export default function Proyectos() {
                                 <div className='card-front'>
                                     <div className='galeria-projects'>
                                         <GaleriaDemo
-                                            imagenesDesktop={[reservaDesktop1, reservaDesktop2, reservaDesktop3, reservaDesktop4, reservaDesktop5, reservaDesktop6]}
-                                            imagenesMobile={[reservaDesktop1, reservaDesktop2, reservaDesktop3]}
+                                            imagenesDesktop={[reservaMobile1, reservaMobile2, reservaMobile3, reservaMobile4, reservaMobile5, reservaMobile6]}
+                                            imagenesMobile={[reservaMobile1, reservaMobile2, reservaMobile3, reservaMobile4, reservaMobile5, reservaMobile6]}
                                             vistaGlobal={vistaGlobal}
+                                            ocultarVista={true}
+                                            imagenCompleta={true}
                                         />
                                     </div>
                                     <h3 className='title-card5'>App Reservas</h3>
-                                    <span className='badge-proyecto-propio'>Proyecto propio</span>
+                                    <span className='badge-proyecto-propio'>Proyecto personal</span>
                                     <div className='body-project'>
                                         <p>Sistema de reservas vía WhatsApp para pequeños negocios. Panel admin personalizable sin backend.</p>
                                     </div>
@@ -348,12 +354,15 @@ export default function Proyectos() {
 
                                 <div className='card-back'>
                                     <h3>App Reservas</h3>
-                                    <p>Sistema de reservas vía WhatsApp para negocios locales. El cliente rellena el formulario y se genera un mensaje formateado automáticamente.</p>
+                                    <p>Aplicación web que permite a negocios locales gestionar reservas sin llamadas. El cliente rellena un formulario y el negocio recibe un mensaje formateado en WhatsApp</p>
                                     <ul className='back-features'>
-                                        <li>Panel admin con 6 secciones configurables</li>
-                                        <li>14 temas visuales + tema personalizado</li>
-                                        <li>Slots, horarios y servicios dinámicos</li>
-                                        <li>QR descargable y exportación a calendario</li>
+                                        <li>Panel admin con 6 secciones configurables.</li>
+                                        <li>14 temas visuales + personalización completa de colores.</li>
+                                        <li>Logo, nombre, descripción y colores personalizables desde el panel</li>
+                                        <li>Slots, horarios y servicios dinámicos.</li>
+                                        <li>Panel admin con horarios, servicios y fechas bloqueadas.</li>
+                                        <li>Preguntas personalizadas en el formulario (texto libre u opciones)</li>
+                                        <li>QR descargable y exportación a calendario.</li>
                                     </ul>
                                     <div className='skills-cont back-skills'>
                                         <span className='skills'>React</span>

@@ -259,6 +259,10 @@
         height: 220px;
     }
 
+    .galeria-container-completa {
+        height: 300px !important;
+    }
+
     .h2-personales {
 
         width: 33rem !important;
@@ -532,6 +536,10 @@
     /*GALERIA PROYECTOS*/
     .galeria-projects .galeria-container {
         height: 220px;
+    }
+
+    .galeria-container-completa {
+        height: 300px !important;
     }
 
     .h2-personales {
@@ -1078,6 +1086,10 @@
         height: 220px;
     }
 
+    .galeria-container-completa {
+        height: 300px !important;
+    }
+
     .h2-personales {
 
         width: 45rem !important;
@@ -1464,6 +1476,10 @@
         height: 220px;
     }
 
+    .galeria-container-completa {
+        height: 300px !important;
+    }
+
     .h2-personales {
 
         width: 47rem !important;
@@ -1613,4 +1629,32 @@
     }
 
 
+}
+/* Deshabilitar Ver online en Lady Hungry para MD+ */
+@media (min-width: 768px) {
+    .ver-online-solo-movil {
+        position: relative;
+        opacity: 0.35;
+        cursor: not-allowed;
+    }
+
+    .ver-online-solo-movil a {
+        pointer-events: none;
+    }
+
+    .ver-online-solo-movil:hover::after {
+        content: 'Disponible solo en móvil';
+        position: absolute;
+        bottom: calc(100% + 6px);
+        left: 50%;
+        transform: translateX(-50%);
+        background: #1a1a1a;
+        color: #ccc;
+        font-size: 0.7rem;
+        padding: 0.3rem 0.6rem;
+        border-radius: 4px;
+        white-space: nowrap;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        z-index: 10;
+    }
 }
