@@ -106,7 +106,7 @@ export default function Proyectos() {
             {/*==================== MIS PROYECTOS======================== */}
             <section id='proyectos'>
                 <div className='cont-proyectos'>
-                    <div>
+                    <div className='cont-title-proyectos'>
                         <h2 className='h2-proyectos'>Proyectos</h2>
                         <p className='subtitulo-proyectos'>Proyectos reales, resultados reales.</p>
                     </div>

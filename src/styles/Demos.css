@@ -21,20 +21,12 @@
 
 }
 
-.cont-demos h3 {
-
-    text-align: center;
-    color: white;
-    width: 90%;
-    margin: auto;
-    margin-bottom: 2rem;
-    font-size: 0.8rem;
-}
 
 .content-ollaPeru p {
     line-height: 1.5;
     width: 90%;
     margin: auto;
+
 
 }
 
@@ -125,7 +117,6 @@
 
 
 .text-accordion {
-
     margin-top: 1rem;
 }
 

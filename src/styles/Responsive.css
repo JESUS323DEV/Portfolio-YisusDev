@@ -219,7 +219,7 @@
         box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.399);
     }
 
-  
+
     /*====================SERVICIOS=======================*/
     .cont-servicios h2 {
         width: 40%;
@@ -237,7 +237,7 @@
         width: 450px;
     }
 
- 
+
     /*====================PROYECTOS=======================*/
     .cont-proyectos h2 {
         width: 35%;
@@ -930,6 +930,7 @@
     .skills-cont span {
         font-size: 0.7rem;
     }
+
     /*====================demos=======================*/
 
     .cont-demos h2 {
@@ -1165,8 +1166,8 @@
 
     .cont-aboutMe h2 {
 
-        width: 36rem;
-        font-size: 4.5rem;
+        width: 32rem;
+        font-size: 4rem;
     }
 
     .contenido-aboutMe {
@@ -1199,25 +1200,25 @@
     }
 
     .card-aboutMe-header h4 {
-        font-size: 1.6rem;
+        font-size: 1.9rem;
     }
 
     .card-aboutMe-sub {
-        font-size: 1.05rem;
+        font-size: 1.1rem;
     }
 
     .card-aboutMe>p {
-        font-size: 0.95rem;
+        font-size: 1rem;
         min-height: 5rem;
     }
 
     .card-aboutMe-lista-titulo {
-        font-size: 0.75rem;
+        font-size: 0.8rem;
     }
 
     .card-aboutMe-lista ul li,
     .card-aboutMe-entregable p {
-        font-size: 0.95rem;
+        font-size: 1rem;
     }
 
     .wf-container {
@@ -1425,7 +1426,7 @@
     }
 
     #proyectos {
-        scroll-margin-top: 0;
+        scroll-margin-top: -3rem;
     }
 
     #contacto {
@@ -1600,11 +1601,12 @@
 
     /*====================CÓMO TRABAJO=======================*/
 
-  
+
 
     .cont-aboutMe h2 {
-        width: 40rem;
-        font-size: 5rem;
+        width: 32rem;
+        font-size: 4rem;
+        margin-bottom: 5rem;
     }
 
     .contenido-aboutMe {
@@ -1617,6 +1619,8 @@
         width: 90%;
     }
 
+
+
     .card-aboutMe {
         display: flex;
         flex-direction: column;
@@ -1627,20 +1631,20 @@
     }
 
     .card-aboutMe-header h4 {
-        font-size: 1.8rem;
+        font-size: 2.1rem;
     }
 
     .card-aboutMe-sub {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
     }
 
     .card-aboutMe>p {
-        font-size: 1rem;
+        font-size: 1.1rem;
         min-height: 4rem;
     }
 
     .card-aboutMe-lista-titulo {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 
 
@@ -1670,6 +1674,11 @@
         padding-top: 8rem;
     }
 
+    .cont-title-proyectos,
+    .title-personales {
+
+        margin-bottom: 4rem;
+    }
 
     .h2-proyectos {
         width: 21rem;
@@ -1709,7 +1718,8 @@
 
     .h2-personales {
 
-        width: 32rem !important;
+        width: 45rem !important;
+        font-size: 4rem;
     }
 
     .skills-cont span {
@@ -1727,8 +1737,16 @@
     /*====================DEMOS=======================*/
     .cont-demos {
         padding: 8rem 0;
+
     }
 
+    .cont-demos p {
+
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+  
     /*====================demos=======================*/
 
     .cont-demos h2 {
