@@ -1031,7 +1031,7 @@
 /*XL laptos grandes (1280px – 1399px) */
 @media (min-width: 1280px) and (max-width: 1399px) {
 
-    /*====================HEADER=======================*/
+    /*====================HEADER=====================XL==*/
     /* anulamos el estado móvil */
     .menu.closed,
     .menu.open {
@@ -1165,18 +1165,18 @@
 
     .cont-aboutMe h2 {
 
-        width: 32rem;
-        font-size: 4rem;
+        width: 36rem;
+        font-size: 4.5rem;
     }
 
     .contenido-aboutMe {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 1.2rem;
+        gap: 1.5rem;
         padding: 0;
-
-
-
+        max-width: 1350px;
+        margin: auto;
+        width: 92%;
     }
 
     .card-content {
@@ -1195,28 +1195,29 @@
         justify-content: flex-start;
         align-items: flex-start;
         text-align: left;
+        padding: 2rem;
     }
 
     .card-aboutMe-header h4 {
-        font-size: 1.35rem;
+        font-size: 1.6rem;
     }
 
     .card-aboutMe-sub {
-        font-size: 0.95rem;
+        font-size: 1.05rem;
     }
 
     .card-aboutMe>p {
-        font-size: 0.88rem;
+        font-size: 0.95rem;
         min-height: 5rem;
     }
 
     .card-aboutMe-lista-titulo {
-        font-size: 0.7rem;
+        font-size: 0.75rem;
     }
 
     .card-aboutMe-lista ul li,
     .card-aboutMe-entregable p {
-        font-size: 0.85rem;
+        font-size: 0.95rem;
     }
 
     .wf-container {
@@ -1602,8 +1603,8 @@
   
 
     .cont-aboutMe h2 {
-        width: 32rem;
-        font-size: 4rem;
+        width: 40rem;
+        font-size: 5rem;
     }
 
     .contenido-aboutMe {
@@ -1611,7 +1612,7 @@
         grid-template-columns: repeat(4, 1fr);
         gap: 2rem;
         padding: 0;
-        max-width: 1600px;
+        max-width: 1700px;
         margin: auto;
         width: 90%;
     }
@@ -1626,20 +1627,20 @@
     }
 
     .card-aboutMe-header h4 {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
 
     .card-aboutMe-sub {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
     .card-aboutMe>p {
-        font-size: 0.95rem;
+        font-size: 1rem;
         min-height: 4rem;
     }
 
     .card-aboutMe-lista-titulo {
-        font-size: 0.72rem;
+        font-size: 0.8rem;
     }
 
 
@@ -1708,7 +1709,7 @@
 
     .h2-personales {
 
-        width: 47rem !important;
+        width: 32rem !important;
     }
 
     .skills-cont span {
