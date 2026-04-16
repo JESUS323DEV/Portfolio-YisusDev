@@ -1,5 +1,4 @@
 .cont-header {
-
     position: fixed;
     top: 0;
     left: 0;
@@ -7,15 +6,51 @@
     z-index: 100;
 }
 
+@keyframes header-entrada {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (min-width: 992px) {
+    .logo {
+        animation: header-entrada 0.5s ease both;
+        animation-delay: 0.5s;
+    }
+
+    .menu li:nth-child(1) { animation: header-entrada 0.5s ease both; animation-delay: 0.55s; }
+    .menu li:nth-child(2) { animation: header-entrada 0.5s ease both; animation-delay: 0.65s; }
+    .menu li:nth-child(3) { animation: header-entrada 0.5s ease both; animation-delay: 0.75s; }
+    .menu li:nth-child(4) { animation: header-entrada 0.5s ease both; animation-delay: 0.85s; }
+
+    .menu li a svg {
+        display: none;
+    }
+}
+
 .contenido-header {
     position: relative;
-    background: var(--bg-normal2);
+    background: rgba(13, 16, 21, 0.75);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 1.5rem 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.199);
+    border-bottom: 1px solid transparent;
+    transition: background 0.4s ease, border-color 0.4s ease, backdrop-filter 0.4s ease;
+}
 
+.contenido-header.header-scrolled {
+    background: rgba(13, 16, 21, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 83, 94, 0.218);
 }
 
 .menu {
@@ -30,27 +65,85 @@
 }
 
 .menu ul {
-
     display: flex;
     flex-direction: column;
     gap: 2rem;
     width: 90%;
-    margin: 3rem auto;
-
+    margin: 3rem auto 0;
 }
 
 .menu li {
-
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     color: white;
-    padding-left: 0.8rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.menu li a {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0rem 0.5rem;
+    transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+@media (max-width: 991px) {
+    .menu li a::before {
+        content: '';
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--color-span);
+        flex-shrink: 0;
+        opacity: 0.7;
+    }
 }
 
 
-.contenido-header svg {
+.menu li a:hover {
+    color: var(--color-span);
+}
 
+/* Animación stagger al abrir */
+@keyframes menu-li-entrada {
+    from { opacity: 0; transform: translateX(-20px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+.menu.open li:nth-child(1) { animation: menu-li-entrada 0.3s ease both; animation-delay: 0.05s; }
+.menu.open li:nth-child(2) { animation: menu-li-entrada 0.3s ease both; animation-delay: 0.12s; }
+.menu.open li:nth-child(3) { animation: menu-li-entrada 0.3s ease both; animation-delay: 0.19s; }
+.menu.open li:nth-child(4) { animation: menu-li-entrada 0.3s ease both; animation-delay: 0.26s; }
+
+/* Social */
+.menu-social {
+    display: flex;
+    gap: 1.5rem;
+    width: 90%;
+    margin: 1.5rem auto 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    padding-top: 1.5rem;
+}
+
+.menu-social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.menu-social-link:hover {
+    color: var(--color-span);
+}
+
+.menu-toggle svg {
+    color: white;
+    width: 28px;
+    height: 28px;
+}
+
+.contenido-header svg {
     color: white;
     width: 30px;
     height: 30px;
@@ -67,23 +160,33 @@
     flex-direction: column;
 }
 
-.logo {
-    width: 100px;
-
-}
-
-.logo {
-    transition: width 0.3s ease;
+.logo-texto {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    font-family: "Oxanium", sans-serif;
+    font-weight: 800;
+    transition: font-size 0.3s ease;
 }
 
 .logo-grande {
-    width: 115px;
-
+    width: 130px;
 }
 
 .logo-pequeno {
-    width: 100px;
+    width: 110px;
+}
 
+.logo-nombre {
+    color: #3399ff;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.logo-dev {
+    color: #3399ff;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .menu li a {

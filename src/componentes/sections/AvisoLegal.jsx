@@ -15,9 +15,9 @@ export default function AvisoLegal() {
                         <h2>1. Datos identificativos</h2>
                         <p>En cumplimiento del artículo 10 de la Ley 34/2002, de Servicios de la Sociedad de la Información y Comercio Electrónico (LSSI-CE), se informa:</p>
                         <ul>
-                            <li><strong>Titular:</strong> Jesús (YisusDev)</li>
+                            <li><strong>Titular:</strong> Jesús (JesúsDev)</li>
                             <li><strong>Actividad:</strong> Diseño y desarrollo web freelance</li>
-                            <li><strong>Contacto:</strong> <a href="https://wa.me/+34695078648" target="_blank" rel="noopener noreferrer">WhatsApp</a> · <a href="https://www.instagram.com/yisusdev/" target="_blank" rel="noopener noreferrer">Instagram @yisusdev</a></li>
+                            <li><strong>Contacto:</strong> <a href="https://wa.me/+34695078648" target="_blank" rel="noopener noreferrer">WhatsApp</a> · <a href="https://www.instagram.com/jesussdev/" target="_blank" rel="noopener noreferrer">Instagram @jesussdev</a></li>
                         </ul>
                     </section>
 

@@ -17,12 +17,18 @@ const SLIDES = [vanessaHero, estrellaHero, atenciaHero]
 export default function Hero() {
 
     const [indice, setIndice] = useState(0)
+    const [loaded, setLoaded] = useState(false)
 
     useEffect(() => {
         const interval = setInterval(() => {
             setIndice(prev => (prev + 1) % SLIDES.length)
         }, 3000)
         return () => clearInterval(interval)
+    }, [])
+
+    useEffect(() => {
+        const raf = requestAnimationFrame(() => setLoaded(true))
+        return () => cancelAnimationFrame(raf)
     }, [])
 
     return (
@@ -32,7 +38,7 @@ export default function Hero() {
                 <div className='cont-hero'>
                     <div className='contenido-hero'>
 
-                        <div className='hero-inner'>
+                        <div className={`hero-inner ${loaded ? 'hero-loaded' : ''}`}>
 
                             {/* TEXTO */}
                             <div className='text-hero'>

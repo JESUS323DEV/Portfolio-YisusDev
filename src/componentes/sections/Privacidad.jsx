@@ -14,9 +14,9 @@ export default function Privacidad() {
                     <section>
                         <h2>1. Responsable del tratamiento</h2>
                         <ul>
-                            <li><strong>Titular:</strong> Jesús (YisusDev)</li>
+                            <li><strong>Titular:</strong> Jesús (JesúsDev)</li>
                             <li><strong>Actividad:</strong> Diseño y desarrollo web freelance</li>
-                            <li><strong>Contacto:</strong> <a href="https://wa.me/+34695078648" target="_blank" rel="noopener noreferrer">WhatsApp</a> · <a href="https://www.instagram.com/yisusdev/" target="_blank" rel="noopener noreferrer">Instagram @yisusdev</a></li>
+                            <li><strong>Contacto:</strong> <a href="https://wa.me/+34695078648" target="_blank" rel="noopener noreferrer">WhatsApp</a> · <a href="https://www.instagram.com/jesussdev/" target="_blank" rel="noopener noreferrer">Instagram @jesussdev</a></li>
                         </ul>
                     </section>
 

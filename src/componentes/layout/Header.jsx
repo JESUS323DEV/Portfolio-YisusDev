@@ -1,15 +1,15 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from "react-router-dom";
 
 //IMG
-import logo from "../../assets/logo-footer.png"
+import logo from "../../assets/logo-jesus.png"
 
 //COMPONENTS
 import ScrollSections from "../../componentes/ScrollSections"
 import useActiveSection from "../../componentes/useActiveSection"
 
 //LUCIDE
-import { List } from 'lucide-react'
+import { List, X, Github } from 'lucide-react'
 
 //CSS
 import '../../styles/Header.css'
@@ -17,9 +17,15 @@ import '../../styles/Header.css'
 
 export default function Header() {
     const [open, setOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false)
     const activeSection = useActiveSection()
 
-    // logo grande solo en hero
+    useEffect(() => {
+        const onScroll = () => setScrolled(window.scrollY > 60)
+        window.addEventListener('scroll', onScroll)
+        return () => window.removeEventListener('scroll', onScroll)
+    }, [])
+
     const logoGrande = activeSection === 'hero'
 
     return (
@@ -27,7 +33,7 @@ export default function Header() {
             <header>
                 <nav>
                     <div className='cont-header'>
-                        <div className='contenido-header'>
+                        <div className={`contenido-header ${scrolled ? 'header-scrolled' : ''}`}>
                             <Link
                                 to="/"
                                 onClick={() => {
@@ -37,15 +43,13 @@ export default function Header() {
                             >
                                 <img
                                     src={logo}
-                                    alt="logo"
+                                    alt="Jesús Dev logo"
                                     className={`logo ${logoGrande ? 'logo-grande' : 'logo-pequeno'}`}
                                 />
                             </Link>
 
-                            <button onClick={() => {
-                                setOpen(prev => !prev)
-                            }}>
-                                <List />
+                            <button className='menu-toggle' aria-label={open ? 'Cerrar menú' : 'Abrir menú'} onClick={() => setOpen(prev => !prev)}>
+                                {open ? <X /> : <List />}
                             </button>
 
                             <div className={`menu ${open ? "open" : "closed"}`}>
@@ -59,7 +63,6 @@ export default function Header() {
                                             ¿Cómo trabajo?
                                         </Link>
                                     </li>
-
                                     <li>
                                         <Link
                                             to="/proyectos"
@@ -78,7 +81,6 @@ export default function Header() {
                                             Webs listas
                                         </Link>
                                     </li>
-
                                     <li>
                                         <Link
                                             to="/contacto"
@@ -89,6 +91,19 @@ export default function Header() {
                                         </Link>
                                     </li>
                                 </ul>
+
+                                {/* Redes sociales - descomentar cuando estén listas
+                                <div className='menu-social'>
+                                    <a href="https://github.com/JESUS323DEV" target="_blank" rel="noopener noreferrer" className='menu-social-link'>
+                                        <Github size={18} />
+                                        GitHub
+                                    </a>
+                                    <a href="https://linkedin.com/in/..." target="_blank" rel="noopener noreferrer" className='menu-social-link'>
+                                        <Linkedin size={18} />
+                                        LinkedIn
+                                    </a>
+                                </div>
+                                */}
                             </div>
                         </div>
                     </div>

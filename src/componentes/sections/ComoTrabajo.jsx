@@ -58,13 +58,13 @@ export default function ComoTrabajo() {
                                 <span className='card-aboutMe-lista-titulo'>Detalles</span>
                                 <ul>
                                     {paso.actividades.map((a, j) => (
-                                        <li key={j}>{a}</li>
+                                        <li key={j}>{a}.</li>
                                     ))}
                                 </ul>
                             </div>
                             <div className='card-aboutMe-entregable'>
                                 <span className='card-aboutMe-lista-titulo'>Resultado</span>
-                                <p>{paso.entregable}</p>
+                                <p>{paso.entregable}.</p>
                             </div>
                         </div>
                     ))}

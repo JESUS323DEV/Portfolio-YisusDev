@@ -79,13 +79,13 @@ export default function Contacto() {
                                 <span>jtipian90@gmail.com</span>
                             </a>
                             <a
-                                href='https://www.instagram.com/yisusdev/'
+                                href='https://www.instagram.com/jesussdev/'
                                 target='_blank'
                                 rel='noopener noreferrer'
                                 className='contacto-link-item'
                             >
                                 <img src={instagram} alt='instagram' className='contacto-link-img' />
-                                <span>@yisusdev</span>
+                                <span>@jesussdev</span>
                             </a>
                             <a
                                 href='https://wa.me/+34695078648'

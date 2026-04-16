@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 
 import { Code, Hash, } from "lucide-react"
 
@@ -75,7 +75,29 @@ export default function Proyectos() {
     ScrollDetails(detailsRefs)
 
     const [flipped, setFlipped] = useState([false, false, false, false, false])
-    const toggleFlip = (i) => setFlipped(prev => prev.map((v, idx) => idx === i ? !v : v))
+    const [isMd, setIsMd] = useState(() => window.matchMedia('(min-width: 768px)').matches)
+
+    useEffect(() => {
+        const mq = window.matchMedia('(min-width: 768px)')
+        const handler = (e) => setIsMd(e.matches)
+        mq.addEventListener('change', handler)
+        return () => mq.removeEventListener('change', handler)
+    }, [])
+
+    const toggleFlip = (i) => {
+        if (isMd) {
+            setFlipped(prev => {
+                const isFlipped = prev[i]
+                if (isFlipped) {
+                    return prev.map((v, idx) => idx === i ? false : v)
+                } else {
+                    return prev.map((_, idx) => idx === i)
+                }
+            })
+        } else {
+            setFlipped(prev => prev.map((v, idx) => idx === i ? !v : v))
+        }
+    }
 
     const [vistaGlobal, setVistaGlobal] = useState('desktop')
 
@@ -102,7 +124,7 @@ export default function Proyectos() {
                     <div className='contenido-proyectos'>
 
                         {/* ===== CARD 1: VANESSA ===== */}
-                        <div className='cont-card'>
+                        <article className='cont-card'>
                             <div className={`card-project ${flipped[0] ? 'card-flipped' : ''}`}>
 
                                 <div className='card-front'>
@@ -156,10 +178,10 @@ export default function Proyectos() {
                                 </div>
 
                             </div>
-                        </div>
+                        </article>
 
                         {/* ===== CARD 2: ESTRELLA ===== */}
-                        <div className='cont-card'>
+                        <article className='cont-card'>
                             <div className={`card-project ${flipped[1] ? 'card-flipped' : ''}`}>
 
                                 <div className='card-front'>
@@ -212,10 +234,10 @@ export default function Proyectos() {
                                 </div>
 
                             </div>
-                        </div>
+                        </article>
 
                         {/* ===== CARD 3: ATENCIA ===== */}
-                        <div className='cont-card'>
+                        <article className='cont-card'>
                             <div className={`card-project ${flipped[2] ? 'card-flipped' : ''}`}>
 
                                 <div className='card-front'>
@@ -268,7 +290,7 @@ export default function Proyectos() {
                                 </div>
 
                             </div>
-                        </div>
+                        </article>
 
                     </div>
 
@@ -280,7 +302,7 @@ export default function Proyectos() {
                     <div className='contenido-proyectos'>
 
                         {/* ===== CARD 4: IDLE MINER ===== */}
-                        <div className='cont-card cont-card-personal'>
+                        <article className='cont-card cont-card-personal'>
                             <div className={`card-project ${flipped[3] ? 'card-flipped' : ''}`}>
 
                                 <div className='card-front'>
@@ -347,10 +369,10 @@ export default function Proyectos() {
                                 </div>
 
                             </div>
-                        </div>
+                        </article>
 
                         {/* ===== CARD 5: APP RESERVAS ===== */}
-                        <div className='cont-card cont-card-personal'>
+                        <article className='cont-card cont-card-personal'>
                             <div className={`card-project ${flipped[4] ? 'card-flipped' : ''}`}>
 
                                 <div className='card-front'>
@@ -394,8 +416,8 @@ export default function Proyectos() {
                                         <li>Logo, nombre, descripción y colores personalizables desde el panel</li>
                                         <li>Slots, horarios y servicios dinámicos.</li>
                                         <li>Panel admin con horarios, servicios y fechas bloqueadas.</li>
-                                        <li>Preguntas personalizadas en el formulario (texto libre u opciones)</li>
-                                        <li>QR descargable y exportación a calendario.</li>
+                                        <li>Y mucho más...</li>
+                                      
                                     </ul>
 
                                     <div className='skills-cont back-skills'>
@@ -412,7 +434,7 @@ export default function Proyectos() {
                                 </div>
 
                             </div>
-                        </div>
+                        </article>
 
                     </div>
                 </div>

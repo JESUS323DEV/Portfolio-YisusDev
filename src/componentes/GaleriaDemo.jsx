@@ -50,7 +50,7 @@ export default function GaleriaDemo({ imagenesDesktop, imagenesMobile, vistaGlob
 
             {/* FILA: prev + imagen + next */}
             <div className='galeria-fila'>
-                <button className='galeria-nav galeria-prev' onClick={anterior}>‹</button>
+                <button className='galeria-nav galeria-prev' aria-label='Imagen anterior' onClick={anterior}>‹</button>
 
                 <div
                     className={`galeria-container ${activeView === 'mobile' ? 'galeria-container-mobile' : ''} ${imagenCompleta ? 'galeria-container-completa' : ''}`}
@@ -80,7 +80,7 @@ export default function GaleriaDemo({ imagenesDesktop, imagenesMobile, vistaGlob
                     </div>}
                 </div>
 
-                <button className='galeria-nav galeria-next' onClick={siguiente}>›</button>
+                <button className='galeria-nav galeria-next' aria-label='Imagen siguiente' onClick={siguiente}>›</button>
             </div>
             {/* PUNTOS + CONTADOR */}
             <div className='galeria-footer'>

@@ -1,5 +1,6 @@
 //IMG
-import logo from "../../assets/logo-footer.png"
+import logo from "../../assets/logo-jesus.png"
+
 //CSS
 import '../../styles/Footer.css'
 
@@ -22,7 +23,7 @@ export default function FooterLayout() {
                     <div className='contenido-footer'>
 
                         <div className='foot'>
-                            <img src={logo} alt="Logo Footer" />
+                            <img src={logo} alt="Jesús Dev logo" className='logo-footer' />
                             <small>Páginas web claras, rápidas y adaptadas a tu negocio</small>
                             <div className='foot-legal'>
                                 <Link to="/aviso-legal">Aviso legal</Link>

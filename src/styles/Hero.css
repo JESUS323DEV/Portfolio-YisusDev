@@ -266,3 +266,52 @@
     background: rgba(4, 157, 178, 0.08);
     border-color: rgb(4, 157, 178);
 }
+
+/* ===== ANIMACIONES DE ENTRADA HERO ===== */
+.text-hero h1,
+.hero-subtitle,
+.hero-badges-marquee,
+.hero-gallery-wrap,
+.cta-hero-cont {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.hero-gallery-wrap {
+    transform: translateY(24px);
+}
+
+/* Grupo 1: h1 + galería casi juntos */
+.hero-loaded .text-hero h1 {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.05s;
+}
+
+.hero-loaded .hero-gallery-wrap {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.15s;
+}
+
+/* Grupo 2: nav cae desde arriba (Header.css) → 0.5s */
+
+/* Grupo 3: subtítulo → badges → CTAs */
+.hero-loaded .hero-subtitle {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.85s;
+}
+
+.hero-loaded .hero-badges-marquee {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 1s;
+}
+
+.hero-loaded .cta-hero-cont {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 1.15s;
+}

@@ -161,7 +161,6 @@
     .cont-aboutMe h2 {
         width: 28rem;
         font-size: 3.5rem;
-        border: 1px solid red !important;
 
     }
 
@@ -287,6 +286,10 @@
     .h2-personales {
 
         width: 33rem !important;
+    }
+
+    .skills-cont span {
+        font-size: 0.72rem;
     }
 
     /*====================DEMOS=======================*/
@@ -570,7 +573,9 @@
         width: 40rem !important;
     }
 
-
+    .skills-cont span {
+        font-size: 0.7rem;
+    }
 
 
 
@@ -921,6 +926,10 @@
         width: 45rem !important;
     }
 
+
+    .skills-cont span {
+        font-size: 0.7rem;
+    }
     /*====================demos=======================*/
 
     .cont-demos h2 {
@@ -1298,6 +1307,10 @@
         width: 45rem !important;
     }
 
+    .skills-cont span {
+        font-size: 0.7rem;
+    }
+
     /*====================demos=======================*/
 
     .cont-demos h2 {
@@ -1411,7 +1424,7 @@
     }
 
     #proyectos {
-        scroll-margin-top: 2rem;
+        scroll-margin-top:0;
     }
 
     #contacto {
@@ -1655,13 +1668,14 @@
     /*====================PROYECTOS=======================*/
 
     .cont-proyectos {
-        padding-top: 5rem;
+        padding-top: 8rem;
     }
 
 
-    .cont-proyectos h2 {
+    .h2-proyectos {
         width: 21rem;
         font-size: 4rem;
+        padding-top: 4rem;
     }
 
     .cont-card {
@@ -1697,6 +1711,10 @@
     .h2-personales {
 
         width: 47rem !important;
+    }
+
+    .skills-cont span {
+        font-size: 0.7rem;
     }
 
     .cont-card-body {
@@ -1850,6 +1868,21 @@
     }
 
 
+}
+
+/* Hero animaciones más rápidas en mobile/tablet */
+@media (max-width: 991px) {
+    .hero-loaded .hero-subtitle {
+        transition-delay: 0.2s;
+    }
+
+    .hero-loaded .hero-badges-marquee {
+        transition-delay: 0.35s;
+    }
+
+    .hero-loaded .cta-hero-cont {
+        transition-delay: 0.5s;
+    }
 }
 
 /* Deshabilitar Ver online en Lady Hungry para MD+ */
