@@ -1424,7 +1424,7 @@
     }
 
     #proyectos {
-        scroll-margin-top:0;
+        scroll-margin-top: 0;
     }
 
     #contacto {
@@ -1599,9 +1599,7 @@
 
     /*====================CÓMO TRABAJO=======================*/
 
-    .cont-aboutMe {
-        padding: 1rem 0;
-    }
+  
 
     .cont-aboutMe h2 {
         width: 32rem;
