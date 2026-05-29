@@ -18,7 +18,7 @@ const FEATURES = [
   {
     icon: Zap,
     title: "Rendimiento primero",
-    desc: "Webs rápidas, optimizadas y pensadas para convertir.",
+    desc: "Diseñadas para ofrecer una experiencia clara y profesional.",
   },
   {
     icon: MessageSquare,

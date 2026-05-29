@@ -5,7 +5,7 @@ import logo from "../../assets/logo-jesus.png"
 import whatsapp from "../../assets/icon-whatsapp.png"
 import ScrollSections from "../../componentes/ScrollSections"
 import useActiveSection from "../../componentes/useActiveSection"
-import { List, X, ArrowRight, Mail, Github } from 'lucide-react'
+import { ArrowRight, Mail, Github } from 'lucide-react'
 
 const navLinks = [
     { to: '/',             section: 'hero',      label: 'Inicio'         },
@@ -70,11 +70,27 @@ export default function Header() {
 
                         {/* Burger — oculto en desktop */}
                         <button
-                            className="lg:hidden"
-                            aria-label="Abrir menú"
-                            onClick={() => setOpen(true)}
+                            className="lg:hidden w-7 h-7 flex flex-col justify-center items-center gap-[5px]"
+                            aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
+                            onClick={() => setOpen(v => !v)}
                         >
-                            <List className="text-white w-7 h-7" />
+                            <span style={{
+                                display: 'block', height: '2px', width: '26px', background: 'white', borderRadius: '2px',
+                                transformOrigin: 'center',
+                                transition: 'transform 0.3s ease, opacity 0.3s ease',
+                                transform: open ? 'translateY(7px) rotate(45deg)' : 'none',
+                            }} />
+                            <span style={{
+                                display: 'block', height: '2px', width: '26px', background: 'white', borderRadius: '2px',
+                                transition: 'opacity 0.2s ease',
+                                opacity: open ? 0 : 1,
+                            }} />
+                            <span style={{
+                                display: 'block', height: '2px', width: '26px', background: 'white', borderRadius: '2px',
+                                transformOrigin: 'center',
+                                transition: 'transform 0.3s ease, opacity 0.3s ease',
+                                transform: open ? 'translateY(-7px) rotate(-45deg)' : 'none',
+                            }} />
                         </button>
 
                         {/* Nav desktop */}
@@ -104,16 +120,23 @@ export default function Header() {
             </header>
 
             {/* MENÚ MOBILE — overlay full screen */}
-            {open && (
-                <div className="fixed inset-0 z-[200] flex flex-col [background:var(--bg-normal)] overflow-y-auto lg:hidden">
+            <div className={`fixed inset-0 z-[200] flex flex-col [background:var(--bg-normal)] overflow-y-auto lg:hidden transition-transform duration-[320ms] ease-in-out ${open ? 'translate-x-0 nav-open' : 'translate-x-full'}`}
+                inert={!open}
+            >
 
                     {/* Logo + X */}
                     <div className="flex items-center justify-between px-6 py-5 border-b border-white/[0.07] shrink-0">
                         <Link to="/" onClick={() => { setOpen(false); ScrollSections("hero"); }}>
                             <img src={logo} alt="Jesús Dev" className="w-[130px]" />
                         </Link>
-                        <button aria-label="Cerrar menú" onClick={() => setOpen(false)}>
-                            <X className="text-white w-7 h-7" />
+                        <button
+                            aria-label="Cerrar menú"
+                            onClick={() => setOpen(false)}
+                            className="w-7 h-7 flex flex-col justify-center items-center gap-[5px]"
+                        >
+                            <span style={{ display:'block', height:'2px', width:'26px', background:'white', borderRadius:'2px', transform:'translateY(7px) rotate(45deg)' }} />
+                            <span style={{ display:'block', height:'2px', width:'26px', background:'white', borderRadius:'2px', opacity:0 }} />
+                            <span style={{ display:'block', height:'2px', width:'26px', background:'white', borderRadius:'2px', transform:'translateY(-7px) rotate(-45deg)' }} />
                         </button>
                     </div>
 
@@ -122,7 +145,7 @@ export default function Header() {
                         {navLinks.map(({ to, section, label }) => {
                             const isActive = activeSection === section
                             return (
-                                <li key={section} className="border-b border-white/[0.07]">
+                                <li key={section} className="nav-item border-b border-white/[0.07]">
                                     <Link
                                         to={to}
                                         className="flex items-center justify-between py-5"
@@ -150,7 +173,7 @@ export default function Header() {
                                     key={label}
                                     href={href}
                                     {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                                    className="flex items-center gap-4"
+                                    className="social-item flex items-center gap-4"
                                 >
                                     <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[rgba(0,188,212,0.08)] border border-[rgba(0,188,212,0.25)]">
                                         {icon}
@@ -175,8 +198,7 @@ export default function Header() {
                         <p className="text-white/30 text-xs">© 2026 Jesús Dev. Todos los derechos reservados.</p>
                     </div>
 
-                </div>
-            )}
+            </div>
         </>
     );
 }

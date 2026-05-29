@@ -48,19 +48,21 @@ export default function ComoTrabajo() {
         {/* Cabecera */}
         <div
           ref={headRef}
+          className='text-center flex flex-col items-center  mb-10 '
           style={{
             opacity: headInView ? 1 : 0,
             transform: headInView ? 'none' : 'translateY(24px)',
             transition: 'opacity 0.55s ease, transform 0.55s ease',
           }}
         >
-          <p className="text-[#049db2] text-xs font-semibold tracking-widest uppercase mb-3">
+          <p className="text-[#049db2] text-xs  font-semibold tracking-widest uppercase mb-3">
             Mi proceso
           </p>
-          <h2 className="text-4xl font-extrabold text-white leading-tight mb-3 lg:text-5xl">
+          <h2 className="text-4xl font-extrabold  text-white leading-tight mb-3 lg:text-5xl">
             ¿Cómo trabajo?
           </h2>
-          <div className="h-0.5 w-10 bg-[#049db2] mb-10" />
+          <div className="h-0.5 w-10  bg-[#049db2] mb-10 " />
+          <p className='text-white/75 leading-relaxed max-w-xs '>Diseño, desarrollo y lanzamiento con un proceso claro desde el primer día.</p>
         </div>
 
         {/* Timeline */}
@@ -115,10 +117,10 @@ export default function ComoTrabajo() {
                     <p className="text-[#049db2] text-[10px] font-semibold tracking-widest uppercase mb-1">
                       Resultado
                     </p>
-                    <p className="text-white/55 text-sm ">{paso.entregable}.</p>
+                    <p className="text-white/55 text-sm mb-4">{paso.entregable}.</p>
                   </div>
-
                 </div>
+
 
               </div>
             </div>

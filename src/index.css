@@ -22,11 +22,16 @@
   .nav-item:nth-child(4) { animation: header-entrada 0.5s ease both; animation-delay: 0.85s; }
 }
 
-/* Stagger mobile: menu open */
-.nav-open .nav-item:nth-child(1) { animation: menu-li-entrada 0.3s ease both; animation-delay: 0.05s; }
-.nav-open .nav-item:nth-child(2) { animation: menu-li-entrada 0.3s ease both; animation-delay: 0.12s; }
-.nav-open .nav-item:nth-child(3) { animation: menu-li-entrada 0.3s ease both; animation-delay: 0.19s; }
-.nav-open .nav-item:nth-child(4) { animation: menu-li-entrada 0.3s ease both; animation-delay: 0.26s; }
+/* Stagger mobile: menu open — nav links */
+.nav-open .nav-item:nth-child(1) { animation: menu-li-entrada 0.3s ease both; animation-delay: 0.12s; }
+.nav-open .nav-item:nth-child(2) { animation: menu-li-entrada 0.3s ease both; animation-delay: 0.20s; }
+.nav-open .nav-item:nth-child(3) { animation: menu-li-entrada 0.3s ease both; animation-delay: 0.28s; }
+.nav-open .nav-item:nth-child(4) { animation: menu-li-entrada 0.3s ease both; animation-delay: 0.36s; }
+
+/* Stagger mobile: menu open — social links */
+.nav-open .social-item:nth-child(1) { animation: menu-li-entrada 0.3s ease both; animation-delay: 0.44s; }
+.nav-open .social-item:nth-child(2) { animation: menu-li-entrada 0.3s ease both; animation-delay: 0.52s; }
+.nav-open .social-item:nth-child(3) { animation: menu-li-entrada 0.3s ease both; animation-delay: 0.60s; }
 
 
 @keyframes card-flip-out {

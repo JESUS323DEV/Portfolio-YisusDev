@@ -176,10 +176,30 @@ export default function Proyectos() {
           </p>
 
           {/* Iconos */}
+
           <div className="flex gap-6 mt-8 mb-2">
-            <Code2 size={22} className="text-[#049db2]" />
-            <Rocket size={22} className="text-[#049db2]" />
-            <Clock size={22} className="text-[#049db2]" />
+            {[
+              { label: 'Desarrollo propio', delay: 400 },
+              { label: 'Soluciones reales', delay: 520 },
+              { label: 'Evolución',         delay: 640 },
+            ].map(({ label, delay }, i) => {
+              const icons = [Code2, Rocket, Clock]
+              const IconComp = icons[i]
+              return (
+                <span
+                  key={label}
+                  className="flex flex-col items-center gap-2"
+                  style={{
+                    transform: headInView ? 'none' : 'translateX(-14px)',
+                    opacity:   headInView ? 1 : 0,
+                    transition: `transform 0.4s ease ${delay}ms, opacity 0.4s ease ${delay}ms`,
+                  }}
+                >
+                  <IconComp size={22} className="text-[#049db2]" />
+                  <p className="text-white/60 text-[0.7rem]">{label}</p>
+                </span>
+              )
+            })}
           </div>
         </div>
 
@@ -201,123 +221,123 @@ export default function Proyectos() {
 
         {/* Cards */}
         <div ref={cardsRef}>
-        {PROJECTS.map((p, i) => (
-          <div
-            key={i}
-            className="mb-4"
-            style={{
-              opacity: cardsInView ? 1 : 0,
-              transition: `opacity 0.55s ease ${i * 100}ms`,
-            }}
-          >
-          <div
-            className={`rounded-xl border border-white/[0.07] bg-[rgba(255,255,255,0.02)] overflow-hidden ${animPhase[i] === 'out' ? 'card-flip-out' : animPhase[i] === 'in' ? 'card-flip-in' : ''}`}
-            onAnimationEnd={(e) => onAnimEnd(e, i)}
-          >
-            {/* Grid stacking: ambas caras siempre en DOM, misma celda */}
-            <div className="grid">
-
-              {/* FRENTE */}
+          {PROJECTS.map((p, i) => (
+            <div
+              key={i}
+              className="mb-4"
+              style={{
+                opacity: cardsInView ? 1 : 0,
+                transition: `opacity 0.55s ease ${i * 100}ms`,
+              }}
+            >
               <div
-                className="col-start-1 row-start-1 p-4 flex flex-col"
-                style={{ visibility: flipped[i] ? 'hidden' : 'visible' }}
-                inert={flipped[i]}
+                className={`rounded-xl border border-white/[0.07] bg-[rgba(255,255,255,0.02)] overflow-hidden ${animPhase[i] === 'out' ? 'card-flip-out' : animPhase[i] === 'in' ? 'card-flip-in' : ''}`}
+                onAnimationEnd={(e) => onAnimEnd(e, i)}
               >
-                {/* Imagen */}
-                <div className="rounded-lg overflow-hidden bg-white/5 mb-4">
-                  <img
-                    src={vista === 'desktop' ? p.imgDesktop : p.imgMobile}
-                    alt={p.titulo}
-                    className="w-full object-cover"
-                  />
-                </div>
+                {/* Grid stacking: ambas caras siempre en DOM, misma celda */}
+                <div className="grid">
 
-                <span className="text-[#049db2]/40 text-xs font-bold">{p.numero}</span>
-                <p className="font-bold text-white text-base mt-0.5 mb-1">{p.titulo}</p>
-
-                {p.tags.length > 0 && (
-                  <div className="flex flex-wrap gap-1 mb-2">
-                    {p.tags.map(t => (
-                      <span
-                        key={t.label}
-                        style={{ color: t.color, borderColor: t.color + '60' }}
-                        className="text-[9px] border px-1.5 py-0.5 rounded-full whitespace-nowrap"
-                      >
-                        {t.label}
-                      </span>
-                    ))}
-                  </div>
-                )}
-
-                <p className="text-white/50 text-xs leading-relaxed mb-4">{p.descripcion}</p>
-
-                <div className="mt-auto flex items-center justify-center gap-3">
-                  <button
-                    onClick={() => startFlip(i)}
-                    className="flex items-center gap-1.5 px-4 py-2 rounded bg-[#049db2] text-[#0d1015] text-xs font-semibold shadow-[0_0_14px_rgba(4,157,178,0.35)]"
+                  {/* FRENTE */}
+                  <div
+                    className="col-start-1 row-start-1 p-4 flex flex-col"
+                    style={{ visibility: flipped[i] ? 'hidden' : 'visible' }}
+                    inert={flipped[i]}
                   >
-                    Leer más <ArrowRight size={12} />
-                  </button>
-                  {p.proximamente ? (
-                    <span className="text-white/50 text-xs">Próximamente</span>
-                  ) : p.soloMovil ? (
-                    <span className="text-white/50 text-xs">Solo móvil</span>
-                  ) : (
-                    <a href={p.url} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 px-4 py-2 rounded border border-[rgba(4,157,178,0.55)] text-[#049db2] text-xs font-medium">
-                      Ver online <ExternalLink size={12} />
-                    </a>
-                  )}
-                </div>
-              </div>
+                    {/* Imagen */}
+                    <div className="rounded-lg overflow-hidden bg-white/5 mb-4">
+                      <img
+                        src={vista === 'desktop' ? p.imgDesktop : p.imgMobile}
+                        alt={p.titulo}
+                        className="w-full object-cover"
+                      />
+                    </div>
 
-              {/* VUELTA */}
-              <div
-                className="col-start-1 row-start-1 p-5 flex flex-col justify-between"
-                style={{ visibility: flipped[i] ? 'visible' : 'hidden' }}
-                inert={!flipped[i]}
-              >
-                <div>
-                  <h3 className="font-bold text-white text-lg mb-2">{p.titulo}</h3>
-                  <p className="text-white/60 text-sm leading-relaxed mb-5">{p.descripcionLarga}</p>
+                    <span className="text-[#049db2]/40 text-xs font-bold">{p.numero}</span>
+                    <p className="font-bold text-white text-base mt-0.5 mb-1">{p.titulo}</p>
 
-                  <ul className="space-y-2.5 mb-5">
-                    {p.features.map(f => (
-                      <li key={f} className="flex items-start gap-2.5 text-white/60 text-sm">
-                        <CircleCheck size={14} className="text-[#049db2] shrink-0 mt-0.5" />
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
+                    {p.tags.length > 0 && (
+                      <div className="flex flex-wrap gap-1 mb-2">
+                        {p.tags.map(t => (
+                          <span
+                            key={t.label}
+                            style={{ color: t.color, borderColor: t.color + '60' }}
+                            className="text-[9px] border px-1.5 py-0.5 rounded-full whitespace-nowrap"
+                          >
+                            {t.label}
+                          </span>
+                        ))}
+                      </div>
+                    )}
 
-                  <div className="flex flex-wrap gap-2 mb-5">
-                    {p.stack.map(s => (
-                      <span key={s} className="text-xs border border-white/15 text-white/40 px-2.5 py-1 rounded">
-                        {s}
-                      </span>
-                    ))}
+                    <p className="text-white/50 text-xs leading-relaxed mb-4">{p.descripcion}</p>
+
+                    <div className="mt-auto flex items-center justify-center gap-3">
+                      <button
+                        onClick={() => startFlip(i)}
+                        className="flex items-center gap-1.5 px-4 py-2 rounded bg-[#049db2] text-[#0d1015] text-xs font-semibold shadow-[0_0_14px_rgba(4,157,178,0.35)]"
+                      >
+                        Leer más <ArrowRight size={12} />
+                      </button>
+                      {p.proximamente ? (
+                        <span className="text-white/50 text-xs">Próximamente</span>
+                      ) : p.soloMovil ? (
+                        <span className="text-white/50 text-xs">Solo móvil</span>
+                      ) : (
+                        <a href={p.url} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 px-4 py-2 rounded border border-[rgba(4,157,178,0.55)] text-[#049db2] text-xs font-medium">
+                          Ver online <ExternalLink size={12} />
+                        </a>
+                      )}
+                    </div>
                   </div>
-                </div>
 
-                <div className="flex items-center gap-3">
-                  <button onClick={() => startFlip(i)} className="flex items-center gap-1.5 px-4 py-2 rounded border border-white/20 text-white/50 text-xs font-medium">
-                    <ChevronLeft size={12} /> Volver
-                  </button>
-                  {p.proximamente ? (
-                    <span className="text-white/25 text-xs">Próximamente</span>
-                  ) : p.soloMovil ? (
-                    <span className="text-white/25 text-xs">Solo móvil</span>
-                  ) : (
-                    <a href={p.url} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 px-4 py-2 rounded border border-[rgba(4,157,178,0.55)] text-[#049db2] text-xs font-medium">
-                      Ver online <ExternalLink size={12} />
-                    </a>
-                  )}
+                  {/* VUELTA */}
+                  <div
+                    className="col-start-1 row-start-1 p-5 flex flex-col justify-between"
+                    style={{ visibility: flipped[i] ? 'visible' : 'hidden' }}
+                    inert={!flipped[i]}
+                  >
+                    <div>
+                      <h3 className="font-bold text-white text-lg mb-2">{p.titulo}</h3>
+                      <p className="text-white/60 text-sm leading-relaxed mb-5">{p.descripcionLarga}</p>
+
+                      <ul className="space-y-2.5 mb-5">
+                        {p.features.map(f => (
+                          <li key={f} className="flex items-start gap-2.5 text-white/60 text-sm">
+                            <CircleCheck size={14} className="text-[#049db2] shrink-0 mt-0.5" />
+                            {f}
+                          </li>
+                        ))}
+                      </ul>
+
+                      <div className="flex flex-wrap gap-2 mb-5">
+                        {p.stack.map(s => (
+                          <span key={s} className="text-xs border border-white/15 text-white/40 px-2.5 py-1 rounded">
+                            {s}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-3">
+                      <button onClick={() => startFlip(i)} className="flex items-center gap-1.5 px-4 py-2 rounded border border-white/20 text-white/50 text-xs font-medium">
+                        <ChevronLeft size={12} /> Volver
+                      </button>
+                      {p.proximamente ? (
+                        <span className="text-white/25 text-xs">Próximamente</span>
+                      ) : p.soloMovil ? (
+                        <span className="text-white/25 text-xs">Solo móvil</span>
+                      ) : (
+                        <a href={p.url} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 px-4 py-2 rounded border border-[rgba(4,157,178,0.55)] text-[#049db2] text-xs font-medium">
+                          Ver online <ExternalLink size={12} />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+
                 </div>
               </div>
-
             </div>
-          </div>
-          </div>
-        ))}
+          ))}
         </div>
 
         {/* CTA Banner */}
