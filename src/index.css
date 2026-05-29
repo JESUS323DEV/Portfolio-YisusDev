@@ -1,0 +1,161 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Oxanium", sans-serif;
+}
+
+@keyframes header-entrada {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes menu-li-entrada {
+  from { opacity: 0; transform: translateX(-20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Stagger desktop: nav entry */
+@media (min-width: 992px) {
+  .nav-item:nth-child(1) { animation: header-entrada 0.5s ease both; animation-delay: 0.55s; }
+  .nav-item:nth-child(2) { animation: header-entrada 0.5s ease both; animation-delay: 0.65s; }
+  .nav-item:nth-child(3) { animation: header-entrada 0.5s ease both; animation-delay: 0.75s; }
+  .nav-item:nth-child(4) { animation: header-entrada 0.5s ease both; animation-delay: 0.85s; }
+}
+
+/* Stagger mobile: menu open */
+.nav-open .nav-item:nth-child(1) { animation: menu-li-entrada 0.3s ease both; animation-delay: 0.05s; }
+.nav-open .nav-item:nth-child(2) { animation: menu-li-entrada 0.3s ease both; animation-delay: 0.12s; }
+.nav-open .nav-item:nth-child(3) { animation: menu-li-entrada 0.3s ease both; animation-delay: 0.19s; }
+.nav-open .nav-item:nth-child(4) { animation: menu-li-entrada 0.3s ease both; animation-delay: 0.26s; }
+
+
+@keyframes card-flip-out {
+  from { transform: scaleX(1); opacity: 1; }
+  to   { transform: scaleX(0); opacity: 0.4; }
+}
+
+@keyframes card-flip-in {
+  from { transform: scaleX(0); opacity: 0.4; }
+  to   { transform: scaleX(1); opacity: 1; }
+}
+
+.card-flip-out { animation: card-flip-out 0.22s ease-in forwards; }
+.card-flip-in  { animation: card-flip-in  0.22s ease-out forwards; }
+
+@keyframes dots-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* El reset va dentro de @layer base para que los utilities de Tailwind
+   (que están en @layer utilities) tengan mayor prioridad */
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #0d1015;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    font-family: "Oxanium", sans-serif;
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-family: "Oxanium", sans-serif;
+  }
+
+  ul, ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: "Oxanium", sans-serif;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    font-family: "Oxanium", sans-serif;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+
+  button {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    font-family: "Oxanium", sans-serif;
+  }
+
+  input, textarea, select {
+    font: inherit;
+    color: inherit;
+    border: none;
+    outline: none;
+  }
+
+  textarea {
+    resize: none;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    scroll-behavior: smooth;
+  }
+
+  summary {
+    list-style: none;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+}
+
+:root {
+  --bg-transparente: radial-gradient(circle, #0d1015 0%, #0d1015cf 100%);
+  --bg-transparente2: radial-gradient(circle, #0d1015e4 0%, #0d1015 100%);
+  --bg-normal: linear-gradient(180deg, #0D1015 0%, #171B21 100%);
+  --bg-normal2: linear-gradient(180deg, #0D1015 100%, #171B21 0%);
+  --bg-normal3: linear-gradient(180deg, #171B21 100%, #0D1015 0%);
+  --color-span: rgb(4, 157, 178);
+  --color-border: rgba(159, 216, 216, 0.11);
+  --color-border-proyectos: rgb(0, 74, 80);
+  --h2-fontXs: 2.8rem;
+  --text-shadow: 1px 1px 5px rgb(0, 0, 0);
+}
+
+main {
+  padding-top: 5.8rem;
+}
+
+#hero { scroll-margin-top: 5.8rem; }
+#aboutMe { scroll-margin-top: 1rem; }
+#servicios { scroll-margin-top: 7.8rem; }
+#proyectos { scroll-margin-top: 7rem; }
+#contacto { scroll-margin-top: 1rem; }
