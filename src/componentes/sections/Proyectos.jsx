@@ -191,7 +191,7 @@ function Tags({ tags }) {
 
 function CTAs({ p, onFlip }) {
   return (
-    <div className="flex items-center gap-3 flex-wrap">
+    <div className="flex items-center justify-center gap-3 flex-wrap">
       <button onClick={onFlip}
         className="flex items-center gap-1.5 px-4 py-2 rounded bg-[#049db2] text-[#0d1015] text-xs font-semibold shadow-[0_0_14px_rgba(4,157,178,0.35)]">
         Ver proyecto <ArrowRight size={12} />
@@ -281,9 +281,9 @@ export default function Proyectos() {
               <div className="grid">
 
                 {/* Frente featured */}
-                <div className="col-start-1 row-start-1 p-4 lg:p-8 flex flex-col-reverse lg:flex-row gap-4 lg:gap-8"
+                <div className="col-start-1 row-start-1 p-4 lg:p-8 flex flex-col-reverse  border-1 lg:flex-row gap-4 lg:gap-8"
                   style={{ visibility: flipped[featuredIdx] ? 'hidden' : 'visible' }}>
-                  <div className="flex-1 flex flex-col lg:justify-center">
+                  <div className="flex-1 flex flex-col  lg:justify-center">
                     <span className="text-[#049db2]/40 text-xs font-bold mb-2">{FEATURED.numero}</span>
                     <h3 className="text-xl lg:text-3xl font-extrabold text-white leading-tight mb-2">{FEATURED.titulo}</h3>
                     <Tags tags={FEATURED.tags} />
@@ -295,10 +295,14 @@ export default function Proyectos() {
                         </li>
                       ))}
                     </ul>
+
                     <div className="flex flex-wrap gap-1.5 mb-5">
                       {FEATURED.stack.map(s => <span key={s} className="text-[10px] lg:text-xs border border-white/15 text-white/40 px-2 py-0.5 rounded">{s}</span>)}
                     </div>
-                    <CTAs p={FEATURED} onFlip={() => startFlip(featuredIdx)} />
+                    <div className='mt-auto'>
+                      <CTAs p={FEATURED} onFlip={() => startFlip(featuredIdx)} />
+
+                    </div>
                   </div>
                   <div className="rounded-xl overflow-hidden aspect-video lg:aspect-auto lg:flex-[1.2] lg:min-h-[300px]">
                     <ImgOrPlaceholder src={FEATURED.imgDesktop} alt={FEATURED.titulo} overlay={FEATURED.overlay} />
@@ -306,9 +310,9 @@ export default function Proyectos() {
                 </div>
 
                 {/* Vuelta featured */}
-                <div className="col-start-1 row-start-1 p-4 lg:p-8 flex flex-col gap-5"
+                <div className="col-start-1 row-start-1 md:justify-center  p-4 md:p-8 flex flex-col gap-5"
                   style={{ visibility: flipped[featuredIdx] ? 'visible' : 'hidden' }}>
-                  <div className="flex flex-col lg:flex-row gap-5 lg:gap-10">
+                  <div className="flex flex-col   md:flex-row gap-5 md:gap-10">
                     <div className="flex-1">
                       <h3 className="font-bold text-white text-xl lg:text-2xl mb-4">{FEATURED.titulo}</h3>
                       {(FEATURED.descripcionBack || []).map((par, idx) => (
@@ -351,9 +355,9 @@ export default function Proyectos() {
                   className={`rounded-xl border border-white/[0.07] bg-[rgba(255,255,255,0.02)] overflow-hidden ${cardAnim(i)}`}
                   onAnimationEnd={(e) => onAnimEnd(e, i)}
                   style={{ opacity: cardsInView ? 1 : 0, transition: `opacity 0.55s ease ${i * 100}ms` }}>
-                  <div className="grid">
+                  <div className="grid h-full">
 
-                    <div className="col-start-1 row-start-1 flex flex-col"
+                    <div className="col-start-1 row-start-1 flex flex-col h-full"
                       style={{ visibility: flipped[i] ? 'hidden' : 'visible' }}>
                       <div className="overflow-hidden aspect-video">
                         <ImgOrPlaceholder src={p.imgDesktop} alt={p.titulo} overlay={p.overlay} />
@@ -415,9 +419,9 @@ export default function Proyectos() {
                   className={`rounded-xl border border-white/[0.07] bg-[rgba(255,255,255,0.02)] overflow-hidden ${cardAnim(i)}`}
                   onAnimationEnd={(e) => onAnimEnd(e, i)}
                   style={{ opacity: cardsInView ? 1 : 0, transition: `opacity 0.55s ease ${i * 100}ms` }}>
-                  <div className="grid">
+                  <div className="grid h-full">
 
-                    <div className="col-start-1 row-start-1 p-4 lg:p-5 flex flex-col lg:flex-row gap-4 lg:gap-5"
+                    <div className="col-start-1 row-start-1 p-4 lg:p-5 flex flex-col lg:flex-row gap-4 lg:gap-5 h-full"
                       style={{ visibility: flipped[i] ? 'hidden' : 'visible' }}>
                       <div className="aspect-video lg:w-48 lg:aspect-auto lg:shrink-0 rounded-lg overflow-hidden">
                         <ImgOrPlaceholder src={p.imgDesktop} alt={p.titulo} overlay={p.overlay} />
