@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
-import { ArrowRight, ChevronLeft, ChevronRight, Target, Zap, MessageSquare } from "lucide-react"
+import { ArrowRight, ChevronRight, Target, Zap, MessageSquare } from "lucide-react"
 import ScrollSections from "../../componentes/ScrollSections"
 
 import vanessaHero from "../../assets/galeria-projects/vanessa/desktop/vanessa-hero-desktop.png"
@@ -46,13 +46,12 @@ export default function Hero() {
     return () => { cancelAnimationFrame(raf1); cancelAnimationFrame(raf2) }
   }, [])
 
-  const prev = () => setIndice(prev => (prev - 1 + SLIDES.length) % SLIDES.length)
   const next = () => setIndice(prev => (prev + 1) % SLIDES.length)
 
   const anim = `transition-all duration-700 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`
 
   return (
-    <section id="hero" className="relative overflow-hidden bg-[#0d1015] min-h-screen">
+    <section id="hero" className="relative overflow-hidden bg-[#0d1015] pt-10 ">
 
       {/* Dot grid */}
       <div className="absolute inset-0 z-0 pointer-events-none [background-image:radial-gradient(circle,rgba(139,241,255,0.05)_1px,transparent_1px)] [background-size:28px_28px] animate-[dots-pulse_3s_ease-in-out_infinite]" />
@@ -60,39 +59,37 @@ export default function Hero() {
       {/* Glow central */}
       <div className="absolute inset-0 z-0 pointer-events-none [background:radial-gradient(ellipse_at_50%_40%,rgba(0,69,76,0.32)_0%,transparent_65%)] animate-[glow-pulse_7s_ease-in-out_infinite]" />
 
-      <div className="relative z-10 mx-auto w-[90%] max-w-6xl pt-10 pb-20">
+
+      <div className="relative z-10 mx-auto w-[90%] max-w-6xl pt-10 pb-20 lg:pt-20 lg:pb-28">
 
         {/* Layout principal: columna en mobile, fila en desktop */}
-        <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-16">
+        <div className="flex flex-col gap-10 lg:flex-row lg:items-center md:grid  md:grid-cols-2 lg:gap-16  ">
 
           {/* Bloque izquierdo: texto */}
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left lg:flex-1">
 
-            {/* Badge 
+            {/* Badge */}
             <div
               style={{ transitionDelay: "0ms" }}
-              className={`${anim} mb-5 flex items-center gap-2
-                rounded-full border border-[rgba(0,188,212,0.4)] bg-[rgba(0,188,212,0.08)] px-4 py-1.5
-                lg:rounded-none lg:border-0 lg:bg-transparent lg:px-0 lg:py-0 lg:border-b lg:border-[#049db2] lg:pb-1`}
+              className={`${anim} flex items-center gap-2 mb-5`}
             >
-              <span className="h-2 w-2 rounded-full bg-[#049db2] lg:hidden" />
-              <span className="text-xs font-semibold tracking-widest uppercase text-white/70 lg:text-[#049db2]">
+              <span className="w-6 h-px bg-[#049db2]" />
+              <span className="text-xs font-semibold tracking-[0.22em] uppercase text-[#049db2]">
                 Desarrollo web
               </span>
             </div>
-*/}
 
             {/* H1 */}
             <h1
               style={{ transitionDelay: "80ms" }}
-              className={`${anim} text-5xl pt-5 font-extrabold text-white leading-[1.1] mb-4 lg:text-6xl xl:text-7xl`}
+              className={`${anim} text-5xl pt-5 lg:pt-0 font-extrabold text-white leading-[1.1] mb-4 lg:text-6xl xl:text-7xl`}
             >
               Tu web como{" "}
               <span className="text-[#049db2]">herramienta</span>
               {" "}de trabajo.
             </h1>
 
-            {/* Divisor solo en mobile */}
+            {/* Divisor */}
             <div className="h-0.5 w-10 bg-[#049db2] mb-5 lg:hidden" />
 
             {/* Subtítulo */}
@@ -129,41 +126,51 @@ export default function Hero() {
           {/* Bloque derecho: slider */}
           <div
             style={{ transitionDelay: "150ms" }}
-            className={`${anim} lg:flex-1 lg:max-w-xl`}
+            className={`${anim} lg:flex-[2]`}
           >
-            <div className="relative flex items-center px-5">
+            <div className="relative flex items-center px-5 mr-4 md:mr-0 ">
 
-              {/* Prev */}
-              <button
-                onClick={prev}
-                aria-label="Proyecto anterior"
-                className="absolute left-0 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-[rgba(13,16,21,0.85)] border border-[rgba(0,188,212,0.3)] text-white hover:border-[#049db2] hover:text-[#049db2] transition-colors duration-200"
-              >
-                <ChevronLeft size={18} />
-              </button>
+              {/* Wrapper */}
+              <div className="flex-1 relative my-10 [transform:perspective(900px)_rotateY(-20deg)]">
 
-              {/* Tarjeta del slider */}
-              <div className="flex-1 relative rounded-xl overflow-hidden border border-[rgba(0,188,212,0.3)] shadow-[0_0_50px_rgba(0,188,212,0.2),0_0_100px_rgba(0,188,212,0.06)]">
-                <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
-                  {SLIDES.map((img, i) => (
-                    <img
-                      key={i}
-                      src={img}
-                      alt={`Proyecto ${i + 1}`}
-                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${i === indice ? "opacity-100" : "opacity-0"}`}
-                    />
-                  ))}
 
-                  {/* Dots */}
-                  <div className="absolute bottom-2.5 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
-                    {SLIDES.map((_, i) => (
-                      <button
-                        key={i}
-                        onClick={() => setIndice(i)}
-                        aria-label={`Proyecto ${i + 1}`}
-                        className={`h-1.5 w-1.5 rounded-full transition-colors duration-300 ${i === indice ? "bg-[#049db2]" : "bg-white/40"}`}
-                      />
-                    ))}
+
+                {/* Capas de borde  */}
+                <div className="absolute pointer-events-none rounded-[22px] border-r border-r-[rgba(4,158,178,0.1)] border-t border-t-[rgba(0,133,150,0.1)] border-b border-b-[rgba(0,133,150,0.28)] border-l border-l-[rgba(4,158,178,0.10)]"
+                  style={{ top: '-16.55px', bottom: '-16.55px', left: '-11.6px', right: '-8px', zIndex: 0 }} />
+
+                <div className="absolute pointer-events-none rounded-[34px] 
+                border-r border-r-[rgba(4,158,178,0.20)] border-l-border-l[rgba(4,158,178,10)]
+                 border-t border-t-[rgba(0,132,150,0.16)] border-b border-b-[rgba(0,133,150,0.28)]"
+                  style={{ inset: '-18px', zIndex: 0 }} />
+
+
+                {/* Bisel + Tarjeta */}
+                <div className="relative rounded-xl lg:rounded-[20px] p-[8px]"
+                  style={{ zIndex: 1 }}>
+                  <div className="relative overflow-hidden  rounded-[14px] lg:rounded-[14px]"
+                    style={{ boxShadow: '-10px 12px 20px rgba(4,157,178,0.6), -6px 8px 50px rgba(4,157,178,0.3), -3px 5px 90px rgba(4,157,178,0.15)' }}>
+                    <div className="relative w-full"
+                      style={{ paddingBottom: "65%" }}>
+                      {SLIDES.map((img, i) => (
+                        <img
+                          key={i}
+                          src={img}
+                          alt={`Proyecto ${i + 1}`}
+                          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${i === indice ? "opacity-100" : "opacity-0"}`}
+                        />
+                      ))}
+                      <div className="absolute bottom-2.5 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+                        {SLIDES.map((_, i) => (
+                          <button
+                            key={i}
+                            onClick={() => setIndice(i)}
+                            aria-label={`Proyecto ${i + 1}`}
+                            className={`h-1.5 w-1.5 rounded-full transition-colors duration-300 ${i === indice ? "bg-[#049db2]" : "bg-white/40"}`}
+                          />
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -183,7 +190,7 @@ export default function Hero() {
         </div>
 
         {/* Features */}
-        <div className="mt-16 grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-8">
+        <div className="mt-16 grid grid-cols-1 gap-6 md-flex  md:grid-cols-3 lg:gap-8 md:mt-20 md:pt-10 md:border-t md:border-white/[0.07]">
           {FEATURES.map((feature) => (
             <div key={feature.title} className="flex items-start gap-4">
               <div className="relative shrink-0 mt-0.5">

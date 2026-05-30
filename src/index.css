@@ -2,6 +2,7 @@
 
 @theme {
   --font-sans: "Oxanium", sans-serif;
+ 
 }
 
 @keyframes header-entrada {
@@ -46,6 +47,7 @@
 
 .card-flip-out { animation: card-flip-out 0.22s ease-in forwards; }
 .card-flip-in  { animation: card-flip-in  0.22s ease-out forwards; }
+
 
 @keyframes dots-pulse {
   0%, 100% { opacity: 1; }
@@ -164,3 +166,17 @@ main {
 #servicios { scroll-margin-top: 7.8rem; }
 #proyectos { scroll-margin-top: 7rem; }
 #contacto { scroll-margin-top: 1rem; }
+
+/* Reservaq widget: resetear alineación interna */
+#reservaq,
+#reservaq > div,
+#reservaq > div > div {
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  max-width: 100% !important;
+}
+
+
+
+

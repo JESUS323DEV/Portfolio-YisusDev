@@ -56,7 +56,7 @@ export default function Header() {
             {/* TOP BAR */}
             <header className="fixed top-0 left-0 w-full z-[100]">
                 <nav>
-                    <div className={`relative flex justify-between items-center px-6 py-5 border-b transition-all duration-[400ms] ${scrolled
+                    <div className={`relative flex justify-between  md:justify-around items-center px-6 py-5 border-b transition-all duration-[400ms] ${scrolled
                         ? 'bg-[rgba(13,16,21,0.92)] backdrop-blur-[12px] border-[rgba(0,83,94,0.218)]'
                         : 'bg-[rgba(13,16,21,0.75)] backdrop-blur-[8px] border-transparent'
                     }`}>
@@ -94,7 +94,7 @@ export default function Header() {
                         </button>
 
                         {/* Nav desktop */}
-                        <ul className="hidden lg:flex lg:flex-row lg:gap-8">
+                        <ul className="hidden lg:flex lg:flex-row lg:gap-5">
                             {navLinks.map(({ to, section, label }) => {
                                 const isActive = activeSection === section
                                 return (

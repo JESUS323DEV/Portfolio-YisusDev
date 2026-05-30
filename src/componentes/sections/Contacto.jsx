@@ -31,70 +31,96 @@ export default function Contacto() {
     <section id="contacto" className="bg-[#0d1015] py-20">
       <div className="mx-auto w-[90%] max-w-6xl">
 
+
         {/* Cabecera */}
         <div
           ref={headRef}
-          className="flex flex-col items-center text-center mb-10"
+          className="flex flex-col items-center text-center mb-10 lg:items-center lg:text-left lg:mb-12"
           style={{
             opacity: headInView ? 1 : 0,
             transform: headInView ? 'none' : 'translateY(24px)',
             transition: 'opacity 0.55s ease, transform 0.55s ease',
           }}
         >
-          <p className="text-[#049db2] text-xs font-semibold tracking-widest uppercase mb-3">
+          <p className="text-[#049db2] text-xs font-semibold tracking-widest uppercase mb-3 ">
             Contacto
           </p>
-          <h2 className="text-4xl font-extrabold text-white leading-tight mb-3">
+          <h2 className="text-4xl font-extrabold text-white leading-tight mb-3 lg:text-5xl xl:text-6xl">
             Hablemos<span className="text-[#049db2]">.</span>
           </h2>
-          <div className="h-0.5 w-10 bg-[#049db2] mb-5" />
-          <p className="text-white/75 text-base leading-relaxed max-w-xs">
-            Cuéntame tu proyecto y te respondo en menos de 24h.
+          <div className="h-0.5 w-10  bg-[#049db2] mb-5" />
+          <p className="text-white/75  leading-relaxed w-xs lg:w-lg text-center">
+            Cuéntame tu proyecto y te lo antes posible.
           </p>
         </div>
 
-        {/* Widget Reservaq + contacto directo */}
+
+        {/* Widget + contacto directo */}
         <div
           ref={bodyRef}
+          className="lg:grid lg:grid-cols-[1fr_350px] lg:gap-12 lg:items-start md:grid md:grid-cols-[1fr_300px] md:gap-10"
           style={{
             opacity: bodyInView ? 1 : 0,
             transform: bodyInView ? 'none' : 'translateY(24px)',
             transition: 'opacity 0.55s ease 0.1s, transform 0.55s ease 0.1s',
           }}
         >
-          <div id="reservaq" data-config={RESERVAQ_CONFIG.replace(/\n/g, '\\n')} />
+      
+            {/* Formulario */}
+            <div>
+              <div id="reservaq" data-config={RESERVAQ_CONFIG.replace(/\n/g, '\\n')} />
+            </div>
 
-          {/* Contacto directo */}
-          <div className="mt-10 flex flex-col items-center gap-4">
-          <p className="text-white/40 text-xs uppercase tracking-widest">O contáctame directamente</p>
-          <div className="flex flex-col gap-3 w-full">
-            <a
-              href="mailto:jtipian90@gmail.com"
-              className="flex items-center gap-3 p-4 rounded-xl border border-white/[0.07] bg-[rgba(255,255,255,0.02)] text-white/60 text-sm"
-            >
-              <Mail size={16} className="text-[#049db2] shrink-0" />
-              jtipian90@gmail.com
-            </a>
-            <a
-              href="https://www.instagram.com/jesussdev/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 p-4 rounded-xl border border-white/[0.07] bg-[rgba(255,255,255,0.02)] text-white/60 text-sm"
-            >
-              <img src={instagram} alt="instagram" className="w-4 h-4 shrink-0" />
-              @jesussdev
-            </a>
-            <a
-              href="https://wa.me/+34695078648"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 p-4 rounded-xl border border-white/[0.07] bg-[rgba(255,255,255,0.02)] text-white/60 text-sm"
-            >
-              <img src={whatsapp} alt="whatsapp" className="w-4 h-4 shrink-0" />
-              +34 695 078 648
-            </a>
+            {/* Contacto directo */}
+            <div className="mt-10 md:mt-31 ">
+
+              <div className="mb-6">
+                <p className="text-[#049db2] text-xs font-semibold tracking-widest uppercase mb-2">
+                  Contacto directo
+                </p>
+                
+              </div>
+
+              <div className="flex flex-col gap-3">
+                <a
+                  href="mailto:jtipian90@gmail.com"
+                  className="flex items-center gap-3 p-4 rounded-xl border border-white/[0.07] bg-[rgba(255,255,255,0.02)] text-white/60 text-sm hover:border-[rgba(4,157,178,0.3)] hover:text-white transition-colors duration-200"
+                >
+                  <Mail size={16} className="text-[#049db2] shrink-0" />
+                  jtipian90@gmail.com
+                </a>
+                <a
+                  href="https://www.instagram.com/jesussdev/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 p-4 rounded-xl border border-white/[0.07] bg-[rgba(255,255,255,0.02)] text-white/60 text-sm hover:border-[rgba(4,157,178,0.3)] hover:text-white transition-colors duration-200"
+                >
+                  <img src={instagram} alt="instagram" className="w-4 h-4 shrink-0" />
+                  @jesussdev
+                </a>
+                <a
+                  href="https://wa.me/+34695078648"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 p-4 rounded-xl border border-white/[0.07] bg-[rgba(255,255,255,0.02)] text-white/60 text-sm hover:border-[rgba(4,157,178,0.3)] hover:text-white transition-colors duration-200"
+                >
+                  <img src={whatsapp} alt="whatsapp" className="w-4 h-4 shrink-0" />
+                  +34 695 078 648
+                </a>
+              </div>
+
+              {/* Desktop: disponibilidad */}
+              <div className="hidden lg:block mt-6 p-4 rounded-xl border border-[rgba(4,157,178,0.15)] bg-[rgba(4,157,178,0.04)]">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="w-2 h-2 rounded-full bg-[#049db2] shrink-0" />
+                  <p className="text-[#049db2] text-xs font-semibold">Disponible para nuevos proyectos</p>
+                </div>
+                <p className="text-white/45 text-xs leading-relaxed">
+                  Si tienes una idea en mente, cuéntamela. Te preparo una propuesta sin compromiso.
+                </p>
+              
+            </div>
           </div>
-        </div>
         </div>
 
       </div>
