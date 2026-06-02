@@ -84,7 +84,7 @@ export default function FooterLayout() {
         </div>
 
         {/* Barra inferior */}
-        <div className="flex flex-col items-center gap-4 lg:flex-row lg:justify-between">
+        <div className="flex flex-col items-center gap-4 lg:justify-between">
           <p className="text-white/30 text-xs">© 2026 Jesús Dev. Todos los derechos reservados.</p>
           <div className="flex items-center">
             <div className="h-px w-10 bg-gradient-to-r from-transparent to-[#049db2]" />

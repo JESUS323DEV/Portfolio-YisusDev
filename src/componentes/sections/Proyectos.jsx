@@ -25,8 +25,8 @@ const PROJECTS = [
     titulo: 'Reservaq',
     descripcion: 'Plataforma de reservas para negocios locales. Tus clientes reservan desde una web personalizada o desde tu propia web, y tú gestionas horarios, servicios y solicitudes desde un único panel.',
     descripcionBack: [
-      'Nació para eliminar el "mándame un WhatsApp para reservar" de los negocios pequeños. El cliente rellena un formulario adaptado a cada negocio y la reserva llega directamente al panel del admin, sin intermediarios ni llamadas.',
-      'El panel detecta nuevas reservas automáticamente, permite confirmar, cancelar o eliminar con un clic, y archiva las pasadas al historial tras el tiempo configurado. Cada negocio tiene su propio slug, su propia config guardada en Supabase y su propio formulario con campos activables.',
+      'Reservaq ayuda a los negocios a dejar atrás las reservas por mensajes, llamadas o papel. Los clientes reservan desde un formulario adaptado a cada negocio y todas las solicitudes quedan organizadas en un panel privado.',
+      'Desde el panel puedes consultar, confirmar, cancelar y gestionar reservas en tiempo real. Cada negocio dispone de su propia configuración, horarios, servicios y formulario personalizado.',
     ],
     tags: [{ label: 'Proyecto personal', color: '#f59e0b' }],
     features: [
@@ -42,13 +42,12 @@ const PROJECTS = [
       'Soporte para consultas sin fecha además de reservas con slot',
       'Widget embebible en cualquier web externa',
     ],
-    stack: ['React', 'Vite', 'Supabase', 'CSS'],
-    stackBack: ['React', 'Vite', 'Supabase', 'Edge Functions', 'CSS'],
-    url: null,
+    stackBack: ['React', 'Vite', 'Supabase', 'CSS', 'Edge Functions', "JavaScript"],
+    url: 'https://reservaq.com/',
     imgDesktop: reservaMobile1,
     imgMobile: reservaMobile2,
-    proximamente: true,
-    overlay: true,
+    proximamente: false,
+    overlay: false,
     tipo: 'featured',
   },
   {
@@ -76,7 +75,7 @@ const PROJECTS = [
     numero: '02',
     titulo: 'Vanessa',
     descripcion: 'Web clara y estructurada para explicar servicios y facilitar el contacto directo por WhatsApp.',
-    descripcionLarga: 'Web profesional para psicopedagoga autónoma. El objetivo es mostrar sus servicios de forma clara y facilitar el contacto de nuevos clientes.',
+    descripcionLarga: 'Web profesional para Psicopedagoga autónoma. El objetivo es mostrar sus servicios de forma clara y facilitar el contacto de nuevos clientes.',
     tags: [{ label: 'Marca personal', color: '#8b5cf6' }],
     features: [
       'Secciones de servicios con diseño limpio',
@@ -140,7 +139,6 @@ const PROJECTS = [
     descripcionLarga: 'Lady Hungry nació como proyecto de aprendizaje de React y creció hasta convertirse en un juego idle completo y jugable.',
     tags: [
       { label: 'Proyecto personal', color: '#f59e0b' },
-      { label: 'Solo para móvil', color: '#f59e0b' },
     ],
     features: [
       'Minar oro y gestionar tres minas',
@@ -183,7 +181,7 @@ function Tags({ tags }) {
     <div className="flex flex-wrap gap-1 mb-3">
       {tags.map(t => (
         <span key={t.label} style={{ color: t.color, borderColor: t.color + '60' }}
-          className="text-[9px] border px-1.5 py-0.5 rounded-full whitespace-nowrap">{t.label}</span>
+          className="text-[9px] border-b-1 whitespace-nowrap">{t.label}</span>
       ))}
     </div>
   )
@@ -191,10 +189,10 @@ function Tags({ tags }) {
 
 function CTAs({ p, onFlip }) {
   return (
-    <div className="flex items-center justify-center gap-3 flex-wrap">
+    <div className="flex items-center justify-center lg:justify-start   gap-3 flex-wrap">
       <button onClick={onFlip}
         className="flex items-center gap-1.5 px-4 py-2 rounded bg-[#049db2] text-[#0d1015] text-xs font-semibold shadow-[0_0_14px_rgba(4,157,178,0.35)]">
-        Ver proyecto <ArrowRight size={12} />
+        Leer más <ArrowRight size={12} />
       </button>
       {p.proximamente ? (
         <span className="text-white/40 text-xs">Próximamente</span>
@@ -284,41 +282,48 @@ export default function Proyectos() {
                 <div className="col-start-1 row-start-1 p-4 lg:p-8 flex flex-col-reverse  border-1 lg:flex-row gap-4 lg:gap-8"
                   style={{ visibility: flipped[featuredIdx] ? 'hidden' : 'visible' }}>
                   <div className="flex-1 flex flex-col  lg:justify-center">
-                    <span className="text-[#049db2]/40 text-xs font-bold mb-2">{FEATURED.numero}</span>
-                    <h3 className="text-xl lg:text-3xl font-extrabold text-white leading-tight mb-2">{FEATURED.titulo}</h3>
+                    <h3 className="text-3xl lg:text-4xl font-extrabold text-white leading-tight mb-2">{FEATURED.titulo}</h3>
                     <Tags tags={FEATURED.tags} />
                     <p className="text-white/60 text-xs lg:text-sm leading-relaxed mb-4">{FEATURED.descripcion}</p>
+
+
+                    {/* LISTA FEATURED */}
                     <ul className="space-y-2 mb-5">
                       {FEATURED.features.map(f => (
-                        <li key={f} className="flex items-center gap-2 text-white/60 text-xs lg:text-sm">
-                          <CircleCheck size={13} className="text-[#049db2] shrink-0" />{f}
+                        <li key={f} className="flex items-start lg:items-center  gap-2 text-white/60 text-xs lg:text-sm">
+                          <CircleCheck size={13} className="text-[#049db2] mt-[2px] lg:mt-0  shrink-0" />{f}
                         </li>
                       ))}
                     </ul>
 
-                    <div className="flex flex-wrap gap-1.5 mb-5">
-                      {FEATURED.stack.map(s => <span key={s} className="text-[10px] lg:text-xs border border-white/15 text-white/40 px-2 py-0.5 rounded">{s}</span>)}
-                    </div>
-                    <div className='mt-auto'>
-                      <CTAs p={FEATURED} onFlip={() => startFlip(featuredIdx)} />
+                  
 
+                    {/* CTA */}
+                    <div className='mt-13'>
+                      <CTAs p={FEATURED} onFlip={() => startFlip(featuredIdx)} />
                     </div>
                   </div>
-                  <div className="rounded-xl overflow-hidden aspect-video lg:aspect-auto lg:flex-[1.2] lg:min-h-[300px]">
+
+                  <div className="rounded-xl overflow-hidden aspect-video lg:aspect-auto lg:flex-[1.2] lg:min-h-[300px] transition-transform duration-500 ease-out lg:hover:[transform:perspective(600px)_rotateY(-8deg)]">
                     <ImgOrPlaceholder src={FEATURED.imgDesktop} alt={FEATURED.titulo} overlay={FEATURED.overlay} />
                   </div>
+
                 </div>
 
                 {/* Vuelta featured */}
                 <div className="col-start-1 row-start-1 md:justify-center  p-4 md:p-8 flex flex-col gap-5"
                   style={{ visibility: flipped[featuredIdx] ? 'visible' : 'hidden' }}>
+
                   <div className="flex flex-col   md:flex-row gap-5 md:gap-10">
+
                     <div className="flex-1">
                       <h3 className="font-bold text-white text-xl lg:text-2xl mb-4">{FEATURED.titulo}</h3>
                       {(FEATURED.descripcionBack || []).map((par, idx) => (
                         <p key={idx} className="text-white/60 text-sm leading-relaxed mb-3">{par}</p>
                       ))}
                     </div>
+
+                    {/* Vuelta lista featured */}
                     <div className="flex-1">
                       <p className="text-[#049db2] text-[10px] font-semibold tracking-widest uppercase mb-3">Características técnicas</p>
                       <ul className="space-y-2.5 mb-5">
@@ -328,11 +333,16 @@ export default function Proyectos() {
                           </li>
                         ))}
                       </ul>
+
+                      {/* Vuelta SKILLS */}
                       <div className="flex flex-wrap gap-2">
                         {(FEATURED.stackBack || FEATURED.stack).map(s => <span key={s} className="text-xs border border-white/15 text-white/40 px-2.5 py-1 rounded">{s}</span>)}
                       </div>
                     </div>
+
                   </div>
+
+                  {/* Vuelta btn volver */}
                   <div className="flex items-center gap-3">
                     <button onClick={() => startFlip(featuredIdx)}
                       className="flex items-center gap-1.5 px-4 py-2 rounded border border-white/20 text-white/50 text-xs font-medium">
@@ -359,12 +369,16 @@ export default function Proyectos() {
 
                     <div className="col-start-1 row-start-1 flex flex-col h-full"
                       style={{ visibility: flipped[i] ? 'hidden' : 'visible' }}>
-                      <div className="overflow-hidden aspect-video">
-                        <ImgOrPlaceholder src={p.imgDesktop} alt={p.titulo} overlay={p.overlay} />
+                      <div className="overflow-hidden aspect-video relative group">
+                        <div className="w-full h-full transition-transform duration-500 ease-out group-hover:scale-105">
+                          <ImgOrPlaceholder src={p.imgDesktop} alt={p.titulo} overlay={p.overlay} />
+                        </div>
+                        <div className="absolute   flex items-center justify-center pointer-events-none">
+                         
+                        </div>
                       </div>
                       <div className="p-4 lg:p-5 flex flex-col flex-1">
-                        <span className="text-[#049db2]/40 text-xs font-bold">{p.numero}</span>
-                        <p className="font-bold text-white text-base lg:text-lg mt-0.5 mb-2">{p.titulo}</p>
+                        <p className="font-bold text-white text-base lg:text-2xl mt-0.5 mb-2">{p.titulo}</p>
                         <Tags tags={p.tags} />
                         <p className="text-white/50 text-xs leading-relaxed mb-4">{p.descripcion}</p>
                         <div className="mt-auto">
@@ -373,8 +387,9 @@ export default function Proyectos() {
                       </div>
                     </div>
 
-                    <div className="col-start-1 row-start-1 p-4 lg:p-5 flex flex-col justify-between"
+                    <div className="col-start-1  row-start-1 p-4 lg:p-5 flex flex-col justify-between"
                       style={{ visibility: flipped[i] ? 'visible' : 'hidden' }}>
+
                       <div>
                         <h3 className="font-bold text-white text-base mb-2">{p.titulo}</h3>
                         <p className="text-white/60 text-sm leading-relaxed mb-4">{p.descripcionLarga}</p>
@@ -385,10 +400,13 @@ export default function Proyectos() {
                             </li>
                           ))}
                         </ul>
+
                         <div className="flex flex-wrap gap-1.5">
                           {p.stack.map(s => <span key={s} className="text-[10px] border border-white/15 text-white/40 px-2 py-0.5 rounded">{s}</span>)}
                         </div>
+
                       </div>
+
                       <div className="flex items-center gap-2 mt-4">
                         <button onClick={() => startFlip(i)}
                           className="flex items-center gap-1.5 px-3 py-1.5 rounded border border-white/20 text-white/50 text-xs">
@@ -423,12 +441,15 @@ export default function Proyectos() {
 
                     <div className="col-start-1 row-start-1 p-4 lg:p-5 flex flex-col lg:flex-row gap-4 lg:gap-5 h-full"
                       style={{ visibility: flipped[i] ? 'hidden' : 'visible' }}>
-                      <div className="aspect-video lg:w-48 lg:aspect-auto lg:shrink-0 rounded-lg overflow-hidden">
-                        <ImgOrPlaceholder src={p.imgDesktop} alt={p.titulo} overlay={p.overlay} />
+                      <div className="aspect-video lg:w-48 lg:aspect-auto lg:shrink-0 rounded-lg overflow-hidden relative group">
+                        <div className="w-full h-full transition-transform duration-500 ease-out group-hover:scale-105">
+                          <ImgOrPlaceholder src={p.imgDesktop} alt={p.titulo} overlay={p.overlay} />
+                        </div>
+                        <div className="absolute  flex items-center justify-center pointer-events-none">
+                        </div>
                       </div>
                       <div className="flex-1 flex flex-col">
-                        <span className="text-[#049db2]/40 text-xs font-bold">{p.numero}</span>
-                        <p className="font-bold text-white text-base lg:text-lg mt-0.5 mb-2">{p.titulo}</p>
+                        <p className="font-bold text-white text-base lg:text-2xl mt-0.5 mb-2">{p.titulo}</p>
                         <Tags tags={p.tags} />
                         <p className="text-white/50 text-xs leading-relaxed mb-4">{p.descripcion}</p>
                         <div className="mt-auto">

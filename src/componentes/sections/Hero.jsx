@@ -128,10 +128,10 @@ export default function Hero() {
             style={{ transitionDelay: "150ms" }}
             className={`${anim} lg:flex-[2]`}
           >
-            <div className="relative flex items-center px-5 mr-4 md:mr-0 ">
+            <div className="relative flex items-center px-5 mr-4 md:mr-0 group">
 
               {/* Wrapper */}
-              <div className="flex-1 relative my-10 [transform:perspective(900px)_rotateY(-20deg)]">
+              <div className="flex-1 relative my-10 [transform:perspective(900px)_rotateY(-20deg)] transition-transform duration-1500 ease-out lg:group-hover:[transform:perspective(900px)_rotateY(0deg)]">
 
 
 
