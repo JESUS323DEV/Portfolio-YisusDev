@@ -66,7 +66,7 @@ export default function Contacto() {
         >
       
             {/* Contacto directo */}
-            <div className="mt-0 lg:mt-55 ">
+            <div className="mt-0 md:mt-35 ">
 
 
 
