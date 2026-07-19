@@ -49,6 +49,14 @@ const ScrollHandler = () => {
         hasScrolled.current = true;
       }, 100);
     }
+    if (pathname === "/contacto") {
+      setTimeout(() => {
+        document.getElementById("contacto")?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 100);
+    }
   }, [pathname]);
 
   return null;

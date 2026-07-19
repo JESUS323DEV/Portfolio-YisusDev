@@ -1,5 +1,6 @@
-import logo from "../../assets/logo-footer.png"
+import logo from "../../assets/logo-jesus.png"
 import { Link } from 'react-router-dom'
+import ScrollSections from '../../componentes/ScrollSections'
 import { BadgeCheck } from 'lucide-react'
 
 // NavBar reutilizada en header y footer de esta página
@@ -17,14 +18,13 @@ const NavBar = () => (
                     </Link>
                 </li>
                 <li>
-                    <a
-                        href="https://wa.me/+34695078648"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                    <Link
+                        to="/contacto"
+                        onClick={() => ScrollSections('contacto')}
                         className="border border-[var(--color-border)] border-b-[rgb(49,57,85)] py-3 px-4 rounded text-white text-sm [background:var(--bg-transparente)] shadow-[1px_1px_10px_rgba(0,255,255,0.118)]"
                     >
                         Contacto
-                    </a>
+                    </Link>
                 </li>
             </ul>
         </div>
@@ -98,8 +98,9 @@ function Presupuesto() {
                     </div>
 
                     {/* Cards de precios */}
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 w-[95%] mx-auto">
                     {CARDS.map((card) => (
-                        <div key={card.titulo} className="border border-[var(--color-border)] flex flex-col gap-8 text-left p-8 px-4 w-[95%] mx-auto rounded-lg">
+                        <div key={card.titulo} className="border border-[var(--color-border)] flex flex-col gap-8 text-left p-8 px-4 rounded-lg">
 
                             {/* Título + precio */}
                             <div className="flex flex-col justify-center items-center text-center gap-4">
@@ -110,7 +111,7 @@ function Presupuesto() {
                             </div>
 
                             {/* Lista de lo que incluye */}
-                            <div className="flex flex-col gap-4 w-[90%] mx-auto">
+                            <div className="flex flex-col gap-4 w-[90%] mx-auto flex-1">
                                 <ul className="flex flex-col justify-center items-start">
                                     {card.features.map(f => (
                                         <li key={f} className="text-white text-base flex gap-1.5 py-2">
@@ -141,13 +142,14 @@ function Presupuesto() {
                                 )}
 
                                 {/* Precios de extras comunes a todos los planes */}
-                                <div className="flex flex-col gap-4 border-t border-white/[0.07] pt-4">
+                                <div className="flex flex-col gap-4 border-t border-white/[0.07] pt-4 mt-auto">
                                     <small className="text-white leading-relaxed text-sm">Mantenimiento Web opcional: <span className="text-[#049db2]">25€/mes</span> o <span className="text-[#049db2]">300€/año</span></small>
-                                    <small className="text-white leading-relaxed text-sm">Dominio y hosting siempre a nombre del cliente. Alta y configuración de dominio y hosting: <span className="text-[#049db2]">100€ (pago único)</span></small>
+                                    <small className="text-white leading-relaxed text-sm">Dominio y hosting siempre a nombre del cliente. Alta y configuración de dominio y hosting: <span className="text-[#049db2]">Sin coste adicional</span> <span className="text-[10px] border border-[#f59e0b60] text-[#f59e0b] px-1.5 py-0.5 rounded">Oferta</span></small>
                                 </div>
                             </div>
                         </div>
                     ))}
+                    </div>
 
                 </div>
             </section>
