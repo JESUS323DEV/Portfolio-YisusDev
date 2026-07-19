@@ -8,7 +8,7 @@ const PASOS = [
     titulo: 'Hablamos',
     subtitulo: 'Entendemos tu negocio',
     texto: 'A partir de tu negocio, definimos qué necesitas y qué tiene que conseguir tu web.',
-    entregable: 'Propuesta y presupuesto claro',
+    entregable: 'Propuesta y presupuesto',
   },
   {
     icon: PenTool,
@@ -42,7 +42,7 @@ export default function ComoTrabajo() {
 
   return (
     <section id="aboutMe" className="bg-[#0d1015] py-20 lg:py-32">
-      <div className="mx-auto w-[90%] max-w-6xl">
+      <div className="mx-auto w-[90%] max-w-6xl ">
 
         {/* Cabecera */}
         <div
@@ -107,7 +107,7 @@ export default function ComoTrabajo() {
               </div>
 
               {/* Contenido del paso */}
-              <div className={`flex-1 ${i < PASOS.length - 1 ? 'pb-12 lg:pb-0' : ''} lg:pr-16`}>
+              <div className={`flex-1 ${i < PASOS.length - 1 ? 'pb-12 lg:pb-0' : ''} lg:pr-16 `}>
 
                 {/* Icono + título — solo en mobile */}
                 <div className="flex items-start gap-4 mb-4 lg:hidden">
@@ -128,7 +128,6 @@ export default function ComoTrabajo() {
 
                 <p className="text-white/60 text-sm leading-relaxed mb-8">{paso.texto}</p>
 
-                <div className="border-t border-white/[0.07] mb-6" />
 
                 {/* Entregable del paso */}
                 <div className="flex items-start gap-2.5">
@@ -139,6 +138,7 @@ export default function ComoTrabajo() {
                     </p>
                     <p className="text-white/55 text-sm">{paso.entregable}.</p>
                   </div>
+
                 </div>
 
               </div>
