@@ -2,6 +2,7 @@ import logo from "../../assets/logo-footer.png"
 import { Link } from 'react-router-dom'
 import { BadgeCheck } from 'lucide-react'
 
+// NavBar reutilizada en header y footer de esta página
 const NavBar = () => (
     <div className="[background:var(--bg-normal)] py-8">
         <div className="flex justify-center items-center gap-8">
@@ -96,7 +97,7 @@ function Presupuesto() {
                         <p className="text-white">Webs claras y pensadas para negocios reales.</p>
                     </div>
 
-                    {/* Cards */}
+                    {/* Cards de precios */}
                     {CARDS.map((card) => (
                         <div key={card.titulo} className="border border-[var(--color-border)] flex flex-col gap-8 text-left p-8 px-4 w-[95%] mx-auto rounded-lg">
 
@@ -108,7 +109,7 @@ function Presupuesto() {
                                 </div>
                             </div>
 
-                            {/* Features */}
+                            {/* Lista de lo que incluye */}
                             <div className="flex flex-col gap-4 w-[90%] mx-auto">
                                 <ul className="flex flex-col justify-center items-start">
                                     {card.features.map(f => (
@@ -119,6 +120,7 @@ function Presupuesto() {
                                     ))}
                                 </ul>
 
+                                {/* Casos de uso específicos — solo en el plan más completo */}
                                 {card.recomendadoPara && (
                                     <ul className="flex flex-col justify-center items-start">
                                         <h4 className="text-[1.2rem] text-[#049db2] [text-shadow:var(--text-shadow)] text-center py-4 w-[80%] mx-auto">Recomendado para:</h4>
@@ -131,13 +133,14 @@ function Presupuesto() {
                                     </ul>
                                 )}
 
+                                {/* Descripción del perfil ideal — solo en planes con recomendado */}
                                 {card.recomendado && (
                                     <div className="bg-[rgba(0,188,212,0.05)] border border-[rgba(0,188,212,0.2)] rounded p-3">
                                         <p className="text-white/70 text-sm w-[90%] mx-auto leading-relaxed">{card.recomendado}</p>
                                     </div>
                                 )}
 
-                                {/* Extras */}
+                                {/* Precios de extras comunes a todos los planes */}
                                 <div className="flex flex-col gap-4 border-t border-white/[0.07] pt-4">
                                     <small className="text-white leading-relaxed text-sm">Mantenimiento Web opcional: <span className="text-[#049db2]">25€/mes</span> o <span className="text-[#049db2]">300€/año</span></small>
                                     <small className="text-white leading-relaxed text-sm">Dominio y hosting siempre a nombre del cliente. Alta y configuración de dominio y hosting: <span className="text-[#049db2]">100€ (pago único)</span></small>

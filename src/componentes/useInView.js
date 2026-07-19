@@ -18,8 +18,8 @@ export default function useInView(threshold = 0.12) {
       { threshold }
     )
 
-    // Double RAF: ensures the browser paints the initial state (opacity 0)
-    // before we start observing, so the CSS transition actually plays
+    // Dos RAF seguidos para que el navegador pinte el estado inicial (opacity 0)
+    // antes de empezar a observar, así la transición CSS arranca bien
     let raf1, raf2
     raf1 = requestAnimationFrame(() => {
       raf2 = requestAnimationFrame(() => {

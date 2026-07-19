@@ -31,6 +31,7 @@ export default function Hero() {
   const [indice, setIndice] = useState(0)
   const [loaded, setLoaded] = useState(false)
 
+  // Autoplay del slider cada 3.5 segundos
   useEffect(() => {
     const interval = setInterval(() => {
       setIndice(prev => (prev + 1) % SLIDES.length)
@@ -38,6 +39,7 @@ export default function Hero() {
     return () => clearInterval(interval)
   }, [])
 
+  // Dos RAF para que el navegador pinte el estado inicial antes de activar las transiciones de entrada
   useEffect(() => {
     let raf2
     const raf1 = requestAnimationFrame(() => {
@@ -48,31 +50,28 @@ export default function Hero() {
 
   const next = () => setIndice(prev => (prev + 1) % SLIDES.length)
 
+  // anim se aplica a cada bloque para que entre con fade + slide desde abajo
   const anim = `transition-all duration-700 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`
 
   return (
     <section id="hero" className="relative overflow-hidden bg-[#0d1015] pt-10 ">
 
-      {/* Dot grid */}
+      {/* Fondo de puntos animados */}
       <div className="absolute inset-0 z-0 pointer-events-none [background-image:radial-gradient(circle,rgba(139,241,255,0.05)_1px,transparent_1px)] [background-size:28px_28px] animate-[dots-pulse_3s_ease-in-out_infinite]" />
 
-      {/* Glow central */}
+      {/* Glow central que respira */}
       <div className="absolute inset-0 z-0 pointer-events-none [background:radial-gradient(ellipse_at_50%_40%,rgba(0,69,76,0.32)_0%,transparent_65%)] animate-[glow-pulse_7s_ease-in-out_infinite]" />
-
 
       <div className="relative z-10 mx-auto w-[90%] max-w-6xl pt-10 pb-20 lg:pt-20 lg:pb-28">
 
-        {/* Layout principal: columna en mobile, fila en desktop */}
-        <div className="flex flex-col gap-10 lg:flex-row lg:items-center md:grid  md:grid-cols-2 lg:gap-16  ">
+        {/* Layout: columna en mobile, grid 2 col en tablet, fila en desktop */}
+        <div className="flex flex-col gap-10 lg:flex-row lg:items-center md:grid md:grid-cols-2 lg:gap-16">
 
           {/* Bloque izquierdo: texto */}
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left lg:flex-1">
 
-            {/* Badge */}
-            <div
-              style={{ transitionDelay: "0ms" }}
-              className={`${anim} flex items-center gap-2 mb-5`}
-            >
+            {/* Badge superior */}
+            <div style={{ transitionDelay: "0ms" }} className={`${anim} flex items-center gap-2 mb-5`}>
               <span className="w-6 h-px bg-[#049db2]" />
               <span className="text-xs font-semibold tracking-[0.22em] uppercase text-[#049db2]">
                 Desarrollo web
@@ -89,7 +88,7 @@ export default function Hero() {
               {" "}de trabajo.
             </h1>
 
-            {/* Divisor */}
+            {/* Divisor solo visible en mobile */}
             <div className="h-0.5 w-10 bg-[#049db2] mb-5 lg:hidden" />
 
             {/* Subtítulo */}
@@ -100,7 +99,7 @@ export default function Hero() {
               Páginas web a medida para negocios locales, portfolios y marcas personales.
             </p>
 
-            {/* CTAs */}
+            {/* CTAs principales */}
             <div
               style={{ transitionDelay: "420ms" }}
               className={`${anim} flex gap-3 w-full lg:w-auto`}
@@ -123,35 +122,27 @@ export default function Hero() {
 
           </div>
 
-          {/* Bloque derecho: slider */}
-          <div
-            style={{ transitionDelay: "150ms" }}
-            className={`${anim} lg:flex-[2]`}
-          >
+          {/* Bloque derecho: slider con perspectiva 3D */}
+          <div style={{ transitionDelay: "150ms" }} className={`${anim} lg:flex-[2]`}>
             <div className="relative flex items-center px-5 mr-4 md:mr-0 group">
 
-              {/* Wrapper */}
+              {/* Wrapper con rotación 3D — se endereza al hacer hover en desktop */}
               <div className="flex-1 relative my-10 [transform:perspective(900px)_rotateY(-20deg)] transition-transform duration-1500 ease-out lg:group-hover:[transform:perspective(900px)_rotateY(0deg)]">
 
-
-
-                {/* Capas de borde  */}
+                {/* Capa de borde interior */}
                 <div className="absolute pointer-events-none rounded-[22px] border-r border-r-[rgba(4,158,178,0.1)] border-t border-t-[rgba(0,133,150,0.1)] border-b border-b-[rgba(0,133,150,0.28)] border-l border-l-[rgba(4,158,178,0.10)]"
                   style={{ top: '-16.55px', bottom: '-16.55px', left: '-11.6px', right: '-8px', zIndex: 0 }} />
 
-                <div className="absolute pointer-events-none rounded-[34px] 
-                border-r border-r-[rgba(4,158,178,0.20)] border-l-border-l[rgba(4,158,178,10)]
-                 border-t border-t-[rgba(0,132,150,0.16)] border-b border-b-[rgba(0,133,150,0.28)]"
+                {/* Capa de borde exterior */}
+                <div className="absolute pointer-events-none rounded-[34px] border-r border-r-[rgba(4,158,178,0.20)] border-l-border-l[rgba(4,158,178,10)] border-t border-t-[rgba(0,132,150,0.16)] border-b border-b-[rgba(0,133,150,0.28)]"
                   style={{ inset: '-18px', zIndex: 0 }} />
 
-
-                {/* Bisel + Tarjeta */}
-                <div className="relative rounded-xl lg:rounded-[20px] p-[8px]"
-                  style={{ zIndex: 1 }}>
-                  <div className="relative overflow-hidden  rounded-[14px] lg:rounded-[14px]"
+                {/* Tarjeta con sombra de color */}
+                <div className="relative rounded-xl lg:rounded-[20px] p-[8px]" style={{ zIndex: 1 }}>
+                  <div className="relative overflow-hidden rounded-[14px] lg:rounded-[14px]"
                     style={{ boxShadow: '-10px 12px 20px rgba(4,157,178,0.6), -6px 8px 50px rgba(4,157,178,0.3), -3px 5px 90px rgba(4,157,178,0.15)' }}>
-                    <div className="relative w-full"
-                      style={{ paddingBottom: "65%" }}>
+                    {/* paddingBottom en % mantiene el ratio sin fijar altura */}
+                    <div className="relative w-full" style={{ paddingBottom: "65%" }}>
                       {SLIDES.map((img, i) => (
                         <img
                           key={i}
@@ -160,6 +151,7 @@ export default function Hero() {
                           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${i === indice ? "opacity-100" : "opacity-0"}`}
                         />
                       ))}
+                      {/* Dots de navegación del slider */}
                       <div className="absolute bottom-2.5 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
                         {SLIDES.map((_, i) => (
                           <button
@@ -175,7 +167,7 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* Next */}
+              {/* Botón siguiente del slider */}
               <button
                 onClick={next}
                 aria-label="Proyecto siguiente"
@@ -189,8 +181,8 @@ export default function Hero() {
 
         </div>
 
-        {/* Features */}
-        <div className="mt-16 grid grid-cols-1 gap-6 md-flex  md:grid-cols-3 lg:gap-8 md:mt-20 md:pt-10 md:border-t md:border-white/[0.07]">
+        {/* Features — en tablet y desktop aparecen en fila con borde superior */}
+        <div className="mt-16 grid grid-cols-1 gap-6 md-flex md:grid-cols-3 lg:gap-8 md:mt-20 md:pt-10 md:border-t md:border-white/[0.07]">
           {FEATURES.map((feature) => (
             <div key={feature.title} className="flex items-start gap-4">
               <div className="relative shrink-0 mt-0.5">
@@ -207,7 +199,7 @@ export default function Hero() {
 
       </div>
 
-      {/* Fade hacia la siguiente sección */}
+      {/* Gradiente de transición hacia la sección siguiente */}
       <div className="absolute bottom-0 left-0 w-full h-28 bg-gradient-to-b from-transparent to-[#0d1015] z-10 pointer-events-none" />
 
     </section>

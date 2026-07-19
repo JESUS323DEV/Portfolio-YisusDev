@@ -27,11 +27,11 @@ export default function FooterLayout() {
         }}
       >
 
-        {/* Fila principal */}
+        {/* Fila principal — columna en mobile, fila en tablet+ */}
         <div className="flex flex-col items-center gap-8 pb-8 mb-6 border-b border-white/[0.06] md:flex-row md:items-start md:justify-between">
 
-          {/* Logo + tagline + legal */}
-          <div className="flex flex-col items-center  md:max-w-[220px] lg:max-w-[350px] ">
+          {/* Logo + tagline + enlaces legales */}
+          <div className="flex flex-col items-center md:max-w-[220px] lg:max-w-[350px]">
             <img src={logo} alt="Jesús Dev" className="w-14 mx-auto lg:w-12 mb-4" />
             <p className="text-white/60 text-sm leading-relaxed mb-4 text-center lg:text-left">
               Páginas web <span className="text-[#049db2]">claras, rápidas</span> y adaptadas a tu negocio
@@ -43,7 +43,7 @@ export default function FooterLayout() {
             </div>
           </div>
 
-          {/* Navegación */}
+          {/* Navegación — 2 columnas en mobile, lista vertical en tablet+ */}
           <div>
             <p className="text-white/30 text-[10px] font-semibold tracking-widest uppercase mb-4 text-center lg:text-left">Navegación</p>
             <ul className="grid grid-cols-2 gap-x-8 gap-y-3 md:flex md:flex-col md:gap-3">
@@ -62,7 +62,7 @@ export default function FooterLayout() {
             </ul>
           </div>
 
-          {/* Conectemos */}
+          {/* Redes y contacto directo */}
           <div className="flex flex-col items-center lg:items-start">
             <p className="text-white/30 text-[10px] font-semibold tracking-widest uppercase mb-4">Conectemos</p>
             <div className="flex gap-5 mb-4">
@@ -83,7 +83,7 @@ export default function FooterLayout() {
 
         </div>
 
-        {/* Barra inferior */}
+        {/* Barra inferior: copyright + decoración central */}
         <div className="flex flex-col items-center gap-4 lg:justify-between">
           <p className="text-white/30 text-xs">© 2026 Jesús Dev. Todos los derechos reservados.</p>
           <div className="flex items-center">

@@ -164,7 +164,7 @@ const PERSONAL = PROJECTS.filter(p => p.tipo === 'personal')
 function ImgOrPlaceholder({ src, alt, overlay = false }) {
   if (src) return (
     <div className="relative w-full h-full">
-      <img src={src} alt={alt} className="w-full h-full object-cover lg:object-top" />
+      <img src={src} alt={alt} className="w-full h-full object-cover lg:object-[35%_center]" />
       {overlay && <div className="absolute inset-0 bg-[rgba(13,16,21,0.10)]" />}
     </div>
   )
@@ -215,13 +215,16 @@ export default function Proyectos() {
   const [cardsRef, cardsInView] = useInView(0.05)
 
   const startFlip = (i) => {
+    // Si ya hay una animación en curso, ignorar el click
     if (animPhase[i]) return
     setAnimPhase(prev => prev.map((v, idx) => idx === i ? 'out' : v))
   }
 
   const onAnimEnd = (e, i) => {
+    // Solo reaccionar al evento del contenedor, no de los hijos
     if (e.target !== e.currentTarget) return
     if (animPhase[i] === 'out') {
+      // Al terminar de salir, cambiar el contenido y animar la entrada
       setFlipped(prev => prev.map((v, idx) => idx === i ? !v : v))
       setAnimPhase(prev => prev.map((v, idx) => idx === i ? 'in' : v))
     } else {
@@ -271,51 +274,53 @@ export default function Proyectos() {
 
         <div ref={cardsRef}>
 
-          {/* Featured-RESVARQ */}
+          {/* --- FEATURED: Reservaq --- */}
           {FEATURED && (
+            // cardAnim aplica la clase CSS de animación de entrada/salida
             <div className={`rounded-xl border border-white/[0.07] bg-[rgba(255,255,255,0.02)] overflow-hidden mb-6 ${cardAnim(featuredIdx)}`}
               onAnimationEnd={(e) => onAnimEnd(e, featuredIdx)}
               style={{ opacity: cardsInView ? 1 : 0, transition: 'opacity 0.55s ease' }}>
+
+              {/* grid de una sola celda: frente y vuelta se superponen en col-start-1 row-start-1 */}
               <div className="grid">
 
-                {/* Frente featured */}
-                <div className="col-start-1 row-start-1 p-4 lg:p-8 flex flex-col-reverse  border-1 lg:flex-row gap-4 lg:gap-8"
+                {/* Frente featured — en mobile el texto va debajo de la imagen (flex-col-reverse) */}
+                <div className="col-start-1 row-start-1 p-4 lg:p-8 flex flex-col-reverse border-1 lg:flex-row gap-4 lg:gap-8"
                   style={{ visibility: flipped[featuredIdx] ? 'hidden' : 'visible' }}>
-                  <div className="flex-1 flex flex-col  lg:justify-center">
+                  <div className="flex-1 flex flex-col lg:justify-center">
                     <h3 className="text-3xl lg:text-4xl font-extrabold text-white leading-tight mb-2">{FEATURED.titulo}</h3>
                     <Tags tags={FEATURED.tags} />
                     <p className="text-white/60 text-xs lg:text-sm leading-relaxed mb-4">{FEATURED.descripcion}</p>
 
-
-                    {/* LISTA FEATURED */}
+                    {/* Lista de features del frente */}
                     <ul className="space-y-2 mb-5">
                       {FEATURED.features.map(f => (
-                        <li key={f} className="flex items-start lg:items-center  gap-2 text-white/60 text-xs lg:text-sm">
-                          <CircleCheck size={13} className="text-[#049db2] mt-[2px] lg:mt-0  shrink-0" />{f}
+                        <li key={f} className="flex items-start lg:items-center gap-2 text-white/60 text-xs lg:text-sm">
+                          <CircleCheck size={13} className="text-[#049db2] mt-[2px] lg:mt-0 shrink-0" />{f}
                         </li>
                       ))}
                     </ul>
 
-                  
-
-                    {/* CTA */}
+                    {/* CTAs del frente */}
                     <div className='mt-13'>
                       <CTAs p={FEATURED} onFlip={() => startFlip(featuredIdx)} />
                     </div>
                   </div>
 
+                  {/* Imagen con efecto 3D al hover en desktop */}
                   <div className="rounded-xl overflow-hidden aspect-video lg:aspect-auto lg:flex-[1.2] lg:min-h-[300px] transition-transform duration-500 ease-out lg:hover:[transform:perspective(600px)_rotateY(-8deg)]">
                     <ImgOrPlaceholder src={FEATURED.imgDesktop} alt={FEATURED.titulo} overlay={FEATURED.overlay} />
                   </div>
 
                 </div>
 
-                {/* Vuelta featured */}
-                <div className="col-start-1 row-start-1 md:justify-center  p-4 md:p-8 flex flex-col gap-5"
+                {/* Vuelta featured — misma celda del grid, controlada por visibility */}
+                <div className="col-start-1 row-start-1 md:justify-center p-4 md:p-8 flex flex-col gap-5"
                   style={{ visibility: flipped[featuredIdx] ? 'visible' : 'hidden' }}>
 
-                  <div className="flex flex-col   md:flex-row gap-5 md:gap-10">
+                  <div className="flex flex-col md:flex-row gap-5 md:gap-10">
 
+                    {/* Descripción técnica */}
                     <div className="flex-1">
                       <h3 className="font-bold text-white text-xl lg:text-2xl mb-4">{FEATURED.titulo}</h3>
                       {(FEATURED.descripcionBack || []).map((par, idx) => (
@@ -323,7 +328,7 @@ export default function Proyectos() {
                       ))}
                     </div>
 
-                    {/* Vuelta lista featured */}
+                    {/* Features técnicas + stack */}
                     <div className="flex-1">
                       <p className="text-[#049db2] text-[10px] font-semibold tracking-widest uppercase mb-3">Características técnicas</p>
                       <ul className="space-y-2.5 mb-5">
@@ -333,8 +338,7 @@ export default function Proyectos() {
                           </li>
                         ))}
                       </ul>
-
-                      {/* Vuelta SKILLS */}
+                      {/* Tecnologías usadas */}
                       <div className="flex flex-wrap gap-2">
                         {(FEATURED.stackBack || FEATURED.stack).map(s => <span key={s} className="text-xs border border-white/15 text-white/40 px-2.5 py-1 rounded">{s}</span>)}
                       </div>
@@ -342,7 +346,7 @@ export default function Proyectos() {
 
                   </div>
 
-                  {/* Vuelta btn volver */}
+                  {/* Botón volver al frente */}
                   <div className="flex items-center gap-3">
                     <button onClick={() => startFlip(featuredIdx)}
                       className="flex items-center gap-1.5 px-4 py-2 rounded border border-white/20 text-white/50 text-xs font-medium">
@@ -355,9 +359,9 @@ export default function Proyectos() {
             </div>
           )}
 
-          {/* Otras webs */}
+          {/* --- OTRAS WEBS: grid 3 columnas en md+ --- */}
           <p className="text-white/30 text-[10px] font-semibold tracking-widest uppercase mb-4">Otras webs</p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-2 lg:gap-3 mb-8">
             {WEBS.map((p) => {
               const i = PROJECTS.indexOf(p)
               return (
@@ -367,29 +371,29 @@ export default function Proyectos() {
                   style={{ opacity: cardsInView ? 1 : 0, transition: `opacity 0.55s ease ${i * 100}ms` }}>
                   <div className="grid h-full">
 
+                    {/* Frente: imagen + info */}
                     <div className="col-start-1 row-start-1 flex flex-col h-full"
                       style={{ visibility: flipped[i] ? 'hidden' : 'visible' }}>
                       <div className="overflow-hidden aspect-video relative group">
+                        {/* Zoom suave al hacer hover */}
                         <div className="w-full h-full transition-transform duration-500 ease-out group-hover:scale-105">
                           <ImgOrPlaceholder src={p.imgDesktop} alt={p.titulo} overlay={p.overlay} />
-                        </div>
-                        <div className="absolute   flex items-center justify-center pointer-events-none">
-                         
                         </div>
                       </div>
                       <div className="p-4 lg:p-5 flex flex-col flex-1">
                         <p className="font-bold text-white text-base lg:text-2xl mt-0.5 mb-2">{p.titulo}</p>
                         <Tags tags={p.tags} />
                         <p className="text-white/50 text-xs leading-relaxed mb-4">{p.descripcion}</p>
+                        {/* mt-auto empuja los CTAs al fondo de la card */}
                         <div className="mt-auto">
                           <CTAs p={p} onFlip={() => startFlip(i)} />
                         </div>
                       </div>
                     </div>
 
-                    <div className="col-start-1  row-start-1 p-4 lg:p-5 flex flex-col justify-between"
+                    {/* Vuelta: detalle técnico */}
+                    <div className="col-start-1 row-start-1 p-4 md:p-0 lg:p-5 flex flex-col justify-between"
                       style={{ visibility: flipped[i] ? 'visible' : 'hidden' }}>
-
                       <div>
                         <h3 className="font-bold text-white text-base mb-2">{p.titulo}</h3>
                         <p className="text-white/60 text-sm leading-relaxed mb-4">{p.descripcionLarga}</p>
@@ -400,13 +404,11 @@ export default function Proyectos() {
                             </li>
                           ))}
                         </ul>
-
+                        {/* Stack de tecnologías */}
                         <div className="flex flex-wrap gap-1.5">
                           {p.stack.map(s => <span key={s} className="text-[10px] border border-white/15 text-white/40 px-2 py-0.5 rounded">{s}</span>)}
                         </div>
-
                       </div>
-
                       <div className="flex items-center gap-2 mt-4">
                         <button onClick={() => startFlip(i)}
                           className="flex items-center gap-1.5 px-3 py-1.5 rounded border border-white/20 text-white/50 text-xs">
@@ -427,7 +429,7 @@ export default function Proyectos() {
             })}
           </div>
 
-          {/* Proyectos personales */}
+          {/* --- PROYECTOS PERSONALES: grid 2 columnas en md+ --- */}
           <p className="text-white/30 text-[10px] font-semibold tracking-widest uppercase mb-4">Proyectos personales</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {PERSONAL.map((p) => {
@@ -439,13 +441,12 @@ export default function Proyectos() {
                   style={{ opacity: cardsInView ? 1 : 0, transition: `opacity 0.55s ease ${i * 100}ms` }}>
                   <div className="grid h-full">
 
+                    {/* Frente: imagen lateral en desktop, arriba en mobile */}
                     <div className="col-start-1 row-start-1 p-4 lg:p-5 flex flex-col lg:flex-row gap-4 lg:gap-5 h-full"
                       style={{ visibility: flipped[i] ? 'hidden' : 'visible' }}>
                       <div className="aspect-video lg:w-48 lg:aspect-auto lg:shrink-0 rounded-lg overflow-hidden relative group">
                         <div className="w-full h-full transition-transform duration-500 ease-out group-hover:scale-105">
                           <ImgOrPlaceholder src={p.imgDesktop} alt={p.titulo} overlay={p.overlay} />
-                        </div>
-                        <div className="absolute  flex items-center justify-center pointer-events-none">
                         </div>
                       </div>
                       <div className="flex-1 flex flex-col">
@@ -458,6 +459,7 @@ export default function Proyectos() {
                       </div>
                     </div>
 
+                    {/* Vuelta: detalle técnico */}
                     <div className="col-start-1 row-start-1 p-4 lg:p-5 flex flex-col justify-between"
                       style={{ visibility: flipped[i] ? 'visible' : 'hidden' }}>
                       <div>

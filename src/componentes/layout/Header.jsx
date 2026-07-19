@@ -120,6 +120,7 @@ export default function Header() {
             </header>
 
             {/* MENÚ MOBILE — overlay full screen */}
+            {/* inert bloquea el foco en los elementos ocultos cuando el menú está cerrado */}
             <div className={`fixed inset-0 z-[200] flex flex-col [background:var(--bg-normal)] overflow-y-auto lg:hidden transition-transform duration-[320ms] ease-in-out ${open ? 'translate-x-0 nav-open' : 'translate-x-full'}`}
                 inert={!open}
             >

@@ -66,9 +66,10 @@ export default function ComoTrabajo() {
           </p>
         </div>
 
-        {/* Timeline */}
+        {/* Timeline — columna en mobile, fila en desktop */}
         <div ref={timelineRef} className="flex flex-col lg:flex-row">
           {PASOS.map((paso, i) => (
+            // Cada paso entra con un delay escalonado según su índice
             <div
               key={i}
               className="flex gap-5 lg:flex-col lg:flex-1 lg:gap-0"
@@ -79,7 +80,7 @@ export default function ComoTrabajo() {
               }}
             >
 
-              {/* MOBILE: número + línea vertical */}
+              {/* MOBILE: número + punto + línea vertical que conecta pasos */}
               <div className="flex flex-col items-center w-8 shrink-0 lg:hidden">
                 <span className="text-white/30 text-sm font-bold leading-none mb-2">{paso.numero}</span>
                 <div className="h-2 w-2 rounded-full bg-[#049db2] shrink-0" />
@@ -88,7 +89,7 @@ export default function ComoTrabajo() {
                 )}
               </div>
 
-              {/* DESKTOP: número + icono + línea horizontal */}
+              {/* DESKTOP: número + icono + línea horizontal que conecta pasos */}
               <div className="hidden lg:flex lg:items-center lg:mb-12">
                 <div className="flex flex-col items-start shrink-0">
                   <span className="text-[#049db2] text-xs font-bold tracking-widest mb-3">{paso.numero}</span>
@@ -96,6 +97,7 @@ export default function ComoTrabajo() {
                     <paso.icon size={22} />
                   </div>
                 </div>
+                {/* La línea no se renderiza en el último paso */}
                 {i < PASOS.length - 1 && (
                   <div className="flex-1 flex items-center ml-4" style={{ marginTop: '20px' }}>
                     <div className="flex-1 h-px bg-[rgba(0,188,212,0.25)]" />
@@ -104,21 +106,21 @@ export default function ComoTrabajo() {
                 )}
               </div>
 
-              {/* Contenido */}
+              {/* Contenido del paso */}
               <div className={`flex-1 ${i < PASOS.length - 1 ? 'pb-12 lg:pb-0' : ''} lg:pr-16`}>
 
-                {/* Mobile: icono + título */}
+                {/* Icono + título — solo en mobile */}
                 <div className="flex items-start gap-4 mb-4 lg:hidden">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-[rgba(0,188,212,0.4)] bg-[rgba(0,188,212,0.06)] text-[#049db2]">
                     <paso.icon size={22} />
                   </div>
                   <div className="pt-1">
-                    <p className="font-bold text-white text-lg  leading-tight">{paso.titulo}</p>
+                    <p className="font-bold text-white text-lg leading-tight">{paso.titulo}</p>
                     <p className="text-[#049db2] text-sm">{paso.subtitulo}</p>
                   </div>
                 </div>
 
-                {/* Desktop: título */}
+                {/* Título — solo en desktop */}
                 <div className="hidden lg:block mb-4">
                   <p className="font-bold text-white text-xl lg:text-2xl leading-tight">{paso.titulo}</p>
                   <p className="text-[#049db2] text-sm mt-1">{paso.subtitulo}</p>
@@ -128,6 +130,7 @@ export default function ComoTrabajo() {
 
                 <div className="border-t border-white/[0.07] mb-6" />
 
+                {/* Entregable del paso */}
                 <div className="flex items-start gap-2.5">
                   <CircleCheck size={15} className="text-[#049db2] shrink-0 mt-0.5" />
                   <div>

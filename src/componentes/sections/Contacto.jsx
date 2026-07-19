@@ -10,6 +10,7 @@ export default function Contacto() {
   const [bodyRef, bodyInView] = useInView(0.05)
 
   useEffect(() => {
+    // El CSS solo se carga una vez aunque el componente se monte varias veces
     if (!document.getElementById('reservaq-css')) {
       const link = document.createElement('link')
       link.rel = 'stylesheet'
@@ -18,6 +19,7 @@ export default function Contacto() {
       document.head.appendChild(link)
     }
 
+    // El script se elimina y se vuelve a insertar para forzar la reinicialización del widget
     const old = document.getElementById('reservaq-js')
     if (old) old.remove()
     const script = document.createElement('script')

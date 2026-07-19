@@ -18,6 +18,7 @@ export default function useActiveSection() {
                     }
                 },
                 {
+                    // La sección se activa cuando entra en la franja central del viewport
                     rootMargin: '-10% 0px -80% 0px',
                     threshold: 0
                 }

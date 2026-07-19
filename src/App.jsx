@@ -31,6 +31,7 @@ const HomeLayout = () => (
 
 const ScrollHandler = () => {
   const { pathname } = useLocation();
+  // hasScrolled evita que el scroll a #proyectos se dispare más de una vez por visita
   const hasScrolled = useRef(false);
 
   useEffect(() => {
@@ -39,6 +40,7 @@ const ScrollHandler = () => {
       return;
     }
     if (pathname === "/proyectos" && !hasScrolled.current) {
+      // Pequeño delay para que el DOM esté pintado antes de hacer scroll
       setTimeout(() => {
         document.getElementById("proyectos")?.scrollIntoView({
           behavior: "smooth",
