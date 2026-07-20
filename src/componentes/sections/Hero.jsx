@@ -148,6 +148,8 @@ export default function Hero() {
                           key={i}
                           src={img}
                           alt={`Proyecto ${i + 1}`}
+                          fetchPriority={i === 0 ? "high" : "low"}
+                          loading={i === 0 ? "eager" : "lazy"}
                           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${i === indice ? "opacity-100" : "opacity-0"}`}
                         />
                       ))}
