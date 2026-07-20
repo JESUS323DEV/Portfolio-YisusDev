@@ -76,9 +76,6 @@ export default function FooterLayout() {
                 <Github size={20} />
               </a>
             </div>
-            <a href="mailto:jtipian90@gmail.com" className="text-white/35 text-xs hover:text-white/60 transition-colors">
-              jtipian90@gmail.com
-            </a>
           </div>
 
         </div>
