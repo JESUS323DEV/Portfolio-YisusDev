@@ -53,6 +53,14 @@ const ScrollHandler = () => {
         hasScrolled.current = true;
       }, 100);
     }
+    if (pathname === "/servicios") {
+      setTimeout(() => {
+        document.getElementById("servicios")?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 100);
+    }
     if (pathname === "/contacto") {
       setTimeout(() => {
         document.getElementById("contacto")?.scrollIntoView({
@@ -89,6 +97,7 @@ function App() {
         <Route path="/" element={<HomeLayout />} />
         <Route path="/proyectos" element={<HomeLayout />} />
         <Route path="/como-trabajo" element={<HomeLayout />} />
+        <Route path="/servicios" element={<HomeLayout />} />
         <Route path="/webs-listas" element={<HomeLayout />} />
         <Route path="/contacto" element={<HomeLayout />} />
 

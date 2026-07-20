@@ -10,6 +10,7 @@ import { ArrowRight, Mail, Github } from 'lucide-react'
 const navLinks = [
     { to: '/',             section: 'hero',      label: 'Inicio'         },
     { to: '/como-trabajo', section: 'aboutMe',   label: '¿Cómo trabajo?' },
+    { to: '/servicios',    section: 'servicios', label: 'Servicios'      },
     { to: '/proyectos',    section: 'proyectos', label: 'Proyectos'      },
     { to: '/contacto',     section: 'contacto',  label: 'Contacto'       },
 ]
