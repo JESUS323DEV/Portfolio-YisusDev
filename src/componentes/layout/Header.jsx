@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from "react-router-dom";
 
-import logo from "../../assets/logo-jesus.png"
+import logo from "../../assets/logo-jesus.webp"
 import whatsapp from "../../assets/icon-whatsapp.png"
 import ScrollSections from "../../componentes/ScrollSections"
 import useActiveSection from "../../componentes/useActiveSection"

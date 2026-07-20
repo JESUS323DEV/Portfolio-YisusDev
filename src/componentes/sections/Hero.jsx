@@ -3,9 +3,9 @@ import { Link } from "react-router-dom"
 import { ArrowRight, ChevronRight, Target, Zap, MessageSquare } from "lucide-react"
 import ScrollSections from "../../componentes/ScrollSections"
 
-import vanessaHero from "../../assets/galeria-projects/vanessa/desktop/vanessa-hero-desktop.png"
-import estrellaHero from "../../assets/galeria-projects/estrella/desktop/estrella-hero-desktop.png"
-import atenciaHero from "../../assets/galeria-projects/atencia/desktop/atencia-hero-desktop.png"
+import vanessaHero from "../../assets/galeria-projects/vanessa/desktop/vanessa-hero-desktop.webp"
+import estrellaHero from "../../assets/galeria-projects/estrella/desktop/estrella-hero-desktop.webp"
+import atenciaHero from "../../assets/galeria-projects/atencia/desktop/atencia-hero-desktop.webp"
 
 const SLIDES = [vanessaHero, estrellaHero, atenciaHero]
 

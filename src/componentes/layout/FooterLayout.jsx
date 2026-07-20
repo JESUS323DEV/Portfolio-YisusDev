@@ -1,4 +1,4 @@
-import logo from "../../assets/logo-jesus.png"
+import logo from "../../assets/logo-jesus.webp"
 import whatsapp from "../../assets/icon-whatsapp.png"
 import { Link } from "react-router-dom"
 import { Home, Briefcase, FolderOpen, Mail, Github } from "lucide-react"

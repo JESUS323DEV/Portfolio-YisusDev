@@ -7,10 +7,10 @@ import {
 import ScrollSections from '../../componentes/ScrollSections'
 import useInView from '../useInView'
 
-import reservaDesktop from '../../assets/galeria-projects/appReservas/desktop/reservaq-desktop.png'
-import vanessaHeroDesktop from '../../assets/galeria-projects/vanessa/desktop/vanessa-hero-desktop.png'
-import estrellaHeroDesktop from '../../assets/galeria-projects/estrella/desktop/estrella-hero-desktop.png'
-import atenciaHeroDesktop from '../../assets/galeria-projects/atencia/desktop/atencia-hero-desktop.png'
+import reservaDesktop from '../../assets/galeria-projects/appReservas/desktop/reservaq-desktop.webp'
+import vanessaHeroDesktop from '../../assets/galeria-projects/vanessa/desktop/vanessa-hero-desktop.webp'
+import estrellaHeroDesktop from '../../assets/galeria-projects/estrella/desktop/estrella-hero-desktop.webp'
+import atenciaHeroDesktop from '../../assets/galeria-projects/atencia/desktop/atencia-hero-desktop.webp'
 
 const PROJECTS = [
   {
