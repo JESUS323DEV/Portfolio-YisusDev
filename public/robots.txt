@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /presupuesto
 
-Sitemap: https://webjesusdev.netlify.app/sitemap.xml
+Sitemap: https://jesusdev.es/sitemap.xml
