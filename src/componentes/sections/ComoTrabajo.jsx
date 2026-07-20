@@ -31,7 +31,7 @@ const PASOS = [
     numero: '04',
     titulo: 'Entrega',
     subtitulo: 'Tu web, online',
-    texto: 'Tu web publicada y funcionando. Preparada para usarse desde el primer momento.',
+    texto: 'Tu web online, tuya al 100%. Sin sorpresas, sin contratos, sin ataduras.',
     entregable: 'Web online y tuya',
   },
 ]
@@ -41,7 +41,7 @@ export default function ComoTrabajo() {
   const [timelineRef, timelineInView] = useInView(0.05)
 
   return (
-    <section id="aboutMe" className="bg-[#0d1015] py-20 lg:py-32">
+    <section id="aboutMe" className="bg-[#0d1015] py-10 lg:py-20">
       <div className="mx-auto w-[90%] max-w-6xl ">
 
         {/* Cabecera */}

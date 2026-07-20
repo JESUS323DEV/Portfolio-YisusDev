@@ -111,7 +111,7 @@ export default function Proyectos() {
   const [cardsRef, cardsInView] = useInView(0.05)
 
   return (
-    <section id="proyectos" className="bg-[#0d1015] py-20">
+    <section id="proyectos" className="bg-[#0d1015] py-10 lg:py-20">
       <div className="mx-auto w-[90%] max-w-6xl">
 
         {/* Cabecera */}
@@ -147,7 +147,7 @@ export default function Proyectos() {
         <div ref={cardsRef}>
 
           {/* Webs de clientes */}
-          <p className="text-white/30 text-[10px] font-semibold tracking-widest uppercase mb-4">Webs</p>
+          <p className="text-white/30 text-[10px] font-semibold tracking-widest uppercase mb-4 ">Webs</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-2 lg:gap-3 mb-8">
             {WEBS.map((p, idx) => (
               <div key={p.numero}

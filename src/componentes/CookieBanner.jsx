@@ -38,27 +38,33 @@ export default function CookieBanner() {
   if (!visible) return null
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-[999] bg-[#0d1015] border-t border-[rgba(4,157,178,0.4)] shadow-[0_-4px_30px_rgba(4,157,178,0.12)] p-5">
-      <div className="mx-auto max-w-6xl flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-        <p className="text-white/60 text-sm leading-relaxed">
-          Usamos cookies de analítica para entender cómo se usa la web y mejorarla.{' '}
-          <Link to="/privacidad" className="text-[#049db2] hover:underline">Política de privacidad</Link>
-        </p>
-        <div className="flex gap-2 shrink-0">
-          <button
-            onClick={reject}
-            className="px-4 py-2 text-xs text-white/50 border border-white/15 rounded hover:border-white/30 transition-colors duration-200"
-          >
-            Rechazar
-          </button>
-          <button
-            onClick={accept}
-            className="px-4 py-2 text-xs font-semibold bg-[#049db2] text-[#0d1015] rounded shadow-[0_0_14px_rgba(4,157,178,0.35)] hover:bg-[#00b4cc] transition-colors duration-200"
-          >
-            Aceptar
-          </button>
-        </div>
+    <div className="fixed bottom-6 left-6 z-[999] w-[calc(100vw-3rem)] max-w-[300px] rounded-2xl border border-white/[0.08] bg-[#131720] p-5 shadow-[0_8px_40px_rgba(0,0,0,0.5)]">
+
+      {/* Título */}
+      <p className="text-white font-semibold text-sm mb-3">Cookies de analítica</p>
+
+      {/* Descripción */}
+      <p className="text-white/50 text-xs leading-relaxed mb-4">
+        Usamos cookies de analítica para entender cómo se usa la web y mejorarla.{' '}
+        <Link to="/privacidad" className="text-[#049db2] hover:underline">Política de privacidad</Link>
+      </p>
+
+      {/* Botones */}
+      <div className="flex gap-2">
+        <button
+          onClick={reject}
+          className="flex-1 py-2 text-xs text-white/50 border border-white/15 rounded-lg hover:border-white/30 transition-colors duration-200"
+        >
+          Rechazar
+        </button>
+        <button
+          onClick={accept}
+          className="flex-1 py-2 text-xs font-semibold bg-[#049db2] text-[#0d1015] rounded-lg shadow-[0_0_14px_rgba(4,157,178,0.3)] hover:bg-[#00b4cc] transition-colors duration-200"
+        >
+          Aceptar
+        </button>
       </div>
+
     </div>
   )
 }

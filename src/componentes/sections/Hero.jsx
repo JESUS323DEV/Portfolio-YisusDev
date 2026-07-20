@@ -12,18 +12,18 @@ const SLIDES = [vanessaHero, estrellaHero, atenciaHero]
 const FEATURES = [
   {
     icon: Target,
-    title: "Enfocado en objetivos",
-    desc: "Diseño y desarrollo alineado con lo que tu negocio necesita.",
+    title: "Tuya para siempre",
+    desc: "Sin cuotas de plataforma. El código es tuyo desde el primer día.",
   },
   {
     icon: Zap,
-    title: "Rendimiento primero",
-    desc: "Diseñadas para ofrecer una experiencia clara y profesional.",
+    title: "Sin plantillas",
+    desc: "Diseño adaptado a tu negocio, no al revés.",
   },
   {
     icon: MessageSquare,
-    title: "Comunicación clara",
-    desc: "Te acompaño en todo el proceso con transparencia total.",
+    title: "Trato directo",
+    desc: "Hablas conmigo, no con un equipo de soporte.",
   },
 ]
 
@@ -96,7 +96,7 @@ export default function Hero() {
               style={{ transitionDelay: "260ms" }}
               className={`${anim} text-white/75 text-base leading-relaxed mb-8 max-w-xs lg:max-w-md`}
             >
-              Páginas web a medida para negocios locales, portfolios y marcas personales.
+              Webs a medida para negocios locales y marcas personales. Sin plantillas ni suscripciones.
             </p>
 
             {/* CTAs principales */}

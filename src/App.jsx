@@ -12,6 +12,7 @@ import Hero from "./componentes/sections/Hero";
 import ComoTrabajo from "./componentes/sections/ComoTrabajo";
 import Proyectos from "./componentes/sections/Proyectos";
 import Contacto from "./componentes/sections/Contacto";
+import Servicios from "./componentes/sections/Servicios";
 import Presupuesto from "./componentes/sections/Presupuesto";
 import AvisoLegal from "./componentes/sections/AvisoLegal";
 import Privacidad from "./componentes/sections/Privacidad";
@@ -23,6 +24,7 @@ const HomeLayout = () => (
     <main>
       <Hero />
       <ComoTrabajo />
+      <Servicios />
       <Proyectos />
       <Contacto />
     </main>

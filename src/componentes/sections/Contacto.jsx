@@ -29,7 +29,7 @@ export default function Contacto() {
   }, [])
 
   return (
-    <section id="contacto" className="bg-[#0d1015] py-20">
+    <section id="contacto" className="bg-[#0d1015] py-10 lg:py-20">
       <div className="mx-auto w-[90%] max-w-6xl">
 
 
