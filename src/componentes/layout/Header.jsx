@@ -198,7 +198,7 @@ export default function Header() {
                             <div className="h-1.5 w-1.5 rounded-full bg-[#049db2]" />
                             <div className="h-px w-16 bg-gradient-to-l from-transparent to-[#049db2]" />
                         </div>
-                        <p className="text-white/30 text-xs">© 2026 Jesús Dev. Todos los derechos reservados.</p>
+                        <p className="text-white/45 text-xs">© 2026 Jesús Dev. Todos los derechos reservados.</p>
                     </div>
 
             </div>

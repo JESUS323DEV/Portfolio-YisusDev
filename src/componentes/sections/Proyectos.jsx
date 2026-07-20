@@ -147,7 +147,7 @@ export default function Proyectos() {
         <div ref={cardsRef}>
 
           {/* Webs de clientes */}
-          <p className="text-white/30 text-[10px] font-semibold tracking-widest uppercase mb-4 ">Webs</p>
+          <p className="text-white/45 text-[10px] font-semibold tracking-widest uppercase mb-4">Webs</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-2 lg:gap-3 mb-8">
             {WEBS.map((p, idx) => (
               <div key={p.numero}
@@ -184,7 +184,7 @@ export default function Proyectos() {
           </div>
 
           {/* Reservaq */}
-          <p className="text-white/30 text-[10px] font-semibold tracking-widest uppercase mb-4 mt-2">SaaS</p>
+          <p className="text-white/45 text-[10px] font-semibold tracking-widest uppercase mb-4mt-2">SaaS</p>
           {FEATURED && (
             <div className="rounded-xl border border-white/[0.07] bg-[rgba(255,255,255,0.02)] overflow-hidden mb-6"
               style={{ opacity: cardsInView ? 1 : 0, transition: 'opacity 0.55s ease' }}>

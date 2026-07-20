@@ -45,7 +45,7 @@ export default function FooterLayout() {
 
           {/* Navegación — 2 columnas en mobile, lista vertical en tablet+ */}
           <div>
-            <p className="text-white/30 text-[10px] font-semibold tracking-widest uppercase mb-4 text-center lg:text-left">Navegación</p>
+            <p className="text-white/45 text-[10px] font-semibold tracking-widest uppercase mb-4 text-center lg:text-left">Navegación</p>
             <ul className="grid grid-cols-2 gap-x-8 gap-y-3 md:flex md:flex-col md:gap-3">
               {NAV_LINKS.map(({ icon, label, to, section }) => {
                 const NavIcon = icon
@@ -64,15 +64,15 @@ export default function FooterLayout() {
 
           {/* Redes y contacto directo */}
           <div className="flex flex-col items-center lg:items-start">
-            <p className="text-white/30 text-[10px] font-semibold tracking-widest uppercase mb-4">Conectemos</p>
+            <p className="text-white/45 text-[10px] font-semibold tracking-widest uppercase mb-4">Conectemos</p>
             <div className="flex gap-5 mb-4">
-              <a href="https://wa.me/+34695078648" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/+34695078648" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
                 <img src={whatsapp} alt="WhatsApp" className="w-5 h-5 opacity-50 hover:opacity-100 transition-opacity" />
               </a>
-              <a href="mailto:jtipian90@gmail.com" className="text-white/50 hover:text-white transition-colors">
+              <a href="mailto:jtipian90@gmail.com" className="text-white/50 hover:text-white transition-colors" aria-label="Enviar correo electrónico">
                 <Mail size={20} />
               </a>
-              <a href="https://github.com/JESUS323DEV" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white transition-colors">
+              <a href="https://github.com/JESUS323DEV" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white transition-colors" aria-label="Ver perfil de GitHub">
                 <Github size={20} />
               </a>
             </div>
@@ -82,7 +82,7 @@ export default function FooterLayout() {
 
         {/* Barra inferior: copyright + decoración central */}
         <div className="flex flex-col items-center gap-4 lg:justify-between">
-          <p className="text-white/30 text-xs">© 2026 Jesús Dev. Todos los derechos reservados.</p>
+          <p className="text-white/45 text-xs">© 2026 Jesús Dev. Todos los derechos reservados.</p>
           <div className="flex items-center">
             <div className="h-px w-10 bg-gradient-to-r from-transparent to-[#049db2]" />
             <div className="h-1.5 w-1.5 rounded-full bg-[#049db2]" />

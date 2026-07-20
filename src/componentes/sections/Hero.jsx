@@ -158,7 +158,7 @@ export default function Hero() {
                             key={i}
                             onClick={() => setIndice(i)}
                             aria-label={`Proyecto ${i + 1}`}
-                            className={`h-1.5 w-1.5 rounded-full transition-colors duration-300 ${i === indice ? "bg-[#049db2]" : "bg-white/40"}`}
+                            className={`h-1.5 w-1.5 rounded-full transition-colors duration-300 p-2 box-content ${i === indice ? "bg-[#049db2]" : "bg-white/40"}`}
                           />
                         ))}
                       </div>
