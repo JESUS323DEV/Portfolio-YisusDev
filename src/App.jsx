@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 
 // IMPORT LAYOUT
 import Header from "./componentes/layout/Header";
+import CookieBanner from "./componentes/CookieBanner";
 import FooterLayout from "./componentes/layout/FooterLayout";
 
 // IMPORT SECTIONS
@@ -67,6 +68,7 @@ function App() {
     <BrowserRouter>
 
       <ScrollHandler />
+      <CookieBanner />
 
       <Routes>
         {/* HOME + SECCIONES */}
