@@ -1,10 +1,8 @@
-# YisusDev — Sitio web de servicios freelance
+# JesusDev — Sitio web de servicios freelance
 
-> 🚧 **En construcción** — Se irán añadiendo más proyectos a la sección Webs Listas próximamente.
+Sitio web de presentación y venta de servicios de desarrollo web freelance, orientado a negocios locales y marcas personales. Diseño oscuro, moderno y responsive.
 
-Sitio web de presentación y venta de servicios de desarrollo web freelance, orientado a negocios locales. Diseño oscuro, moderno y responsive.
-
-**Live:** [webyisusdev.netlify.app](https://webyisusdev.netlify.app)
+**Live:** [jesusdev.es](https://jesusdev.es)
 
 ---
 
@@ -12,44 +10,40 @@ Sitio web de presentación y venta de servicios de desarrollo web freelance, ori
 
 - **React 18** + **Vite**
 - **React Router v6** — navegación SPA con scroll a sección
-- **CSS puro** — sin librerías de estilos, responsive manual con breakpoints propios
+- **Tailwind CSS** — diseño responsive con breakpoints estándar
+- **Lucide React** — iconos
 
-## Estructura de secciones
+## Secciones
 
 | Ruta | Sección |
 |---|---|
-| `/` | Hero |
-| `/como-trabajo` | Cómo trabajo |
-| `/servicios` | Mis servicios |
-| `/proyectos` | Proyectos (clientes + personales) |
-| `/webs-listas` | Demos / Webs listas |
-| `/contacto` | Contacto |
+| `/` | Hero, Cómo trabajo, Servicios, Proyectos, Contacto |
+| `/presupuesto` | Presupuesto (oculto, enlace directo) |
 | `/aviso-legal` | Aviso legal |
 | `/privacidad` | Política de privacidad |
 
+El scroll a cada sección se gestiona mediante rutas virtuales (`/como-trabajo`, `/proyectos`, `/contacto`) sin páginas separadas.
+
 ## Proyectos incluidos
 
-**Clientes:**
 - Vanessa (psicopedagoga)
-- Estrella
-- Clínica Atencia
+- Estrella sin filtro (Social media manager)
+- Atencia Homes (Inmobiliaria)
+- Reservaq (SaaS propio de gestión de reservas)
 
-**Personales / Demos:**
-- Webs listas (en expansión)
-- Juego
-- Utrno
+## Analítica
 
-## Breakpoints
+Microsoft Clarity con carga condicional tras consentimiento de cookies (GDPR). El script no se ejecuta hasta que el usuario acepta desde el banner.
 
-```
-XS   ≤ 575px
-SM   576px – 767px
-MD   768px – 991px
-LG   992px – 1199px
-SXL  1200px – 1279px
-XL   1280px – 1399px
-XXL  ≥ 1400px
-```
+## SEO
+
+- `sitemap.xml` y `robots.txt` en `/public`
+- Meta tag de verificación de Google Search Console en `index.html`
+- Open Graph y meta description configurados
+
+## Deploy
+
+Desplegado en **Netlify** con dominio personalizado `jesusdev.es`. El build se genera con `npm run build` y Netlify lo sirve desde la carpeta `dist`.
 
 ## Arrancar en local
 
@@ -66,4 +60,4 @@ npm run build
 
 ---
 
-*Desarrollado por [YisusDev](https://webyisusdev.netlify.app)*
+*Desarrollado por [JesusDev](https://jesusdev.es)*
