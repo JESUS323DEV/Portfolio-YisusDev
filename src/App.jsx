@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 // IMPORT LAYOUT
 import Header from "./componentes/layout/Header";
 import CookieBanner from "./componentes/CookieBanner";
+import whatsapp from "./assets/icon-whatsapp.png"
 import FooterLayout from "./componentes/layout/FooterLayout";
 
 // IMPORT SECTIONS
@@ -69,6 +70,17 @@ function App() {
 
       <ScrollHandler />
       <CookieBanner />
+
+      {/* Botón flotante WhatsApp — solo desktop */}
+      <a
+        href="https://wa.me/+34695078648"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex fixed bottom-6 right-6 z-[998] w-11 h-11 lg:w-14 lg:h-14 items-center justify-center rounded-full bg-[#25d366] shadow-[0_4px_20px_rgba(37,211,102,0.4)] hover:shadow-[0_4px_28px_rgba(37,211,102,0.6)] hover:scale-110 transition-all duration-200"
+        aria-label="Contactar por WhatsApp"
+      >
+        <img src={whatsapp} alt="WhatsApp" className="w-7 h-7" />
+      </a>
 
       <Routes>
         {/* HOME + SECCIONES */}
